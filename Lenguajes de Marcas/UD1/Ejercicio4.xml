@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recetas>
+    <receta>
+        <nombre>Huevos con canela</nombre>
+        <ingredientes>
+            <ingrediente>
+                <nombre>Huevos</nombre>
+                <peso>100 gramos</peso>
+            </ingrediente>
+            <ingrediente>
+                <nombre>Canela</nombre>
+                <peso>10 gramos</peso>
+            </ingrediente>
+        </ingredientes>
+        <tiempoPreparacion>220 minutos</tiempoPreparacion>
+    </receta>
+        <nombre>Leche con sal</nombre>
+        <ingredientes>
+            <ingrediente>
+                <nombre>Leche</nombre>
+                <peso>1/2 litro</peso>
+            </ingrediente>
+            <ingrediente>
+                <nombre>sal</nombre>
+                <peso>3 kilos</peso>
+            </ingrediente>
+        </ingredientes>
+        <tiempoPreparacion>0.2 minutos</tiempoPreparacion>
+</recetas>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno>
+        <nombre>Carlos</nombre>
+        <apellido>Fernandez</apellido>
+        <edad>24</edad>
+        <email>carlosrodriguez@gmail.com</email>
+    </alumno>
+    <alumno>
+        <nombre>Antonio</nombre>
+        <apellido>Lobato</apellido>
+        <edad>49</edad>
+        <email>tucoche@gmail.com</email>
+    </alumno>
+</alumnos>
