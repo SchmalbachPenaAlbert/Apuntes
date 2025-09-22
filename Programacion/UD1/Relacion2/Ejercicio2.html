@@ -1,0 +1,11 @@
+<script>
+
+    // Pide al usuario el total de una cuenta y el porcentaje de propina que quiere dejar. Calcula y muestra la propina.
+    let total = Number(prompt("Introduzca el valor total de la cuenta en euros:"))
+    let porcentajePropina = parseInt(prompt("Introduzca el porcentaje de propina que desea añadir (sugerido 30%)"))
+    let propina = porcentajePropina / 100 * total
+    // Añado: Ajusto la propina a 2 decimales, ya que no se puede pagar menos de 1 centimo.
+    let propina_dec = propina.toFixed(2)
+    alert("Ha dejado una propina de " + propina_dec + "€.")
+
+</script>
