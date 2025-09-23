@@ -1,6 +1,10 @@
 <script>
 
+    // Introduzco dos variables para la distancia y el tiempo según lo que introduzca el usuario y lo convierto a número desde string
+    let distanciaRecorrida = Number(prompt("Introduzca la distancia recorrida en kilómetros:"))
+    let tiempoTranscurrido = parseInt(prompt("Introduzca el tiempo transcurrido en minutos:"))
+    // Calculo la velocidad media en km/h
+    let velocidadMedia = distanciaRecorrida / (tiempoTranscurrido * 60)
+    console.log("La velocidad media es " + velocidadMedia + ".")
 
-
-    
 </script>

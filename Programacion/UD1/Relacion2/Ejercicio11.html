@@ -1,6 +1,9 @@
 <script>
 
-
-
+let segundosIniciales = parseInt(prompt("Introduzca una cantidad de segundos:"))
+let horas = parseInt(segundosIniciales / 3600)
+let minutos = parseInt((horas / 60) - (segundosIniciales / 60))
+let segundos = parseInt(segundosIniciales - (horas * 3600) - (minutos * 60))
+console.log(segundosIniciales + " equivale a " + horas + " horas " + minutos + " minutos y " + segundos + " segundos.")
     
 </script>

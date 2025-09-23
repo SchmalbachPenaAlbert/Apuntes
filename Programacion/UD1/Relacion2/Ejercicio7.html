@@ -1,6 +1,11 @@
 <script>
-
-
-
+    // Declaro las variables peso y altura con valor segun el prompt del usuario, pasando ambos a número desde string
+    let peso = Number(prompt("Introduzca su peso:"))
+    let altura = Number(prompt("Introduzca su altura en metros:"))
+    // Calculo el IMC con la fórmula
+    let imc = peso / (altura * altura)
+    // Añado: Ajusto el IMC a 1 decimal, ya que no nos ineteresan más decimales en la medición
+    let imcAjustado = imc.toFixed(1)
+    console.log("El IMC es " + imcAjustado + ".")
     
 </script>
