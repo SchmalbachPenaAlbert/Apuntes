@@ -1,9 +1,15 @@
 <script>
 
-let segundosIniciales = parseInt(prompt("Introduzca una cantidad de segundos:"))
-let horas = parseInt(segundosIniciales / 3600)
-let minutos = parseInt((horas / 60) - (segundosIniciales / 60))
-let segundos = parseInt(segundosIniciales - (horas * 3600) - (minutos * 60))
-console.log(segundosIniciales + " equivale a " + horas + " horas " + minutos + " minutos y " + segundos + " segundos.")
+    // Creo una variable con un valor que obedezca al imput del usuario, convirtiendo ese valor string a número
+    let segundosIniciales = parseInt(prompt("Introduzca una cantidad de segundos:"))
+    // Divido los segundos entre 3600 para conseguir las horas
+    let horas = parseInt(segundosIniciales / 3600)
+    // Creo otra variable con el módulo de la operación anterior para facilitar los cálculos
+    let sobranteHoras = parseInt(segundosIniciales % 3600)
+    // Obtengo los minutos y segundos mediante una division de esas horas sobrantes entre 60 y el módulo de esa operación, respectivamente
+    let minutos = parseInt(sobranteHoras / 60)
+    let segundos = sobranteHoras % 60
+    // Finalmente, muestro el resultado en la consola
+    console.log(segundosIniciales + " equivale a " + horas + " horas, " + minutos + " minutos y " + segundos + " segundos.")
     
 </script>

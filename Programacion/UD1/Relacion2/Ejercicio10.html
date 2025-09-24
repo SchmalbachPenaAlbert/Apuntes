@@ -1,8 +1,11 @@
 <script>
 
+    // Creo una variable, sus datos siendo el imput del usuario, y lo convierto de string a número entero
     let minutosIniciales = parseInt(prompt("Introduzca una cantidad de minutos:"))
+    // Paso esos minutos a horas, y dejo el resto en minutos
     let horas = parseInt(minutosIniciales / 60)
     let horasMinutos = minutosIniciales % 60
+    // Finalmente, muestro en la consola ambos valores, horas y minutos
     console.log(minutosIniciales + " equivale a " + horas + " horas y " + horasMinutos + " minutos.")
 
 </script>
