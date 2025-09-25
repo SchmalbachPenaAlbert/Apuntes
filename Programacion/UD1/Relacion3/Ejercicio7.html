@@ -2,8 +2,21 @@
 
     let numero1 = Number(prompt("Introduzca un número:"))
     let numero2 = Number(prompt("Introduzca otro número:"))
-    let operacion = prompt("Introduce un operante:")
-    let resultado = Number(numero1 + operacion + numero2)
-    console.log("El resultado es " + resultado)
+    let operante = prompt("Introduce un operante:")
+    let resultado
+    if (operante == "+") {
+        resultado = numero1 + numero2
+    } else if (operante == "-") {
+        resultado = numero1 - numero2
+    } else if (operante == "*") {
+        resultado = numero1 * numero2
+    } else if (operante == "/") {
+        resultado = numero1 / numero2
+    } else if (operante == "%") {
+        resultado = numero1 % numero2
+    } else {
+        console.log("No se ha introducido un operante válido.")
+    }
+    console.log("El resultado de la operación es " + resultado + ".")
     
 </script>

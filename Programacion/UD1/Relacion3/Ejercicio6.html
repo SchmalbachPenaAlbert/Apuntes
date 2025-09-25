@@ -1,7 +1,7 @@
 <script>
 
     let year = parseInt(prompt("Introduzca un año:"))
-    if (year % 4 == 0) {
+    if ((year % 4 == 0) && !(year % 100 == 0) || (year % 400 == 0)) {
         console.log("Es bisiesto")
     } else {
         console.log("Es no bisiesto")
