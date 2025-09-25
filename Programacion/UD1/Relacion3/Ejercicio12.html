@@ -1,0 +1,15 @@
+<script>
+
+    let lado1 = Number(prompt("Introduzca la longitud de un lado del triángulo:"))
+    let lado2 = Number(prompt("Introduzca la longitud de otro lado del triángulo:"))
+    let lado3 = Number(prompt("Introduzca la longitud de el tercer lado del triángulo:"))
+    if (lado1 == lado2 == lado3) {
+        console.log("El triángulo es equilátero.")
+    } else if ((lado1 == lado2 != lado3) || (lado1 != lado2 == lado3)) {
+        console.log("El triángulo es isóceles.")
+    } else {
+        console.log("El triángulo es escaleno.")
+    }
+
+    // Está mal!
+</script>

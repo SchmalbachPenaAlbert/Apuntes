@@ -1,0 +1,18 @@
+<script>
+
+    let calificacion = parseInt(prompt("Introduzca una calificación entre 0 y 100:"))
+    if (calificacion <= 100 && calificacion >= 90) {
+        console.log("La calificación es A.")
+    } else if (calificacion <= 89 && calificacion >= 80) {
+        console.log("La calificación es B.")
+    } else if (calificacion <= 79 && calificacion >= 70) {
+        console.log("La calificación es C.")
+    } else if (calificacion <= 69 && calificacion >= 60) {
+        console.log("La calificación es D.")
+    } else if (calificacion <= 59 && calificacion >= 0) {
+        console.log("La calificación es F.")
+    } else {
+        alert("No se ha introducido un número entre 0 y 100!")
+    }
+
+</script>

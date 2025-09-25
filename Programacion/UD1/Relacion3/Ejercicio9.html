@@ -1,0 +1,13 @@
+<script>
+
+    let numero = Number(prompt("Introduzca un número de dos cifras:"))
+    if ((numero >= 10 && numero < 100) || (numero <= -10 && numero > -100)) {
+        let digito1 = parseInt(numero / 10)
+        let digito2 = numero % 10
+        let sumaDigitos = digito1 + digito2
+        console.log("La suma de los dos digitos es " + sumaDigitos + ".")
+    } else {
+        alert("El número introducido no es de dos cifras!")
+    }
+
+</script>
