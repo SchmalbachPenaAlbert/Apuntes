@@ -9,53 +9,56 @@
             <nombre>Reshiram</nombre>
             <tipo>dragon</tipo>
             <tipo>fuego</tipo>
-            <nivel></nivel>
+            <nivel>3</nivel>
         </pokemon>
         <pokemon>
-            <nombre></nombre>
-            <tipo></tipo>
-            <nivel></nivel>
+            <nombre>Moltres</nombre>
+            <tipo>fuego</tipo>
+            <tipo>volador</tipo>
+            <nivel>1</nivel>
         </pokemon>
         <pokemon>
-            <nombre></nombre>
-            <tipo></tipo>
-            <nivel></nivel>
-        </pokemon>
-    </entrenador>
-    <entrenador>
-        <nombre></nombre>
-        <pokemon>
-            <nombre></nombre>
-            <tipo></tipo>
-            <nivel></nivel>
-        </pokemon>
-        <pokemon>
-            <nombre></nombre>
-            <tipo></tipo>
-            <nivel></nivel>
-        </pokemon>
-        <pokemon>
-            <nombre></nombre>
-            <tipo></tipo>
-            <nivel></nivel>
+            <nombre>Porygon</nombre>
+            <tipo>normal</tipo>
+            <nivel>9</nivel>
         </pokemon>
     </entrenador>
     <entrenador>
-        <nombre></nombre>
+        <nombre>Lamine Yamal</nombre>
         <pokemon>
-            <nombre></nombre>
-            <tipo></tipo>
-            <nivel></nivel>
+            <nombre>Skitty</nombre>
+            <tipo>normal</tipo>
+            <nivel>2</nivel>
         </pokemon>
         <pokemon>
-            <nombre></nombre>
-            <tipo></tipo>
-            <nivel></nivel>
+            <nombre>Deoxys</nombre>
+            <tipo>psíquico</tipo>
+            <nivel>3</nivel>
         </pokemon>
         <pokemon>
-            <nombre></nombre>
-            <tipo></tipo>
-            <nivel></nivel>
+            <nombre>Drapion</nombre>
+            <tipo>veneno</tipo>
+            <tipo>bicho</tipo>
+            <nivel>6</nivel>
+        </pokemon>
+    </entrenador>
+    <entrenador>
+        <nombre>Luis</nombre>
+        <pokemon>
+            <nombre>Lillipup</nombre>
+            <tipo>normal</tipo>
+            <nivel>4</nivel>
+        </pokemon>
+        <pokemon>
+            <nombre>Palpitou</nombre>
+            <tipo>agua</tipo>
+            <tipo>tierra</tipo>
+            <nivel>10</nivel>
+        </pokemon>
+        <pokemon>
+            <nombre>Palafin</nombre>
+            <tipo>agua</tipo>
+            <nivel>8</nivel>
         </pokemon>
     </entrenador>
 </liga>
