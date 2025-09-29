@@ -2,7 +2,7 @@
 
     let angle = parseInt(prompt("Introduzca el valor del ángulo:"))
     let angleType = ""
-    if (angle < 90) {
+    if (angle > 0 && angle < 90) {
         angleType = "agudo"
     } else if (angle == 90) {
         angleType = "recto"

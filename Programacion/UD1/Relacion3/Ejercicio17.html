@@ -1,5 +1,18 @@
 <script>
 
+    let minutos = Number(prompt("Introduzca la duración de la llamada en minutos:"))
+    const tresMinutosGratis = 3 * 0.5
+    const tresADiezMinutos = 7 * 0.5
+    const minutosExtra = (minutos - 10) * 0.3
+    let importe = ""
+    if (minutos < 3) {
+        importe = 0
+    } else if (minutos > 3 && minutos <= 10) {
+        importe = minutos * 0.5 - tresMinutosGratis
+    } else if (minutos > 10) {
+        importe = minutosExtra + tresADiezMinutos
+    }
+    importe = importe.toFixed(2)
+    console.log("El coste es de " + importe + "€.")
 
-    
 </script>

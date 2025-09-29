@@ -1,5 +1,13 @@
 <script>
 
+    let promedioAcademico = Number(prompt("Introduzca el promedio académico del estudiante:"))
+    let ingresosAnuales = Number(prompt("Introduzca los ingresos anuales del grupo familiar del estudiante:"))
+    if (promedioAcademico >= 8 && ingresosAnuales <= 20000) {
+        console.log("Tiene la posibilidad de solicitar una beca completa.")
+    } else if (promedioAcademico >= 8 && ingresosAnuales > 20000) {
+        console.log("Tiene la posibilidad de solicitar una beca parcial.")
+    } else {
+        console.log("Lo sentimos, pero el solicitante no puede aplicar a ninguna beca.")
+    }
 
-    
 </script>

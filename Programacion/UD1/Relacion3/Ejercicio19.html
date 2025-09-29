@@ -1,5 +1,19 @@
 <script>
 
+    let horas = Number(prompt("Introduzca la duración del estacionamiento en horas:"))
+    const primerasDosHoras = 2 * 5
+    const dosACincoHoras = (horas - 2) * 4
+    const primerasCincoHoras = (2 * 5) + (3 * 4)
+    const horasExtra = (horas - 5) * 3
+    let importe = ""
+    if (horas < 2) {
+        importe = horas * 5
+    } else if (horas > 2 && horas <= 5) {
+        importe = dosACincoHoras + primerasDosHoras
+    } else if (horas > 5) {
+        importe = horasExtra + primerasCincoHoras
+    }
+    importe = importe.toFixed(2)
+    console.log("El coste es de " + importe + "€.")
 
-    
 </script>
