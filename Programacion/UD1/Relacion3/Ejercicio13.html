@@ -1,5 +1,12 @@
 <script>
 
+    let letra = prompt("Introduzca una letra:")
+    letra = letra.toLowerCase()
+    if ((letra == "a") || (letra == "e") || (letra == "i") || (letra == "o") || (letra == "u")) {
+        letra = "vocal"
+    } else {
+        letra = "consonante"
+    }
+    console.log("La letra introducida es una " + letra + ".")
 
-    
 </script>

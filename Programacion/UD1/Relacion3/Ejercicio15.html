@@ -1,5 +1,18 @@
 <script>
 
+    let angle = parseInt(prompt("Introduzca el valor del ángulo:"))
+    let angleType = ""
+    if (angle < 90) {
+        angleType = "agudo"
+    } else if (angle == 90) {
+        angleType = "recto"
+    } else if (angle > 90 && angle < 180) {
+        angleType = "obtuso"
+    } else if (angle == 180) {
+        angleType = "llano"
+    } else {
+        angleType = "no válido"
+    }
+    console.log("El tipo de ángulo es " + angleType + ".")
 
-    
 </script>

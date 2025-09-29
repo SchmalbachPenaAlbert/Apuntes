@@ -1,5 +1,16 @@
 <script>
 
+    let temperatura = Number(prompt("Introduzca la temperatura actual:"))
+    let estadoClima = ""
+    if (temperatura < 0) {
+        estadoClima = "muy frío"
+    } else if (temperatura >= 0 && temperatura < 16) {
+        estadoClima = "frío"
+    } else if (temperatura >= 16 && temperatura <= 25) {
+        estadoClima = "templado"
+    } else {
+        estadoClima = "caliente"
+    }
+    console.log("El estado del clima es " + estadoClima + ".")
 
-    
 </script>
