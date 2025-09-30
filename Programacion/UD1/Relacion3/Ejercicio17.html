@@ -5,12 +5,15 @@
     const tresADiezMinutos = 7 * 0.5
     const minutosExtra = (minutos - 10) * 0.3
     let importe = ""
-    if (minutos < 3) {
+
+    if (minutos < 3 && minutos > 0) {
         importe = 0
     } else if (minutos > 3 && minutos <= 10) {
         importe = minutos * 0.5 - tresMinutosGratis
     } else if (minutos > 10) {
         importe = minutosExtra + tresADiezMinutos
+    } else { 
+        console.log("No se ha introducido una duración válida!")
     }
     importe = importe.toFixed(2)
     console.log("El coste es de " + importe + "€.")
