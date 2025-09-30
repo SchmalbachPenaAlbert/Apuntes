@@ -1,6 +1,17 @@
 <script>
 
-let puntuacion = Number(script("Introduzca su puntuación de crédito:"))
-let 
-    
+    let puntuacion = Number(script("Introduzca su puntuación de crédito:"))
+    let mesesCliente = Number(script("Introduzca los meses que usted ha estado adscrito a este banco:"))
+    if (mesesCliente < 0) {
+        console.log("Se introducido una cantidad imposible!")
+    } else if (puntuacion < 650 || mesescliente < 24) {
+        console.log("Lamentamos informarle de que su solicitud de crédito ha sido rechazada.")
+    } else {
+        if (mesesCliente > 24 && mesesCliente < 56) {
+            console.log("Le informamos que se le ha sido aprobado un crédito estándar.")
+        } else {
+            console.log("Le informamos que se le ha sido aprobado un crédito premium.")
+        }
+    }
+
 </script>
