@@ -1,5 +1,21 @@
 <script>
 
+    let salario = Number(prompt("Introduzca su salario anual:"))
+    let porcentajeImpuestos = ""
+    if (salario < 10000) {
+        porcentajeImpuestos = "0%"
+        trozoSalario = 0
+    } else if (salario > 10000 && salario < 20000) {
+        porcentajeImpuestos = "10%"
+        trozoSalario = 0.1
+    } else if (salario > 20000 && salario < 40000) {
+        porcentajeImpuestos = "20%"
+        trozoSalario = 0.2
+    } else {
+        porcentajeImpuestos = "30%"
+        trozoSalario = 0.3
+    }
+    let importe = salario * Number(trozoSalario)
+    console.log("El porcentaje de impuestos a pagar es del " + porcentajeImpuestos + ". Por tanto, el importe a pagar es de " + importe + ".")
 
-    
 </script>
