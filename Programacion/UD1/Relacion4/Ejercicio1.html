@@ -1,0 +1,14 @@
+<script>
+
+let numero = parseInt(prompt("Introduzca un número entero positivo:"))
+let resultado = 0
+if (numero < 0) {
+    console.log("Se ha introducido un número negativo!")
+} else { 
+    for (i = 0; i < 10; i++) {
+        resultado = numero * (i + 1)
+        console.log(numero + " x " + (i + 1) + " = " + resultado)
+    }
+}
+
+</script>
