@@ -5,8 +5,6 @@
 ### ¿Qué es Git?
 
 **Git** es un **sistema de control de versiones** (**Version Control System** o VCS) que permite a los desarrolladores **gestionar y realizar un seguimiento de los cambios del código a lo largo del tiempo**.
-Git, al ser **descentralizado**, permite que **cada desarrollador mantenga una copia completa del repositorio**.
-Por ejemplo, un desarrollador puede trabajar por su cuenta en una nueva funcionalidad y realizar una serie de commits antes de compartir su trabajo con el equipo.
 
 ### ¿Cómo configurar Git?
 
@@ -38,3 +36,42 @@ Así relaciona Git los **repositorios locales y remotos**, mediante **plataforma
   <br>
   <em>Diagrama relaciones repositorios Git</em>
 </p>
+
+## Utilidades
+
+### Recursos web
+
+Una página muy útil para aprender los comandos de Git y otros lenguajes es **w3 schools**. La web incluye tutoriales paso a paso y explicaciones de algunos comandos que ahora veremos. Echale un vistazo pulsando [este enlace](https://www.w3schools.com/git/default.asp).
+
+### Comandos generales
+
+#### Git Staging
+
+* **git add <file>** - Stagear un archivo
+* **git add --all** - Stagear TODOS los cambios
+* **git status** - Ver que está en el estado staged
+* **git restore** --staged <file> - Hacer que un archivo deje de estar staged
+
+#### Git Commit
+
+* **git commit -m "message** - Hacer commit de los cambios, introduciendo un mensaje
+* **git log** - Ver el historial de commits
+
+Para guardar los cambios que hayamos hecho, necesitaremos también un mensaje que describa lo que hemos cambiado.
+
+### Git Branch
+
+* **git branch <name>** - Crea una nueva rama
+* **git branch** - Muestra la lista de todas las ramas
+
+Las ramas te permiten **trabajar en el código por tu cuenta, sin interferir en la rama principal (main)**.
+
+### Git Checkout
+
+* **git checkout <name>** - Permite desplazarse entre ramas
+
+#### Git Merge
+
+* **git merge <name>** - Combinar una rama en la rama principal
+
+Ten en cuenta: Para hacer un merge porimero necesitamos situarnos en la rama principal (main).
