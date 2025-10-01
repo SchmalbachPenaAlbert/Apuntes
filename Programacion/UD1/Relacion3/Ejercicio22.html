@@ -1,18 +1,21 @@
 <script>
 
     let jugador1 = prompt("¿Piedra, papel, o tijera? Introduzca lo que va a sacar el jugador 1:")
-    if (jugador1.toLowerCase() != "piedra" || "papel" || "tijera") {
+    if (jugador1.toLowerCase() != "piedra" && jugador1.toLowerCase() != "papel" && jugador1.toLowerCase() != "tijera") {
         console.log("Se debe introducir un valor entre \"piedra\", \"papel\" y \"tijera\"!")
-    }  else {
+    } else {
         let jugador2 = prompt("Introduzca lo que va a sacar el jugador 2:")
-        if (jugador2.toLowerCase() != "piedra" || "papel" || "tijera") {
+        if (jugador2.toLowerCase() != "piedra" && jugador2.toLowerCase() != "papel" && jugador2.toLowerCase() != "tijera") {
             console.log("Se debe introducir un valor entre \"piedra\", \"papel\" y \"tijera\"!")
         } else {
-            if (jugador1 = "piedra" && jugador2 = "piedra")
-            console.log("Empate!")
-        } else if {
-            
+            if (jugador1 == jugador2) {
+                console.log("Empate!")
+            } else if ((jugador1 == "piedra" && jugador2 == "tijera") || (jugador1 == "papel" && jugador2 == "piedra") || (jugador1 == "tijera" && jugador2 == "papel")) {
+            console.log("Gana el jugador 1!")
+            } else {
+            console.log("Gana el jugador 2!")
+            }
         }
-    }
-    
+    }    
+
 </script>
