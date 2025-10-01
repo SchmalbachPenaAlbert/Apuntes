@@ -50,7 +50,7 @@ Una página muy útil para aprender los comandos de Git y otros lenguajes es **w
 * **git add <file>** - Stagear un archivo
 * **git add --all** - Stagear TODOS los cambios
 * **git status** - Ver que está en el estado staged
-* **git restore** --staged <file> - Hacer que un archivo deje de estar staged
+* **git restore --staged <file>** - Hacer que un archivo deje de estar staged
 
 #### Git Commit
 
