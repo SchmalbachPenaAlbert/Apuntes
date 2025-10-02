@@ -1,5 +1,22 @@
 <script>
 
+    let numero = Number(prompt("Introduzca un número secreto entre 1 y 10. Después deje que otra persona lo adivine:"))
+    if (numero < 1 || numero > 10) {
+        console.log("No se ha introducido un número en el rango solicitado! Se debe introducir un número entre 1 y 10!")
+    } else {
+        let adivinarNumero = Number(prompt("Adivina el número!:"))
+        let contador = Number(1)
+        while (adivinarNumero != numero) {
+            console.log("Número secreto incorrecto! Intentalo de nuevo!")
+            contador = contador + 1
+            adivinarNumero = Number(prompt("Intenta de nuevo:"))
+        }
+        if (contador == 1) {
+            console.log("¡Correcto! Has adivinado el número en 1 intento!")
+        } else {
+            console.log("¡Correcto! Has adivinado el número en " + contador + " intentos!")
+        }
 
-    
+    }
+
 </script>
