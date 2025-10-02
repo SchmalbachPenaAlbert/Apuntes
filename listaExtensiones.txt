@@ -1,0 +1,12 @@
+.NET Install Tool
+Deep Abyss
+Auto Close Tag
+Better Comments
+Color Highlight
+Git Graph
+Live Server
+Markdown All in One
+Markdown PDF
+Markdownlint
+Prettier
+XML
