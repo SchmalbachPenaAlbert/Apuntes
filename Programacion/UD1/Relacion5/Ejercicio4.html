@@ -1,5 +1,19 @@
 <script>
 
-
+    let color = prompt("Introduce un color:")
+    let numeroRepeticiones = parseInt(prompt("Introduzca un número:"))
+    if (numeroRepeticiones < 0) {
+        numeroRepeticiones = Math.abs(numeroRepeticiones)
+        color = color.split("").reverse().join("")
+        for (let i = 0; i < numeroRepeticiones; i++) {
+            console.log(color)
+            console.log()
+        }
+        } else {
+            for (i = 0; i < numeroRepeticiones; i++) {
+                console.log(color)
+                console.log()
+            }
+        }
 
 </script>
