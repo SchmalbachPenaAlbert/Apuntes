@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agencia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="Ejercicio5.xsd">
+
+<paquete codigo="PKT-0001">
+
+<destino>ads</destino>
+<precio>53.23</precio>
+<fechaInicio>2025-12-04</fechaInicio>
+<fechaFin>2025-12-05</fechaFin>
+<tipo>Relax</tipo>
+
+<cliente>
+    <nombre>Ssd</nombre>
+    <dni>12345678O</dni>
+    <edad>18</edad>
+    <email>cojones@gmail.com</email>
+</cliente>
+</paquete>
+<paquete codigo="PKT-0001">
+
+<destino>ads</destino>
+<precio>53.23</precio>
+<fechaInicio>2025-12-04</fechaInicio>
+<fechaFin>2025-12-05</fechaFin>
+<tipo>Relax</tipo>
+
+<cliente>
+    <nombre>Sassd</nombre>
+    <dni>12345678O</dni>
+    <edad>18</edad>
+    <email>cojones@gmail.com</email>
+</cliente>
+</paquete>
+
+
+
+
+
+
+
+
+
+
+
+
+</agencia>
