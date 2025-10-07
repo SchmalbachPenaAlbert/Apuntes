@@ -1,5 +1,15 @@
 <script>
 
+    let numero = parseInt(prompt("Introduzca la altura deseada de la pirámide"))
+    let asteriscos = ""
+    let espacios = ""
+    for (let i = 0; i < numero; i++) {
+        asteriscos += "*"
+        espacios = ""
+        for (let j = 0; j < numero - i; j++) {
+            espacios += " "
+        }
+            console.log(espacios + asteriscos)
+        }
 
-    
 </script>

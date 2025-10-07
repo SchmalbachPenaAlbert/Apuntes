@@ -2,6 +2,8 @@
 
     let color = prompt("Introduce un color:")
     let numeroRepeticiones = parseInt(prompt("Introduzca un número:"))
+
+    // añadido: si se introduce un número negativo, se muestra el color en el valor absoluto de ese número, pero con el color invertido!
     if (numeroRepeticiones < 0) {
         numeroRepeticiones = Math.abs(numeroRepeticiones)
         color = color.split("").reverse().join("")

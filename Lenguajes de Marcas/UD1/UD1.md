@@ -1,3 +1,19 @@
+- [XSD](#xsd)
+  - [Inicio XSD](#inicio-xsd)
+  - [Minimo y máximo de ocurrencias](#minimo-y-máximo-de-ocurrencias)
+  - [Restricciones](#restricciones)
+    - [- enumeration](#--enumeration)
+    - [- length / minLength / maxLength](#--length--minlength--maxlength)
+    - [- pattern](#--pattern)
+      - [Teléfono (formato 123-456-7890)](#teléfono-formato-123-456-7890)
+      - [Solo letras](#solo-letras)
+      - [Letras, números y guiones](#letras-números-y-guiones)
+      - [5 dígitos (ID, código postal,...)](#5-dígitos-id-código-postal)
+      - [Empieza con letra y sigue con números](#empieza-con-letra-y-sigue-con-números)
+    - [- minInclusive / maxInclusive](#--mininclusive--maxinclusive)
+    - [- minExclusive / maxExclusive](#--minexclusive--maxexclusive)
+    - [- totaldigits / fractiondigits](#--totaldigits--fractiondigits)
+    - [- combinación de restricciones](#--combinación-de-restricciones)
 # XSD
 
 ## Inicio XSD
