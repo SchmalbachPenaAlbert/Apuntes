@@ -7,7 +7,14 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 ```
 
-## Restricciones más comunes
+## Minimo y máximo de ocurrencias
+EL máximo y el mínimo **número de ocurrencias de un elemento** se determina mediante **minOccurs** y **maxOccurs**. Si no se requiere un límite, se puede poner **"unbounded"**.
+
+```xml
+<xs:element name="telefono" type="xs:string" minOccurs="0" maxOccurs="3"/>
+```
+
+## Restricciones
 
 Las **restricciones** en XSD se usan para limitar los valores permitidos en los elementos o atributos.  
 **Se aplican dentro de un tipo simple (`<xs:simpleType>`)**.
@@ -46,6 +53,8 @@ Restringen la **longitud de una cadena**.
 ### - pattern
 Restringe con una **expresión regular**.
 
+#### Teléfono (formato 123-456-7890)
+
 ```xml
 <xs:simpleType name="TelefonoType">
   <xs:restriction base="xs:string">
@@ -54,7 +63,39 @@ Restringe con una **expresión regular**.
 </xs:simpleType>
 ```
 
-En este caso, un número válido sería 324-123-9897.
+Ejemplo válido: 324-123-9897.
+
+#### Solo letras
+
+```xml
+<xs:pattern value="[A-Za-z]+"/>
+```
+
+Ejemplo válido: Password
+
+#### Letras, números y guiones
+
+```xml
+<xs:pattern value="[A-Za-z0-9_-]+"/>
+```
+
+Ejemplo válido: usuario_003-s
+
+#### 5 dígitos (ID, código postal,...)
+
+```xml
+<xs:pattern value="\d{5}"/>
+```
+
+Ejemplo válido: 18009
+
+#### Empieza con letra y sigue con números
+
+```xml
+<xs:pattern value="[A-Za-z][0-9]*"/>
+```
+
+Ejemplo válido: E123 (y no 123E)
 
 ### - minInclusive / maxInclusive
 Especifican el rango de valores permitidos, **incluyendo los valores límite**.
@@ -86,31 +127,13 @@ Controlan la **cantidad de dígitos** totales y decimales.
 ```xml
 <xs:simpleType name="PrecioType">
   <xs:restriction base="xs:decimal">
-    <xs:totalDigits value="6"/>
-    <xs:fractionDigits value="2"/>
+    <xs:totalDigits value="6"/> <!-- Total de dígitos, incluyendo enteros y decimales -->
+    <xs:fractionDigits value="2"/> <!-- Máximo 2 dígitos después del punto decimal -->
   </xs:restriction>
 </xs:simpleType>
 ```
 
 Ejemplo válido: 1234.56 (6 dígitos totales, 2 decimales)
-
-### - whitespace
-Controla **cómo se tratan los espacios en blanco**:
-
-- **preserve**: mantiene los espacios
-
-- **replace**: reemplaza tabulaciones y saltos por espacio
-
-- **collapse**: elimina espacios duplicados
-
-```xml
-<xs:simpleType name="TextoLimpioType">
-  <xs:restriction base="xs:string">
-    <xs:whiteSpace value="collapse"/>
-  </xs:restriction>
-</xs:simpleType>
-```
-
 
 ### - combinación de restricciones
 **Se pueden combinar varias restricciones**:
