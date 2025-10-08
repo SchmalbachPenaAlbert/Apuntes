@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Ejercicio6.xsd">
+    <producto>
+        <id>56</id>
+        <nombre>Raton inalambrico</nombre>
+        <categoria>Periférico</categoria>
+        <precio>21.99</precio>
+        <stock>54</stock>
+        <proveedor>
+            <nombre>Logitec</nombre>
+            <telefono>654-777-212</telefono>
+            <pais>Suiza</pais>
+        </proveedor>
+    </producto>
+    <producto>
+        <id>4</id>
+        <nombre>Procesador Intel Core</nombre>
+        <categoria>Ordenador</categoria>
+        <precio>149.99</precio>
+        <stock>21</stock>
+        <proveedor>
+            <nombre>Intel</nombre>
+            <telefono>521-998-603</telefono>
+            <pais>Estados Unidos</pais>
+        </proveedor>
+    </producto>
+</inventario>

@@ -12,7 +12,7 @@ xsi:noNamespaceSchemaLocation="Ejercicio5.xsd">
 
 <cliente>
     <nombre>Ssd</nombre>
-    <dni>12345678O</dni>
+    <dni>12345678R</dni>
     <edad>18</edad>
     <email>cojones@gmail.com</email>
 </cliente>

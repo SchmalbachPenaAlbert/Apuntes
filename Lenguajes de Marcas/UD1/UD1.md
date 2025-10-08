@@ -1,3 +1,4 @@
+- [Apariciones especificas](#apariciones-especificas)
 - [XSD](#xsd)
   - [Inicio XSD](#inicio-xsd)
   - [Minimo y máximo de ocurrencias](#minimo-y-máximo-de-ocurrencias)
@@ -7,13 +8,27 @@
     - [- pattern](#--pattern)
       - [Teléfono (formato 123-456-7890)](#teléfono-formato-123-456-7890)
       - [Solo letras](#solo-letras)
+      - [Nombre (cadena con la primera letra mayúscula)](#nombre-cadena-con-la-primera-letra-mayúscula)
       - [Letras, números y guiones](#letras-números-y-guiones)
       - [5 dígitos (ID, código postal,...)](#5-dígitos-id-código-postal)
       - [Empieza con letra y sigue con números](#empieza-con-letra-y-sigue-con-números)
+      - [DNI](#dni)
+      - [Email](#email)
     - [- minInclusive / maxInclusive](#--mininclusive--maxinclusive)
     - [- minExclusive / maxExclusive](#--minexclusive--maxexclusive)
     - [- totaldigits / fractiondigits](#--totaldigits--fractiondigits)
     - [- combinación de restricciones](#--combinación-de-restricciones)
+- [DTD](#dtd)
+  - [DTD estructura](#dtd-estructura)
+# Apariciones especificas
+Por defecto, los elementos deben aparecer solo una vez obligatoriamente.
+```
++ = one or more, ? = optional, * = zero or more
+```
+"+" - Si quiero que aparezca más de una vez.
+"?" - Si quiero que aparezca una o ninguna vez. Es decir, que sea opcional.
+"*" - Si quiero que aparezca ninguna o muchas veces.
+
 # XSD
 
 ## Inicio XSD
@@ -24,7 +39,7 @@
 ```
 
 ## Minimo y máximo de ocurrencias
-EL máximo y el mínimo **número de ocurrencias de un elemento** se determina mediante **minOccurs** y **maxOccurs**. Si no se requiere un límite, se puede poner **"unbounded"**.
+El máximo y el mínimo **número de ocurrencias de un elemento** se determina mediante **minOccurs** y **maxOccurs**. Si no se requiere un límite, se puede poner **"unbounded"**.
 
 ```xml
 <xs:element name="telefono" type="xs:string" minOccurs="0" maxOccurs="3"/>
@@ -87,7 +102,15 @@ Ejemplo válido: 324-123-9897.
 <xs:pattern value="[A-Za-z]+"/>
 ```
 
-Ejemplo válido: Password
+Ejemplo válido: PassWord
+
+#### Nombre (cadena con la primera letra mayúscula)
+
+```xml
+<xs:restriction base="xs:string">
+  <xs:pattern value="[A-Z][a-z]+"></xs:pattern>
+</xs:restriction>
+```
 
 #### Letras, números y guiones
 
@@ -112,6 +135,29 @@ Ejemplo válido: 18009
 ```
 
 Ejemplo válido: E123 (y no 123E)
+
+#### DNI
+
+```xml
+<xs:element name="dni">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{8}[A-Z]{1}" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+```
+#### Email
+
+```xml
+<xs:element name="email">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+```
 
 ### - minInclusive / maxInclusive
 Especifican el rango de valores permitidos, **incluyendo los valores límite**.
@@ -162,4 +208,19 @@ Ejemplo válido: 1234.56 (6 dígitos totales, 2 decimales)
     <xs:pattern value="[A-Za-z0-9_]+"/>
   </xs:restriction>
 </xs:simpleType>
+```
+
+# DTD
+
+## DTD estructura
+
+```xml
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item+)>
+  <!ELEMENT item (name, category+, price, description?)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+]>
 ```
