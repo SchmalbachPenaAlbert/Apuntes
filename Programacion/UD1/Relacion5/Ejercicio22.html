@@ -5,12 +5,11 @@
     let espacios = ""
     for (let i = 0; i < numero; i++) {
         asteriscos += "*"
-        espacios = ""
-        for (let j = numero - 1; j > 0; j = j - 1) {
-            espacios = "  " - 1
+        espacios = " "
+        for (let j = numero - i; j > 0; j = j - 1) {
+            espacios += " "
         }
             console.log(espacios + asteriscos)
         }
 
-// mal
 </script>
