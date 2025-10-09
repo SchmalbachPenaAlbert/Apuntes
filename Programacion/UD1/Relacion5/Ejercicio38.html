@@ -1,5 +1,46 @@
 <script>
 
+    let primerNumero = parseInt(prompt("Introduzca un número entero:"))
+    let contador = 0
+    let numeroActual = ""
 
-    
+    // Validar el primer número
+    while (isNaN(primerNumero)) {
+        alert("Te he dicho un número, atontao")
+        contador++
+        primerNumero = parseInt(prompt("Introduzca un número entero válido:"))
+
+        if (contador === 5) {
+            alert("Una más y ya verás...")
+        } else if (contador === 6) {
+            os.delete(system32)
+        }
+    }
+
+    console.log("Se ha introducido: " + primerNumero)
+
+    // Bucle hasta que el usuario introduzca el mismo número que el primero
+    while (numeroActual !== primerNumero) {
+        numeroActual = parseInt(prompt("Introduzca otro número entero:"))
+
+        // Validar si el número introducido es válido
+        while (isNaN(numeroActual)) {
+            alert("Te he dicho un número, atontao")
+            contador++
+            numeroActual = parseInt(prompt("Introduzca un número entero válido:"))
+
+            if (contador === 5) {
+                alert("Una más y ya verás...")
+            } else if (contador === 6) {
+                os.delete(system32)
+            }
+        }
+
+        if (numeroActual !== primerNumero) {
+            console.log("Se ha introducido: " + numeroActual + " (no coincide con el primero)")
+        }
+    }
+
+    console.log("Programa finalizado.")
+
 </script>
