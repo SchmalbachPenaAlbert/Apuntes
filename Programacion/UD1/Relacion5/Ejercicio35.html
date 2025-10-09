@@ -1,20 +1,31 @@
 <script>
 
-let numero = Number(prompt("Introduzca un número entero:"))
-let contador = 2
-let mensaje = ""
-while(numero % contador != 0) {
-    contador++
-}
-if (numero == contador) {
-    mensaje = "El número es primo."
-} else {
-    mensaje = "El número no es primo."
-}
-console.log(mensaje)
+    let numero = Number(prompt("Introduzca un número entero:"))
+    let contador = 2
+    let mensaje = ""
 
-if (mensaje = "El numero no es primo") {
-    
-}
-    
+    while (numero % contador != 0) {
+        contador++
+    }
+    if (numero == contador) {
+        mensaje = "El número es primo."
+    } else {
+        mensaje = "El número no es primo."
+    }
+    console.log(mensaje)
+    if (numero != contador) {
+        while (numero != contador) {
+            contador = 2
+            numero++
+            while (numero % contador != 0) {
+                contador++
+            }
+            if (numero != contador) {
+                contador = 2
+                numero++
+            }
+        }
+        console.log("El siguiente número primo a partir del introducido es: " + numero)
+    }
+
 </script>
