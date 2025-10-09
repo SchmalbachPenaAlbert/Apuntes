@@ -9,12 +9,12 @@
 
     asteriscos = ""
     for (let i = 0; i < numero; i++) {
-        asteriscos += "*"
+        asteriscos = "*" + (numero + i + 2)
         console.log(asteriscos)
     }    
 
         for (let j = 0; j < numero - i; j++) {
-            espacios += " "
+            espacios = " " + (numero - i - 2)
         }
             console.log(espacios + asteriscos)
         }
