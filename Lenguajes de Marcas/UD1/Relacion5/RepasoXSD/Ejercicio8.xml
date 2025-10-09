@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redSocial xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Ejercicio8.xsd">
+    <usuario id="56709">
+        <nombreUsuario>Pepe_RS</nombreUsuario>
+        <email>pepesito9@gmail.com</email>
+        <seguidores>1089</seguidores>
+        <publicacion>
+            <titulo>En el monte</titulo>
+            <fecha>2025-09-10</fecha>
+            <likes>245</likes>
+            <comentario>
+                <autor>antoniolobato</autor>
+                <contenido>Comprame el coche porfa</contenido>
+                <fecha>2025-09-11T00:00:01</fecha>
+            </comentario>
+        </publicacion>
+        <publicacion>
+            <titulo>Fuengirola</titulo>
+            <fecha>2025-08-21</fecha>
+            <likes>105</likes>
+            <comentario>
+                <autor>lopelen</autor>
+                <contenido>Invitame a una, anda.</contenido>
+                <fecha>2025-08-21T12:23:58</fecha>
+            </comentario>
+        </publicacion>
+    </usuario>
+    <usuario id="56098">
+        <nombreUsuario>migue_</nombreUsuario>
+        <email>correo77@gmail.es</email>
+        <seguidores>23</seguidores>
+    </usuario>
+</redSocial>
