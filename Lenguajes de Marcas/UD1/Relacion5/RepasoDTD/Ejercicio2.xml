@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE libro [
-<!ELEMENT libro (titulo, autor, editorial)>
-<!ELEMENT titulo (#PCDATA)>
-<!ELEMENT autor (#PCDATA)>
-<!ELEMENT editorial (#PCDATA)>
+<!DOCTYPE alumno [
+<!ELEMENT alumno (nombre, apellido, edad?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
 ]>
+
+<alumno>
+    <nombre>Lucas</nombre>
+    <apellido>Fernandez</apellido>
+    <edad>11</edad>
+</alumno>

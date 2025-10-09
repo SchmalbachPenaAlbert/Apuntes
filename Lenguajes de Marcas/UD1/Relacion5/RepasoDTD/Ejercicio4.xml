@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE biblioteca [
+<!ELEMENT biblioteca (seccion+)>
+<!ELEMENT seccion (nombre, libro+)>
+<!ELEMENT libro (titulo, autor, anio?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+]>
+
+<biblioteca>
+    <seccion>
+        <nombre>Narrativa</nombre>
+        <libro>
+            <titulo>Viaje por las Aristas de un Cuchillo</titulo>
+            <autor>Carlos Vicent</autor>
+            <anio>2019</anio>
+        </libro>
+        <libro>
+            <titulo>La Librería de la Medianoche</titulo>
+            <autor>Matt Haig</autor>
+            <anio>2023</anio>
+        </libro>
+    </seccion>
+    <seccion>
+        <nombre>Destacados</nombre>
+        <libro>
+            <titulo>Rebelión en la Granja</titulo>
+            <autor>George Orwell</autor>
+        </libro>
+        <libro>
+            <titulo>La Península de las Casas Vacías</titulo>
+            <autor>David Uclés</autor>
+            <anio>2024</anio>
+        </libro>
+    </seccion>
+</biblioteca>
