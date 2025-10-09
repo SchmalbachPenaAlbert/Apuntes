@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tienda SYSTEM "tienda.dtd">
+
+<tienda>
+    <nombre>Tienda Central</nombre>
+    <pokemon>
+        <nombre>Palpitou</nombre>
+        <tipo>agua</tipo>
+        <precio>3000</precio>
+    </pokemon>
+    <pokemon>
+        <nombre>Moltres</nombre>
+        <tipo>fuego</tipo>
+        <tipo>volador</tipo>
+        <precio>450</precio>
+    </pokemon>
+</tienda>

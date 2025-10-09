@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="hospital">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="departamento">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre">
+                                <xs:simpleType>
+                                    <xs:restriction>
+                                        <xs:enumeration value="Urgencias"></xs:enumeration>
+                                        <xs:enumeration value="Pediatría"></xs:enumeration>
+                                        <xs:enumeration value="Traumatología"></xs:enumeration>
+                                        <xs:enumeration value="Oncología"></xs:enumeration>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="medicoJefe"></xs:element>
+                            <xs:element name="paciente">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="dni"></xs:element>
+                                        <xs:element name="edad"></xs:element>
+                                        <xs:element name="fechaIngreso"></xs:element>
+                                        <xs:element name="diagnostico"></xs:element>
+                                        <xs:element name="tratamiento"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

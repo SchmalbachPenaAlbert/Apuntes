@@ -19,16 +19,8 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="fechaInicio">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:date" />
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="fechaFin">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:date" />
-                                </xs:simpleType>
-                            </xs:element>
+                           <xs:element name="fechaInicio" type="xs:date"/>
+                            <xs:element name="fechaFin" type="xs:date"/>
                             <xs:element name="tipo">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -42,7 +34,7 @@
                             <xs:element name="cliente" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="nombre" maxOccurs="unbounded">
+                                        <xs:element name="nombre">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:pattern value="[A-Z][a-z]+"></xs:pattern>
@@ -52,7 +44,7 @@
                                         <xs:element name="dni">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
-                                                    <xs:pattern value="[0-9]{8}[A-Z]{1}" />
+                                                    <xs:pattern value="\d{8}[A-Z]{1}" />
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
@@ -78,7 +70,7 @@
                         <xs:attribute name="codigo" use="required">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
-                                    <xs:pattern value="PKT-[0-9]{4}"/>
+                                    <xs:pattern value="PKT-\d{4}"/>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>

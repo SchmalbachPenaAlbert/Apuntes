@@ -19,7 +19,8 @@
     - [- totaldigits / fractiondigits](#--totaldigits--fractiondigits)
     - [- combinación de restricciones](#--combinación-de-restricciones)
 - [DTD](#dtd)
-  - [DTD estructura](#dtd-estructura)
+  - [Si el DTD es INTERNO](#si-el-dtd-es-interno)
+  - [Si el DTD es EXTERNO](#si-el-dtd-es-externo)
 # Apariciones especificas
 Por defecto, los elementos deben aparecer solo una vez obligatoriamente.
 ```
@@ -212,15 +213,34 @@ Ejemplo válido: 1234.56 (6 dígitos totales, 2 decimales)
 
 # DTD
 
-## DTD estructura
+## Si el DTD es INTERNO
 
+En el XML:
 ```xml
-<!DOCTYPE catalog [
-  <!ELEMENT catalog (item+)>
-  <!ELEMENT item (name, category+, price, description?)>
-  <!ELEMENT name (#PCDATA)>
-  <!ELEMENT category (#PCDATA)>
-  <!ELEMENT price (#PCDATA)>
-  <!ELEMENT description (#PCDATA)>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE curso [
+<!ELEMENT curso (nombre, alumno+)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT alumno (nombre, apellido)>
+<!ELEMENT apellido (#PCDATA)>
 ]>
+```
+
+## Si el DTD es EXTERNO
+
+En el XML:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE raiz SYSTEM "ejercicio.dtd">
+```
+
+En el DTD:
+```xml
+<!ELEMENT tienda (nombre, pokemon+)>
+<!ELEMENT pokemon (nombre, tipo+, precio)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT tipo (#PCDATA)>
 ```
