@@ -1,5 +1,17 @@
 <script>
 
+    let numero = Number(prompt("Introduzca un número entero:"))
+    let numero2 = ""
 
-    
+    while (numero != numero2) {
+        numero2 = Number(prompt("Introduzca otro número:"))
+        if (numero > numero2) {
+            console.log("El primer número (" + numero + ") es MAYOR que el número introducido (" + numero2 + ").")
+        } else if (numero < numero2) {
+            console.log("El primer número (" + numero + ") es MENOR que el número introducido (" + numero2 + ").")
+        } else {
+            console.log("Programa finalizado")
+        }
+    }
+
 </script>

@@ -1,5 +1,10 @@
 <script>
 
-
+    let numero = prompt("Introduzca un número entero:")
+    numero = numero.split("").map(Number)
+    let a = ""
+    let b = ""
+    let suma = numero.reduce((a, b) => a + b, 0)
+    console.log("La suma de los dígitos es: " + suma)
     
 </script>
