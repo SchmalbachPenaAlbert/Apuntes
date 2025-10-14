@@ -1,1 +1,0 @@
-// Esto es un simultacro de la prueba técnica y como seria. Completados ejercicios 1-3 a 26-09
