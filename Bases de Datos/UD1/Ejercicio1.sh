@@ -1,2 +1,0 @@
-#l/bin/bash
-ls $1 | wc -w
