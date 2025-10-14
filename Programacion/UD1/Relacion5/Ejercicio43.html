@@ -1,5 +1,21 @@
 <script>
+    let numero = Number(prompt("Introduzca un número entero:"));
+    let mensaje = "";
+    console.log("Los números primos anteriores al número " + numero + " son:");
 
+    for (let i = 2; i < numero; i++) {
+        let esPrimo = true;
+        let j = 2;
 
-    
+        while (j < i && esPrimo === true) {
+            if (i % j === 0) {
+                esPrimo = false;
+            }
+            j++;
+        }
+
+        if (esPrimo) {
+            console.log(i);
+        }
+    }
 </script>
