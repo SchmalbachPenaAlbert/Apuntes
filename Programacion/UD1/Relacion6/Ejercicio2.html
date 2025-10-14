@@ -1,5 +1,16 @@
 <script>
 
-    
+    let saldo = 1000
+    while (saldo != 0) {
+        saldoRetirar = Number(prompt("Saldo: " + saldo + " | Introduzca saldo a retirar:"))
+        if (saldoRetirar > saldo) {
+            console.log("Saldo insuficiente.")
+        } else if (saldoRetirar == saldo) {
+            saldo = saldo - saldoRetirar
+            console.log("Te has quedado sin saldo ¡A trabajar!")
+        } else {
+            saldo = saldo - saldoRetirar
+        }
+    }
 
 </script>
