@@ -1,0 +1,24 @@
+<script>
+
+    let n = 0
+    let contadorAprobados = 0
+    let contadorSuspensos = -1
+    let notaMedia = 0
+    let nota = ""
+    while (nota != -1) {
+        n++
+        nota = Number(prompt("Introduce la calificacion del alumno " + n + ":"))
+        console.log("Nota alumno " + n + ": " + nota)
+        if (nota >= 5) {
+            contadorAprobados++
+        } else {
+            contadorSuspensos++
+        }
+        notaMedia = notaMedia + nota
+    }
+    notaMedia = notaMedia / n
+    notaMedia = notaMedia.toFixed(2)
+    console.log("Hay " + contadorAprobados + " alumnos aprobados y " + contadorSuspensos + " suspensos.")
+    console.log("La calificación media es: " + notaMedia)
+
+</script>
