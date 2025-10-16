@@ -10,3 +10,4 @@ Markdown PDF
 Markdownlint
 Prettier
 XML
+Indent Rainbow

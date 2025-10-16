@@ -29,4 +29,8 @@
 
 #### **chmod** - Concede permisos a un programa #5f5fffff{chmod u+x archivo.sh}
 
-#### **mv** - Permite mover un archivo (mv [origen] [destino]) / Renombra archivos (mv [nombreAntiguo.txt] [nombreNuevo.txt])
+#### **mv** - Permite mover un archivo (mv [origen] [destino]) (por defecto mueve recursivamente) / Renombra archivos (mv [nombreAntiguo.txt] [nombreNuevo.txt])
+
+#### **rm** - Elimina archivos. -r para que lo haga también con el directorio
+
+#### **rmdir** - Elimina directorios vacíos

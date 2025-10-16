@@ -32,75 +32,85 @@ ls -R /usr
 
 9. Cambiarse al directorio tmp y verificarlo.
 
-
+cd tmp
+pwd
 
 10. Mostrar el día y la hora actual.
 
-
+date
 
 11. Con un solo comando posicionarse en el directorio $HOME y verificarlo.
 
-
+cd
+pwd
 
 12. Crear los directorios dir1, dir2 y dir3 en el directorio PRUEBA. Dentro de dir1 crear el directorio dir11. Dentro del directorio dir3 crear el directorio dir31 Dentro del directorio dir31, crear los directorios dir311 y dir312.
 
+mkdir PRUEBA
+cd PRUEBA
+mkdir {dir1,dir2,dir3}
+mkdir dir1/dir11
+mkdir dir3/dir31
+mkdir dir3/dir31/{dir311,dir312}
 
 
 13. Copiar un archivo /etc/magic a un archivo llamado mensaje de vuestro directorio PRUEBA.
 
-
+cp /etc/magic PRUEBA/mensaje
 
 14. Copiar mensaje en dir1 y dir2, y verificarlo.
 
-
+cp PRUEBA/mensaje PRUEBA/{dir1,dir2}
+ls PRUEBA/{dir1,dir2}
 
 15. Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras.
 
-
+cp /bin/?a?? dir3/dir31/dir311
 
 16. Mover el directorio dir31 y sus subdirectorios debajo de dir2.
 
-
+mv dir3/dir31 dir2
 
 17. Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios.
 
-
+find -type f
 
 18. Ocultar el archivo mensaje del directorio dir2.
 
-
+mv PRUEBA/dir2/mensaje PRUEBA/dir2/.mensaje
 
 PT8.1.- Sitúate en tu HOME.
 
-
+cd / (o simplemente cd)
 
 PT8.2.- Crea un directorio examen.
 
-
+mkdir exmaen
 
 PT8.3.- Dentro de examen, crea los directorios ejercicios1 y ejercicios2.
 
-
+mkdir examen/{ejercicios1,ejercicios2}
 
 PT8.4.- Crea un fichero de texto llamado file1.dat en ejercicios1.
 
-
+touch examen/ejercicios1/file1.dat
 
 PT8.5.- Haz una copia del fichero file1.dat dentro de ejercicios2.
 
-
+cp examen/ejercicios1/file1.dat cp examen/ejercicios2
 
 PT8.6.- Sitúate en ejercicios2.
 
-
+cd examen/ejercicios2
 
 PT8.7.- Mueve el archivo file1.dat hasta ejercicios2/mover, poniendo como nombre de destino file1_movido.dat. Ten en cuenta que, posiblemente, tendrás que crear antes el directorio.
 
-
+mkdir mover
+mv file1.dat mover/file1_movido.dat
 
 PT8.8.- Copia el archivo /etc/crontab a un archivo llamado copia_crontab de tu directorio examen.
 
-
+cp /etc/crontab ./../copia_crontab
 
 PT8.9.- Copiar en el directorio ejercicios1 los archivos de /bin que tengan una "a" como segunda letra y su nombre termine en "o" ó en "e".
 
