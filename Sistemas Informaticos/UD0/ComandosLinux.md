@@ -7,11 +7,7 @@
 
 #### **pwd** - Imprime la ruta en la que se encuentra el usuario
 
-#### **cat** - Muestra contenido archivo
-
-#### **bash** - Ejecuta bash
-
-#### **nano** - Crea un programa
+#### **cat** - Muestra el contenido del archivo
 
 #### **cp** - Copia un archivo/carpeta
 - **-R**: *en el caso de una carpeta, también copia los subdirectorios*
@@ -27,10 +23,25 @@
 
 #### **touch** - Crea un archivo
 
-#### **chmod** - Concede permisos a un programa #5f5fffff{chmod u+x archivo.sh}
+#### **nano** - Permite editar un archivo
+
+#### **chmod** - Concede permisos a un programa {chmod u+x archivo.sh}
 
 #### **mv** - Permite mover un archivo (mv [origen] [destino]) (por defecto mueve recursivamente) / Renombra archivos (mv [nombreAntiguo.txt] [nombreNuevo.txt])
 
+#### **find** - Busca y lista archivos y directorios según parámetros
+- **type**: Busca un tipo específico de archivo (-d directorio -f archivo)
+- **name**: Busca por nombre (se pone entre comillas) / **iname**: Busca por nombre sin distinción entre mayúsculas y minúsculas
+- **mtime**: Busca por última modificación. +N para modificados anteriores al número específicado en días. -N para modificados posteriores al número.
+- **size**: Busca por tamaño
+- **iname**: Busca sin distinción entre mayusuclas y minúsculas
+
 #### **rm** - Elimina archivos. -r para que lo haga también con el directorio
 
-#### **rmdir** - Elimina directorios vacíos
+#### **rmdir** - Elimina **directorios vacíos**
+
+#### **head** - Muestra las primeras líneas de un archivo (por defecto 10)
+- **-n**: *muestra otro núemro dieferente de líneas, en vez de 10*
+
+#### **tail** - Muestra las últimas líneas de un archivo (por defecto 10)
+- **-n**: *muestra otro núemro dieferente de líneas, en vez de 10*
