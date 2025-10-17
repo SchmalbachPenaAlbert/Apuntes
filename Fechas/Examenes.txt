@@ -1,4 +1,5 @@
-Jueves, 9 de octubre - Lenguajes de Marcas UD1 (simulacro miércoles 8)
+Jueves, 9 de octubre - Lenguajes de Marcas UD1
 Martes, 14 de octubre - Bases de Datos UD1
-Jueves, 16 de octubre - Sistemas Informáticos UD1
+Jueves, 16 de octubre - Sistemas Informáticos UD0
 Lunes, 20 de octubre - Programación UD1
+Miércoles, 22 de octubre - Entornos de Desarrollo UD1
