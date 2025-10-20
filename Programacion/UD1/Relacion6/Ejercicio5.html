@@ -1,5 +1,19 @@
 <script>
 
-    
+    let temperatura
+    let promedio
+    let totalTemp = 0
+    let contadorTempValidas = 0
+
+    for (let i = 1; i < 8; i++) {
+        temperatura = Number(prompt("Introduzca la temperatura del día " + i + ":"))
+        if (temperatura > -20 && temperatura < 50) {
+            totalTemp += temperatura
+            contadorTempValidas++
+        }
+    }
+    promedio = totalTemp / contadorTempValidas
+    promedio = promedio.toFixed(1)
+    console.log("La temperatura media de la semana es: " + promedio)
 
 </script>
