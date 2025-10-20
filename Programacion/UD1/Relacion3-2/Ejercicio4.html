@@ -1,5 +1,26 @@
 <script>
 
+    let temperatura = parseInt(prompt("Introduzca la temperatura actual:"))
+    let hora = Number(prompt("Introduzca la hora del día (formato 24h):"))
+    if (temperatura < 15) {
+        if (hora >= 6 && hora <= 21) {
+            recomendacion = "ir a caminar con abrigo."
+        } else {
+            recomendacion = "quedarse en casa con una bebida caliente."
+        }
+    } else if (temperatura >= 15 && temperatura < 30) {
+        if (hora >= 6 && hora <= 21) {
+            recomendacion = "hacer deporte al aire libre."
+        } else {
+            recomendacion = "salir a pasear por la ciudad."
+        }
+    } else {
+        if (hora >= 12 && hora <= 18) {
+            recomendacion = "ir a la piscina o a la playa."
+        } else {
+            recomendacion = "evitar esfuerzos, descansar."
+        }
+    }
+    console.log("Teniendo en cuente la tempreratura y hora actuales, nuestros expertos recomiendan " + recomendacion)
 
-    
 </script>
