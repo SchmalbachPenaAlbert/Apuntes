@@ -1,11 +1,27 @@
 <script>
 
     let contadorProducto = 0
+    let precioProducto = ""
     let total = 0
-    while (precioProducto != 0) {
+    let propinaPorcentaje = ""
+    let propina = ""
+    let personas = ""
+    let totalPropina = ""
+    let precioCabeza = ""
+    while (precioProducto !== 0) {
         contadorProducto++
-        let precioProducto = Number(prompt("Precio del producto " + contadorProducto + ":"))
-        total += precioPorducto
+        precioProducto = Number(prompt("Precio del producto " + contadorProducto + ":"))
+        total += precioProducto
     }
+    propinaPorcentaje = parseInt(prompt("¿Cuánta propina quieres dejar?:"))
+    propina = propinaPorcentaje / 100
+    totalPropina = total * propina + total
+    totalPropina = totalPropina.toFixed(2)
+    personas = parseInt(prompt("¿Cúantas personas sois?:"))
+    precioCabeza = total / personas
+    precioCabeza = precioCabeza.toFixed(2)
+    console.log("Total sin propina: " + total + "€")
+    console.log("Totan con propina del " + propinaPorcentaje + "%: " + totalPropina + "€")
+    console.log("Precio por cabeza: " + precioCabeza + "€")
 
 </script>
