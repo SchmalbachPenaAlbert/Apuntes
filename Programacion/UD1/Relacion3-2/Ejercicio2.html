@@ -1,5 +1,24 @@
 <script>
 
-
+    let edad = parseInt(prompt("Introduzca su edad:"))
+    let mensaje = ""
+    let mensajeExtra = ""
+    if (edad < 12) {
+        mensaje = "Entrada gratuita."
+        if (edad < 5) {
+            mensajeExtra = " Debe ir acompañado de un adulto."
+        }
+    } else if (edad >= 12 && edad < 18) {
+        mensaje = "Entrada reducida (5€)."
+    } else if (edad >= 18 && edad < 65) {
+        mensaje = "Entrada general (10 €)."
+    } else {
+        if (edad >= 90) {
+            mensaje = "Entrada gratuita por cortesía."
+        } else {
+            mensaje = "Entrada reducida (4€)."
+        }
+    }
+    console.log(mensaje + mensajeExtra)
     
 </script>

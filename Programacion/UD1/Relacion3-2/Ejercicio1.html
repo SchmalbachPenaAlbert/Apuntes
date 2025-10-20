@@ -1,5 +1,43 @@
 <script>
 
-
+    let nota = Number(prompt("Introduzca su nota (0-100):"))
+    let asistencia = Number(prompt("Introduzca el porcentaje de asistencia:"))
+    let entregaTrabajoFinal = prompt("¿Entregó el trabajo final? (sí/no)").toLowerCase()
+    let trabajoFinal = (entregaTrabajoFinal == "sí" || entregaTrabajoFinal == "si")
+    let sacarCurso = ""
+    let calificacion = ""
+    let mensajeExtra = ""
+    if (nota >= 50 && asistencia >= 75) {
+        sacarCurso = "Aprueba"
+    } else if (nota < 30) {
+        sacarCurso = "Suspenso grave"
+    } else {
+        sacarCurso = "Suspenso"
+    }
+    if (sacarCurso == "Aprueba") {
+        if (nota < 70) {
+            if (trabajoFinal == true) {
+                calificacion = "Aprobado"
+            } else {
+                calificacion = "No presentado"
+            }
+        } else if (nota >= 70 && nota < 90) {
+            calificacion = "Notable"
+            if (asistencia == 100) {
+                mensajeExtra = ", con mención especial"
+            }
+        } else {
+            if (trabajoFinal == true && asistencia == 100) {
+                calificacion = "Matricula de honor"
+            } else {
+                calificacion = "Sobresaliente"
+            }
+        }
+    }
+    if (sacarCurso !== "Aprueba") {
+        console.log("Ha recibido un " + sacarCurso + ". Se le informará proximamente de las posibles recuperaciones a las que pueda optar.")
+    } else {
+        console.log("Su calificación es " + calificacion + mensajeExtra + ".")
+    }
     
 </script>
