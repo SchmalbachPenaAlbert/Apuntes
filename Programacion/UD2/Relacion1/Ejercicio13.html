@@ -1,5 +1,12 @@
 <script>
 
-    
+    let letras = ["a", "b", "c", "d"]
+    let temp1 = letras.shift()
+    let temp2 = letras.pop()
+    let temp3 = letras.shift()
+    letras.unshift(temp2)
+    letras.push(temp3)
+    letras.push(temp1)
+    console.log(letras)
 
 </script>
