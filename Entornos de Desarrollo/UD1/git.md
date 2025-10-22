@@ -49,29 +49,78 @@ Una página muy útil para aprender los comandos de Git y otros lenguajes es **w
 
 * **git add <file>** - Stagear un archivo
 * **git add --all** - Stagear TODOS los cambios
-* **git status** - Ver que está en el estado staged
+* **git status** - Muestra una visión general del estado de los archivos, includído cuáles están commiteados.
 * **git restore --staged <file>** - Hacer que un archivo deje de estar staged
 
 #### Git Commit
 
-* **git commit -m "message** - Hacer commit de los cambios, introduciendo un mensaje
-* **git log** - Ver el historial de commits
+* **git commit -m "message"** - Hace commit de los cambios, introduciendo un mensaje
+* **git log** - Muestra el historial de commits
 
 Para guardar los cambios que hayamos hecho, necesitaremos también un mensaje que describa lo que hemos cambiado.
 
-### Git Branch
+#### Git Branch
 
 * **git branch <name>** - Crea una nueva rama
 * **git branch** - Muestra la lista de todas las ramas
+* **git branch -m <oldname> <newname>** - Renombra la rama actual.
+* **git branch -d <name>** - Elimina la rama local especificada (si ya está fusionada).
 
 Las ramas te permiten **trabajar en el código por tu cuenta, sin interferir en la rama principal (main)**.
 
-### Git Checkout
+#### Git Checkout
 
 * **git checkout <name>** - Permite desplazarse entre ramas
 
-#### Git Merge
+#### Git Merge y Git Rebase
 
-* **git merge <name>** - Combinar una rama en la rama principal
+* **git merge <name>** - Combinar los cambios de una rama en otra
+* **git rebase <name>** - Alternativa a git merge para combinar cambios de dos ramas. Al contrario que *git merge*, **git rebase reescribe el historial moviendo los commits de una rama a otra**.
 
-Ten en cuenta: Para hacer un merge porimero necesitamos situarnos en la rama principal (main).
+Ten en cuenta: Para hacer un merge o rebase primero necesitamos situarnos en la rama a la que queramos unir la rama separada.
+
+#### Git Cherry-pick
+
+* **git cherry-pick <commit_hash>** - Aplica los cambios introducidos por un commit específico de una rama a tu rama actual.
+
+Nota: Cuando ves la salida de git log, la cadena que aparece al lado de commit es el *commit hash*.
+
+#### Git Stash
+
+* **git stash** - Guarda temporalmente los cambios locales sin commitearlos, permitiéndote cambiar de rama. Luego puedes recuperarlos con **git stash pop**.
+
+#### Git Init
+
+* **git init** - Inicializa un nuevo repositorio Git local.
+
+#### Git Clone
+
+* **git clone <url>** - Clona un repositorio remoto localmente
+
+#### Git Configuration
+
+* **git config --global user.name "tuNombre"** - Establece tu nombre de usuario para los commits.
+* **git config --global user.email "tuEmail@STEMgranada.com"** - Establece tu correo electrónico para los commits.
+
+**Sin el --global**, el comando solo tendría efecto para el **repositorio actual**, y no para el usuario.
+
+#### Git Remote
+
+* **git push** - **Sube los commits** de tu rama local al repositorio remoto.
+* **git pull** - **Descarga y fusiona los cambios** del repositorio remoto a tu rama local.
+* **git fetch** - Descarga los cambios del remoto, pero **NO los fusiona automáticamente** (los deja listos para inspección).
+
+#### Git Reset y Git Restore
+
+* **git reset HEAD~1 (o HEAD^)** - Deshace el último commit
+* **git restore <file>** - Descarta los cambios en el directorio de trabajo (archivos no staggeados) de un archivo específico.
+
+#### Git Tagging
+* **git tag <tag_name>** - Marca puntos significativos en la historia de un proyecto, como versiones (v2).
+
+### Prácticas frecuentes
+
+* **Comentarios en el código**: Explica en el código por qué se han hecho ciertos cambios, especialmente en secciones complejas o críticas.
+* **Realizar commits cortos de forma frecuente**: Los commits grandes, que abarcan múltiples cambios, son más difíciles de revisar y depurar. Es buena prática dividir el trabajo en trozos más pequeños.
+* **Revisión de código**: Utiliza las pull requests para solicitar la revisión de tu código.
+* **Resolver conflictos con cuidado**
