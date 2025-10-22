@@ -1,3 +1,27 @@
+- [Documentación Git](#documentación-git)
+  - [Introducción](#introducción)
+    - [¿Qué es Git?](#qué-es-git)
+    - [¿Cómo configurar Git?](#cómo-configurar-git)
+    - [Estados ficheros en Git](#estados-ficheros-en-git)
+    - [¿Cómo relaciona Git los repositorios?](#cómo-relaciona-git-los-repositorios)
+  - [Utilidades](#utilidades)
+    - [Recursos web](#recursos-web)
+    - [Comandos generales](#comandos-generales)
+      - [Git Staging](#git-staging)
+      - [Git Commit](#git-commit)
+      - [Git Branch](#git-branch)
+      - [Git Checkout](#git-checkout)
+      - [Git Merge y Git Rebase](#git-merge-y-git-rebase)
+      - [Git Cherry-pick](#git-cherry-pick)
+      - [Git Stash](#git-stash)
+      - [Git Init](#git-init)
+      - [Git Clone](#git-clone)
+      - [Git Configuration](#git-configuration)
+      - [Git Remote](#git-remote)
+      - [Git Reset y Git Restore](#git-reset-y-git-restore)
+      - [Git Tagging](#git-tagging)
+    - [Prácticas frecuentes](#prácticas-frecuentes)
+
 # Documentación Git
 
 ## Introducción
