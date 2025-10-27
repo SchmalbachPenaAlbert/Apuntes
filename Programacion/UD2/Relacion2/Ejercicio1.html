@@ -1,0 +1,50 @@
+<script>
+
+    let temperaturas = []
+    let temperaturaDia = 0
+    let opcion = 0
+    let temperaturaMaxima = 0
+    let temperaturaMinima = 0
+    let sumaTemperaturas = 0
+    let temperaturaPromedio = 0
+    const numeroDias = 7
+    for (let i = 0; i < numeroDias; i++) {
+        temperaturaDia = Number(prompt("Introduce la temperatura:"))
+        temperaturas.push(temperaturaDia)
+    }
+    console.log(temperaturas) //temp
+    console.log("Opciones:")
+    console.log("1. Mostrar la temperatura más alta registrada.")
+    console.log("2. Mostrar la temperatura más baja registrada.")
+    console.log("3. Calcular la temperatura promedio de la semana.")
+    console.log("4. Salir del programa.")
+    while (opcion != 4) {
+        opcion = Number(prompt("Introduce una opción:"))
+        if (opcion == 1) {
+            temperaturaMaxima = temperaturas[0]
+            for (let i = 1; i < temperaturas.length; i++) {
+                if (temperaturaMaxima < temperaturas[i]) {
+                    temperaturaMaxima = temperaturas[i]
+                }
+            }
+            console.log(`La temperatura máxima es ${temperaturaMaxima}`)
+        } else if (opcion == 2) {
+            temperaturaMinima = temperaturas[0]
+            for (let i = 1; i < temperaturas.length; i++) {
+                if (temperaturaMinima > temperaturas[i]) {
+                    temperaturaMinima = temperaturas[i]
+                }
+            }
+            console.log(`La temperatura mínima es ${temperaturaMinima}`)
+        } else { // opcion 3
+            for (let i = 0; i < temperaturas.length; i++) {
+                sumaTemperaturas += temperaturas[i] 
+                temperaturaPromedio = sumaTemperaturas / numeroDias
+                temperaturaPromedio = temperaturaPromedio.toFixed(1)
+            }
+            console.log(`La temperatura promedio es ${temperaturaPromedio}`)
+        }
+    }
+    console.log(temperaturas)
+
+</script>
