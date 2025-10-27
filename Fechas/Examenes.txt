@@ -4,3 +4,4 @@ Jueves, 16 de octubre - Sistemas Informáticos UD0
 Lunes, 20 de octubre - Programación UD1
 Miércoles, 22 de octubre - Entornos de Desarrollo UD1
 Miércoles, 5 de noviembre - Lenguajes de Marcas UD2
+Martes, 18 de noviembre - Programación UD2
