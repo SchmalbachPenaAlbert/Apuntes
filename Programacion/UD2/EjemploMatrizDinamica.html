@@ -1,0 +1,18 @@
+<script>
+
+    let tablero = []
+    let numeroFilas = Number(prompt("Introduce el núemro de filas:"))
+    let numeroColumnas = Number(prompt("Introduce el núemro de columnas:"))
+    let columnaActual = []
+    let filaActual = []
+
+    for (let i = 0; i < numeroFilas; i++) {
+        filaActual = []
+        for (let j = 0; j < numeroColumnas; j++) {
+            filaActual.push(`${i}${j}`)
+        }
+        tablero.push(filaActual)
+    }
+    console.log(tablero)
+
+</script>
