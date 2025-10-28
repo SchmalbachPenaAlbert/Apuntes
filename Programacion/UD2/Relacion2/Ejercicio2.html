@@ -1,0 +1,46 @@
+<script>
+
+    let jugadores = ["STEM", "Albert", "Migue", "Jose", "Varchar"]
+    let puntuaciones = [140, 240, 270, 150, 220]
+    let opcion = 0
+    let nombreIntroducido = ""
+    let puntuacionIntroducida = 0
+    let jugadorActual = []
+    let puntuacionActual = []
+
+    console.log("Valores iniciales:")
+    console.log(jugadores)
+    console.log(puntuaciones)
+
+    console.log("Opciones:")
+    console.log("1. Registrar puntuación")
+    console.log("2. Mostrar últimas puntuaciones")
+    console.log("3. Salir del programa.")
+
+    while (opcion != 3) {
+        opcion = Number(prompt("Introduce una opción:"))
+
+        if (opcion == 1) {
+            nombreIntroducido = prompt("Introduce un nombre:")
+            jugadores.shift()
+            jugadores.push(nombreIntroducido)
+            puntuacionIntroducida = Number(prompt("Introduce la puntuación conseguida:"))
+            puntuaciones.shift()
+            puntuaciones.push(puntuacionIntroducida)
+            console.log(jugadores)
+            console.log(puntuaciones)
+
+        } else if (opcion == 2) {
+            for (let i = 0; i < jugadores.length; i++) {
+                jugadorActual = jugadores[i]
+                puntuacionActual = puntuaciones[i]
+                console.log(jugadorActual + " - Puntos: " + puntuacionActual)
+            }
+        
+        } else {
+            // manejo de errores: si no es ni 1 ni 2, se repite el while
+        }
+    }
+    console.log("Programa finalizado.")
+
+</script>
