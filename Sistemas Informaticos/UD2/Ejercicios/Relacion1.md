@@ -56,32 +56,46 @@ drwxrwxrwx 5 chefJefe chef 4096 feb 21 12:40 HotelesComilo
 /opt$: cd HotelesComilo
 /opt/HotelesComilos$: ls -ltr  
 
-drwxrwxr-- 2 chefJefe pinche      4096 feb 21 12:39 recetas
+drwxrwxr-- 2 chefJefe pinche    4096 feb 21 12:39 recetas
 drwxrwxr-x 2 chefJefe chef 4096 feb 21 12:39 pinches
 drwxr-x--- 2 chefJefe chef 4096 feb 21 12:40 gestion
 ```
 
 ```bash
-# Escribe aquí los comandos necesarios para crear la estructura de directorios
+<--- Creo la estructura de los archivos --->
+sudo mkdir /opt/HotelesComilo
+sudo mkdir /opt/HotelesComilo/{recetas,pinches,gestion}
 
+<--- Cambio el usuario y grupo prpietario de los directorios --->
+sudo chown chefJefe:chef HotelesComilo
+sudo chown chefJefe:pinche recetas
+sudo chown chefJefe:chef pinches
+sudo chown chefJefe:chef gestion
+
+<--- Cambio los permisos de los directorios (guía para los permisos en los apuntes) --->
+sudo chmod 777 /opt/HotelesComilo
+sudo chmod 774 /opt/HotelesComilo/recetas
+sudo chmod 775 /opt/HotelesComilo/pinches
+sudo chmod 750 /opt/HotelesComilo/gestion
 ```
 
 ### 4. Preguntas:
 
 1. ¿Puede el usuario *chefJefe* escribir en el directorio *recetas*? ¿Por qué? 
 
-```
-Responde aquí a la pregunta 1
+```txt
+Sí, ya que el usuario chefJefe es el propiertario del directorio y tiene todos los permisos.
 ```
 
 2. El *chef1* tiene que entrar en el directorio *recetas* para consultar las recetas disponibles. ¿Cómo modificarías el directorio *recetas* para que los *pinches* puedan seguir accediendo con todos los permisos? 
 
-```
-Responde aquí a la pregunta 2
+```txt
+Pondría:
+sudo chmod 777 /opt/HotelesComilo/recetas
 ```
 
 3. ¿Puede el usuario *pinchePrincipal* subir su ficha personal (*ficha_personal.pdf*) al directorio *pinches*?
 
-```
-Responde aquí a la pregunta 3
+```txt
+No, ya que no tiene permisos de escritura.
 ```
