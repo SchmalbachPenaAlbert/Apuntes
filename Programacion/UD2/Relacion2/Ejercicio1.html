@@ -1,5 +1,6 @@
 <script>
 
+    // creacion variables
     let temperaturas = []
     let temperaturaDia = 0
     let opcion = 0
@@ -8,19 +9,31 @@
     let sumaTemperaturas = 0
     let temperaturaPromedio = 0
     const numeroDias = 7
+
+    // construcción del array
     for (let i = 0; i < numeroDias; i++) {
         temperaturaDia = Number(prompt("Introduce la temperatura:"))
-        temperaturas.push(temperaturaDia)
+        // control de errores
+        if (temperaturaDia < -50 || temperaturaDia > 60) {
+            console.log("El valor introducido excede los límites. Compruébalo y escríbelo de nuevo.")
+            i = i - 1
+        } else {
+            temperaturas.push(temperaturaDia)
+        }
     }
-    console.log(temperaturas) //temp
+
+    // opciones de los datos a calcular
+    console.log(`Temperaturas introducidas: ${temperaturas}`)
     console.log("Opciones:")
     console.log("1. Mostrar la temperatura más alta registrada.")
     console.log("2. Mostrar la temperatura más baja registrada.")
     console.log("3. Calcular la temperatura promedio de la semana.")
     console.log("4. Salir del programa.")
+
+    // verificación opcion introducida
     while (opcion != 4) {
         opcion = Number(prompt("Introduce una opción:"))
-        if (opcion == 1) {
+        if (opcion == 1) { // calculo de la temperatura máxima
             temperaturaMaxima = temperaturas[0]
             for (let i = 1; i < temperaturas.length; i++) {
                 if (temperaturaMaxima < temperaturas[i]) {
@@ -28,7 +41,7 @@
                 }
             }
             console.log(`La temperatura máxima es ${temperaturaMaxima}`)
-        } else if (opcion == 2) {
+        } else if (opcion == 2) { // calculo de la temperatura minima
             temperaturaMinima = temperaturas[0]
             for (let i = 1; i < temperaturas.length; i++) {
                 if (temperaturaMinima > temperaturas[i]) {
@@ -36,15 +49,18 @@
                 }
             }
             console.log(`La temperatura mínima es ${temperaturaMinima}`)
-        } else { // opcion 3
+        } else if (opcion == 3) { // calculo temperatura promedio
+            sumaTemperaturas = 0
             for (let i = 0; i < temperaturas.length; i++) {
                 sumaTemperaturas += temperaturas[i] 
                 temperaturaPromedio = sumaTemperaturas / numeroDias
                 temperaturaPromedio = temperaturaPromedio.toFixed(1)
             }
             console.log(`La temperatura promedio es ${temperaturaPromedio}`)
+        } else {
+            // manejo de errores: si no es ni 1 ni 2 ni 3, se repite el while
         }
     }
-    console.log(temperaturas)
+    console.log("Programa finalizado.")
 
 </script>
