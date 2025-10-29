@@ -1,10 +1,34 @@
 <script>
 
-    productosDisponibles = ["Ingletadora", "Esmerilladora", "Soldador", "Tronzadora", "Generador", "Medidor", "Encoladora", "Batería", "Taladro de impacto", "Martillo perforador"]
-    precioProductos = [129.99, 44.99, 119.99, 387, 359, 28.99, 6.99, 44.99, 79.99, 81.37]
-    
-    productoSolicitado = prompt("Introduce el nombre del artículo:")
-    productoSolicitado = productoSolicitado.toLowerCase()
-    cantidadDeseada = prompt("Introduce la cantidad deseada del artículo:")
+    let productosDisponibles = ["Ingletadora", "Esmerilladora", "Soldador", "Tronzadora", "Generador", "Medidor", "Encoladora", "Batería", "Taladro de impacto", "Martillo perforador"]
+    let precioProductos = [129.99, 44.99, 119.99, 387, 359, 28.99, 6.99, 44.99, 79.99, 81.37]
+    let productoSolicitado = ""
+    let cantidadDeseada = 0
+    let importe = 0
+    let productosAdquiridos = []
+    let cantidadesProductosAdquiridos = []
+
+    console.log(`Productos: ${productosDisponibles}`)
+
+    while (productoSolicitado !== "FIN") {
+        productoSolicitado = prompt("Introduce el nombre del artículo:")
+        if (productoSolicitado !== "FIN") {
+            cantidadDeseada = parseInt(prompt("Introduce la cantidad deseada del artículo:"))
+            for (let i = 0; i < productosDisponibles.length; i++) {
+                if (productoSolicitado == productosDisponibles[i]) {
+                    importe += cantidadDeseada * precioProductos[i]
+                    productosAdquiridos.push(productoSolicitado)
+                    cantidadesProductosAdquiridos.push(cantidadDeseada)
+                }
+            }
+            console.log(`Importe hasta ahora: ${importe.toFixed(2)}`)
+        } else {
+            console.log("Programa finalizado.")
+        }
+    }
+    for (let i = 0; i < productosAdquiridos.length; i++) {
+        console.log(`Producto ${i + 1}: ${productosAdquiridos[i]} | Cantidad: ${cantidadesProductosAdquiridos[i]}`)
+    }
+    console.log(`Importe final: ${importe.toFixed(2)}`)
 
 </script>
