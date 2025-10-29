@@ -7,6 +7,7 @@
     let puntuacionIntroducida = -1
     let jugadorActual = []
     let puntuacionActual = []
+    let nuevoRecord = false
 
     console.log("Valores iniciales:")
     console.log(jugadores)
@@ -21,18 +22,37 @@
         opcion = Number(prompt("Introduce una opción:"))
 
         if (opcion == 1) {
+            puntuacionIntroducida = -1
+            // Pregunto por un nombre
             nombreIntroducido = prompt("Introduce un nombre:")
+            // Añado el nombre al historial
             jugadores.shift()
             jugadores.push(nombreIntroducido)
+            // Mientras la puntuación sea negativa (empieza siendo -1), pregunto por una puntuación
             while (puntuacionIntroducida < 0) {
                 puntuacionIntroducida = Number(prompt("Introduce la puntuación conseguida:"))
             }
+
+            // Extra: compruebo si la puntuación del usuario supera alguna de las de puntuaciones, avisando de que se ha conseguido un nuevo record si ninguna es más alta
+            for (let i = 0; i < puntuaciones.length; i++) {
+                if (puntuacionIntroducida >= puntuaciones[i]) {
+                    nuevoRecord = true
+                } else {
+                    nuevoRecord = false
+                }
+            }
+            if (nuevoRecord === true) {
+                console.log("¡Nuevo record!")
+            }
+
+            // Después de comprobar si es un nuevo record, añado la puntuación introducida al historial
             puntuaciones.shift()
             puntuaciones.push(puntuacionIntroducida)
             console.log(jugadores)
             console.log(puntuaciones)
 
         } else if (opcion == 2) {
+            // Muestro los nombres y sus correspondientes puntuaciones en una sola línea
             for (let i = 0; i < jugadores.length; i++) {
                 jugadorActual = jugadores[i]
                 puntuacionActual = puntuaciones[i]
