@@ -4,9 +4,11 @@
     let precioProductos = [129.99, 44.99, 119.99, 387, 359, 28.99, 6.99, 44.99, 79.99, 81.37]
     let productoSolicitado = ""
     let cantidadDeseada = 0
+    let precioProductoSolicitado = 0
     let importe = 0
     let productosAdquiridos = []
     let cantidadesProductosAdquiridos = []
+    let importeIVA = 0
 
     console.log(`Productos: ${productosDisponibles}`)
 
@@ -16,11 +18,14 @@
             cantidadDeseada = parseInt(prompt("Introduce la cantidad deseada del artículo:"))
             for (let i = 0; i < productosDisponibles.length; i++) {
                 if (productoSolicitado == productosDisponibles[i]) {
-                    importe += cantidadDeseada * precioProductos[i]
+
+                    precioProductoSolicitado = cantidadDeseada * precioProductos[i]
+                    importe += precioProductoSolicitado
                     productosAdquiridos.push(productoSolicitado)
                     cantidadesProductosAdquiridos.push(cantidadDeseada)
                 }
             }
+            console.log(`Importe producto: ${precioProductoSolicitado.toFixed(2)}`)
             console.log(`Importe hasta ahora: ${importe.toFixed(2)}`)
         } else {
             console.log("Programa finalizado.")
@@ -29,6 +34,8 @@
     for (let i = 0; i < productosAdquiridos.length; i++) {
         console.log(`Producto ${i + 1}: ${productosAdquiridos[i]} | Cantidad: ${cantidadesProductosAdquiridos[i]}`)
     }
-    console.log(`Importe final: ${importe.toFixed(2)}`)
+    console.log(`Subtotal: ${importe.toFixed(2)}`)
+    importeIVA = importe * 1.21
+    console.log(`Importe a pagar (IVA incluido): ${importeIVA.toFixed(2)}`)
 
 </script>
