@@ -12,13 +12,15 @@
 
     console.log(`Productos: ${productosDisponibles}`)
 
+    // bucle mientras no se introduzca "FIN"
     while (productoSolicitado !== "FIN") {
         productoSolicitado = prompt("Introduce el nombre del artículo:")
+        // Compruebo si se introduce "FIN" para que no se tenga que preguntar la cantidad innecesariamnte
         if (productoSolicitado !== "FIN") {
             cantidadDeseada = parseInt(prompt("Introduce la cantidad deseada del artículo:"))
+            // si el producto solicitado coincide con algún producto del stock, se añade a la cuenta
             for (let i = 0; i < productosDisponibles.length; i++) {
                 if (productoSolicitado == productosDisponibles[i]) {
-
                     precioProductoSolicitado = cantidadDeseada * precioProductos[i]
                     importe += precioProductoSolicitado
                     productosAdquiridos.push(productoSolicitado)
@@ -31,10 +33,13 @@
             console.log("Programa finalizado.")
         }
     }
+
+    // bucle para el output final de los productos y su respectiva cantidad
     for (let i = 0; i < productosAdquiridos.length; i++) {
         console.log(`Producto ${i + 1}: ${productosAdquiridos[i]} | Cantidad: ${cantidadesProductosAdquiridos[i]}`)
     }
     console.log(`Subtotal: ${importe.toFixed(2)}`)
+    // extra: añado un importe con IVA (el falcon no se paga solo)
     importeIVA = importe * 1.21
     console.log(`Importe a pagar (IVA incluido): ${importeIVA.toFixed(2)}`)
 
