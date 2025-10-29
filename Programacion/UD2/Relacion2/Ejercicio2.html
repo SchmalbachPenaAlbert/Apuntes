@@ -4,7 +4,7 @@
     let puntuaciones = [140, 240, 270, 150, 220]
     let opcion = 0
     let nombreIntroducido = ""
-    let puntuacionIntroducida = 0
+    let puntuacionIntroducida = -1
     let jugadorActual = []
     let puntuacionActual = []
 
@@ -24,7 +24,9 @@
             nombreIntroducido = prompt("Introduce un nombre:")
             jugadores.shift()
             jugadores.push(nombreIntroducido)
-            puntuacionIntroducida = Number(prompt("Introduce la puntuación conseguida:"))
+            while (puntuacionIntroducida < 0) {
+                puntuacionIntroducida = Number(prompt("Introduce la puntuación conseguida:"))
+            }
             puntuaciones.shift()
             puntuaciones.push(puntuacionIntroducida)
             console.log(jugadores)
