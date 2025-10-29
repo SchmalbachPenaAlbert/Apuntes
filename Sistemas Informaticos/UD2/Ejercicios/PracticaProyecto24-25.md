@@ -25,7 +25,7 @@ iii. /home/compartido/backup
 ```bash
 #!/bin/bash
 
-# <--- Ejercicio 1 --->
+<--- Ejercicio 1 --->
 sudo adduser usuario1
 sudo adduser usuario2
 sudo adduser usuario3
@@ -51,4 +51,20 @@ sudo usermod -aG grupopaleto usuario2
 sudo chown usuario1:grupopaleto /home/compartido/proyectos/plan_proyecto.txt
 sudo chmod 224 /home/compartido/proyectos/plan_proyecto.txt
 
+<- c ->
+(pwd: /home/usuario1)
+sudo touch notas_personales.txt
+sudo chmod 600 /home/usuario1/notas_personales.txt
+(pwd: /home/usuario2)
+sudo touch notas_personales.txt
+sudo chmod 600 /home/usuario2/notas_personales.txt
+(pwd: /home/usuario3)
+sudo touch notas_personales.txt
+sudo chmod 600 /home/usuario3/notas_personales.txt
+(pwd: /home/usuario4)
+sudo touch notas_personales.txt
+sudo chmod 600 /home/usuario4/notas_personales.txt
+(pwd: /home/usuario5)
+sudo touch notas_personales.txt
+sudo chmod 600 /home/usuario5/notas_personales.txt
 ```
