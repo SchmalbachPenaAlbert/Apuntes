@@ -8,10 +8,10 @@
     let temperaturaMinima = 0
     let sumaTemperaturas = 0
     let temperaturaPromedio = 0
-    const numeroDias = 7
+    const NUMERODIAS = 7
 
     // construcción del array
-    for (let i = 0; i < numeroDias; i++) {
+    for (let i = 0; i < NUMERODIAS; i++) {
         temperaturaDia = Number(prompt("Introduce la temperatura:"))
         // control de errores
         if (temperaturaDia < -50 || temperaturaDia > 60) {
@@ -53,7 +53,7 @@
             sumaTemperaturas = 0
             for (let i = 0; i < temperaturas.length; i++) {
                 sumaTemperaturas += temperaturas[i] 
-                temperaturaPromedio = sumaTemperaturas / numeroDias
+                temperaturaPromedio = sumaTemperaturas / NUMERODIAS
                 temperaturaPromedio = temperaturaPromedio.toFixed(1)
             }
             console.log(`La temperatura promedio es ${temperaturaPromedio}`)
