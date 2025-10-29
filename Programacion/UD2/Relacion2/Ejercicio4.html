@@ -1,0 +1,42 @@
+<script>
+
+    let titulos = ["1983", "La Librería de la Medianoche", "Azul", "Invisible", "La Casa de Bernarda Alba"]
+    let cantidades = [6, 5, 1, 3, 5]
+    let nuevoTitulo = ""
+    let nuevaCantidad = 0
+    let opcion = 0
+    let libroExiste = false
+
+    console.log("Opciones:")
+    console.log("1. Añadir un nuevo libro al inventario.")
+    console.log("2. Actualizar la cantidad de un libro existente.")
+    console.log("3. Ver el inventario completo.")
+    console.log("4. Salir del programa.")
+
+    while (opcion != 4) {
+        libroExiste = false
+        console.log(titulos)
+        console.log(cantidades)
+        opcion = prompt("Introduce una opción:")
+        if (opcion == 1) {
+            nuevoTitulo = prompt("Introduce el título del libro a añadir:")
+            nuevaCantidad = parseInt(prompt("Introduce el stock del libro:"))
+            titulos.push(nuevoTitulo)
+            cantidades.push(nuevaCantidad)
+        } else if (opcion == 2) {
+            while (libroExiste == false) {
+                nuevoTitulo = prompt("Introduce el título del libro existente")
+                for (let i = 0; i < titulos.length; i++) {
+                    if (nuevoTitulo == titulos[i]) {
+                        titulos.push(nuevoTitulo)
+                        nuevaCantidad = parseInt(prompt("Introduce el NUEVO STOCK del libro (stock actual = " + cantidades[i] + "):"))
+                        libroExiste = true
+                    } else {
+                        console.log("¡El título introducido NO existe!")
+                    }
+                }
+            }        
+        }
+    }
+
+</script>
