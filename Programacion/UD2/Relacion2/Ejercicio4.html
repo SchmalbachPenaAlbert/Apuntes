@@ -4,8 +4,11 @@
     let cantidades = [6, 5, 1, 3, 5]
     let nuevoTitulo = ""
     let nuevaCantidad = 0
+    let tituloSolicitado = ""
     let opcion = 0
-    let libroExiste = false
+    let libroEnStock = false
+    const minimaOpcion = 1
+    const maximaOpcion = 4
 
     console.log("Opciones:")
     console.log("1. Añadir un nuevo libro al inventario.")
@@ -13,29 +16,59 @@
     console.log("3. Ver el inventario completo.")
     console.log("4. Salir del programa.")
 
+    console.log(titulos)
+    console.log(cantidades)
+
     while (opcion != 4) {
-        libroExiste = false
-        console.log(titulos)
-        console.log(cantidades)
         opcion = prompt("Introduce una opción:")
         if (opcion == 1) {
             nuevoTitulo = prompt("Introduce el título del libro a añadir:")
-            nuevaCantidad = parseInt(prompt("Introduce el stock del libro:"))
-            titulos.push(nuevoTitulo)
-            cantidades.push(nuevaCantidad)
+            // comprobación para que no se añada al array cantidades un título nulo o string vacío
+            if (nuevoTitulo !== null && nuevoTitulo !== "") { 
+                nuevaCantidad = parseInt(prompt("Introduce el stock del libro:"))
+                titulos.push(nuevoTitulo)
+                cantidades.push(nuevaCantidad)
+            } else {
+                console.log("Operación cancelada.")
+            }
         } else if (opcion == 2) {
-            while (libroExiste == false) {
-                nuevoTitulo = prompt("Introduce el título del libro existente")
+            libroEnStock = false
+            // bucle que pide titulos hasta que se introduzca el titulo de un libro en stock o se cancele (null)
+            while (libroEnStock == false && tituloSolicitado !== null) {
+                tituloSolicitado = prompt("Introduce el título del libro existente")
+                // bucle que busca el título. Si se encuentra un título existente, pregunta por el nuevo stock
                 for (let i = 0; i < titulos.length; i++) {
-                    if (nuevoTitulo == titulos[i]) {
-                        titulos.push(nuevoTitulo)
+                    if (tituloSolicitado == titulos[i]) {
                         nuevaCantidad = parseInt(prompt("Introduce el NUEVO STOCK del libro (stock actual = " + cantidades[i] + "):"))
-                        libroExiste = true
-                    } else {
-                        console.log("¡El título introducido NO existe!")
+                        libroEnStock = true
+                        cantidades[i] = nuevaCantidad
+                        i = titulos.length
+                        // si es null (usuario pulsa cancelar) se cancela
+                    } else if (tituloSolicitado == null) {
+                        console.log("Operación cancelada.")
                     }
                 }
+                // bucle que comprueba si el stock de algún producto es 0, para eliminarlo
+                for (let i = 0; i < titulos.length; i++) {
+                    if (cantidades[i] == 0) {
+                        // DUDA: ¿Cómo eliminar un valor de en medio de un array?
+                    }
+                }
+                if (libroEnStock == false) {
+                    console.log("¡El título introducido NO existe!")
+                }
             }        
+        } else if (opcion == 3) {
+            console.log("Inventario:")
+            // bucle que muestra en la consola los titulos y el correspondiente stock en una línea
+            for (let i = 0; i < titulos.length; i++) {
+                console.log(`"${titulos[i]}" | Stock: ${cantidades[i]}`)
+            }
+        } else if (opcion < minimaOpcion || opcion > maximaOpcion) {
+            // (si es menor que 1 o mayor que 4...)
+            console.log("Por favor, introduce una opción valida.")
+        } else {
+            opcion = 4
         }
     }
 
