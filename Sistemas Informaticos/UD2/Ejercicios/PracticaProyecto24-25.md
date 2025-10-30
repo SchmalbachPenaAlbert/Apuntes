@@ -22,16 +22,18 @@ iii. /home/compartido/backup
 
 ## Comandos utilizados
 
-```bash
-#!/bin/bash
+### Tarea Inicial
 
+```bash
 <--- Ejercicio 1 --->
+<- a ->
 sudo adduser usuario1
 sudo adduser usuario2
 sudo adduser usuario3
 sudo adduser usuario4
 sudo adduser usuario5
 
+<- b ->
 sudo mkdir /home/compartido
 sudo mkdir /home/compartido/documentos
 sudo mkdir /home/compartido/proyectos
@@ -52,7 +54,34 @@ sudo chown usuario1:grupopaleto /home/compartido/proyectos/plan_proyecto.txt
 sudo chmod 224 /home/compartido/proyectos/plan_proyecto.txt
 
 <- c ->
-(pwd: /home/usuario1)
-sudo touch notas_personales.txt
+sudo touch /home/usuario1/notas_personales.txt
 sudo chmod 600 /home/{usuario1, usuario2, usuario3, usuario4, usuario5}/notas_personales.txt
+
+<--- Ejercicio 3 --->
+#!/bin/bash
+
+```
+
+### Primer incremento
+
+```bash
+<--- Ejercicio 1 --->
+sudo groupadd admin
+sudo groupadd colaboradores
+sudo usermod -aG admin usuario1
+sudo usermod -aG admin usuario2
+sudo usermod -aG colaboradores usuario3
+sudo usermod -aG colaboradores usuario4
+sudo usermod -aG colaboradores usuario5
+
+<--- Ejercicio 2 --->
+<- a ->
+sudo chown staff:admin /home/compartido/documentos/informe_general.txt
+sudo chmod 400 /home/compartido/documentos/informe_general.txt
+
+<- b ->
+sudo chown admin:colaboradores /home/compartido/proyectos/plan_proyecto.txt
+sudo chmod 420 /home/compartido/proyectos/plan_proyecto.txt
+
+<--- Ejercicio 3 --->
 ```
