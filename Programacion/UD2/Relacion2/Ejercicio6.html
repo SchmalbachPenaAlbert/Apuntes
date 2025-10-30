@@ -1,11 +1,15 @@
 <script>
 
     let tareas = ["Estudiar", "Practicar código"]
-    let estadoTareas = [false, true]
+    let estadoTareas = [false, true] // completada -> true; pendiente -> false
     let opcion = 0
     let nuevaTarea = ""
-    let estadoNuevaTarea = "" // completada -> true; pendiente -> false
+    let estadoNuevaTarea = ""
     let listaTareas = ""
+    let tareaACompletar = ""
+    let contadorLista = 0
+    const OPCIONMINIMA = 1
+    const OPCIONMAXIMA = 5
 
     console.log("Opciones:")
     console.log("1. Añadir una nueva tarea.")
@@ -14,21 +18,61 @@
     console.log("4. Ver la lista de tareas completadas.")
     console.log("5. Salir del programa.")
 
-    while (opcion !== "5") {
+    while (opcion != "5") {
         opcion = Number(prompt("Introduce una opción:"))
         if (opcion == "1") {
             nuevaTarea = prompt("Introduce el nombre de la nueva tarea:")
-            estadoNuevaTarea = prompt("Introduce el estado de la nueva tarea (C = completada y P = pendiente):").toUpperCase()
-            while (estadoNuevaTarea != "C" && estadoNuevaTarea != "P") {
-                estadoNuevaTarea = prompt("El valor introducido no corresponde a ningún estado. Introduce el estado de la nueva tarea (C = completada y P = pendiente):").toUpperCase()
+            estadoNuevaTarea = prompt("Introduce el estado de la nueva tarea: completada (c) o pendiente (p)").toUpperCase()
+            while (estadoNuevaTarea != "C" && estadoNuevaTarea != "P" && estadoNuevaTarea != "COMPLETADA" && estadoNuevaTarea != "PENDIENTE") {
+                estadoNuevaTarea = prompt("El valor introducido no corresponde a ningún estado. Introduce el estado de la nueva tarea: completada (c) o pendiente (p)").toUpperCase()
             }
-            if (estadoNuevaTarea == "C") {
+            if (estadoNuevaTarea == "C" || estadoNuevaTarea == "COMPLETADA") {
                 estadoNuevaTarea = true
             } else {
                 estadoNuevaTarea = false
             }
             tareas.push(nuevaTarea)
             estadoTareas.push(estadoNuevaTarea)
+        } else if (opcion == "2") {
+            tareaExistente = false
+            tareaACompletar = prompt("Introduce el nombre de la tarea a marcar como completada:")
+            for (i = 0; i < tareas.length; i++) {
+                if (tareaACompletar == tareas[i] && estadoTareas[i] != true) {
+                    estadoTareas[i] = true
+                    tareaExistente = true
+                } else if (estadoTareas[i] == true) {
+                    alert("¡La tarea ya está completada!")
+                }
+            }
+            if (tareaExistente == false) {
+                alert("¡El nombre introducido NO corresponde a ninguna tarea existente!")
+            }
+        } else if (opcion == "3") {
+            contadorLista = 0
+            console.log("Tareas pendientes:")
+            for (i = 0; i < tareas.length; i++) {
+                if (estadoTareas[i] == false) {
+                    console.log(tareas[i])
+                    contadorLista++
+                }
+            }
+            if (contadorLista == 0) {
+                    console.log("¡No hay tareas pendientes!")
+                }
+        } else if (opcion == "4") {
+            contadorLista = 0
+            console.log("Tareas completadas:")
+            for (i = 0; i < tareas.length; i++) {
+                if (estadoTareas[i] == true) {
+                    console.log(tareas[i])
+                    contadorLista++
+                }
+            }
+            if (contadorLista == 0) {
+                console.log("¡No hay tareas completadas!")
+            }
+        } else if (opcion < OPCIONMINIMA || opcion > OPCIONMAXIMA) {
+            console.log("¡El valor introducido no corresponde con ninguna opción!")
         }
 
         console.log(tareas)
@@ -40,78 +84,5 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    while (opcion != 5) {
-        opcion = prompt("Elige una opción\n1. Añadir una nueva tarea\n2. Marcar una tarea como completada\n3. Ver la lista de tareas pendientes\n4. Ver la lista de tareas completadas\n5. Salir del programa.")
-
-        while (opcion != "1" && opcion != "2" && opcion != "3" && opcion != "4") {
-            opcion = prompt("Elige una opción\n1. Añadir una nueva tarea\n2. Marcar una tarea como completada\n3. Ver la lista de tareas pendientes\n4. Ver la lista de tareas completadas\n5. Salir del programa.")
-        }
-        if (opcion == "1") {
-            nuevaTarea = prompt("Introduce el nombre de la tarea")
-            tareas.push(nuevaTarea)
-
-            estadoNuevaTarea = prompt("Introduce el estado de la tarea: " + nuevaTarea
-                + "\nC(Completada) o P(Pendiente)").toUpperCase()
-
-            while (estadoNuevaTarea != "C" && estadoNuevaTarea != "P") {
-                estadoNuevaTarea = prompt("Introduce el estado de la tarea: " + nuevaTarea
-                    + "\nC(Completada) o P(Pendiente)").toUpperCase()
-            }
-
-            if (estadoNuevaTarea == "C") {
-                estadoTareas.push(true)
-            } else if (estadoNuevaTarea == "P") {
-                estadoTareas.push(false)
-            }
-        } else if (opcion == 2) {
-            nuevaTarea = prompt("Introduce el nombre de la tarea")
-            for (let i = 0; i < tareas.length; i++) {
-                if (tareas[i] == nuevaTarea) {
-                    estadoTareas[i] = true
-                }
-            }
-        } else if (opcion == 3) {
-            listaTareas = ""
-            for (let i = 0; i < estadoTareas.length; i++) {
-                if (estadoTareas[i] == false) { // !estadoTareas[i]
-                    listaTareas += tareas[i] + "-"
-                }
-            }
-            console.log(listaTareas);
-
-        } else if (opcion == 4) {
-            listaTareas = ""
-            for (let i = 0; i < estadoTareas.length; i++) {
-                if (estadoTareas[i] == true) { // estadoTareas[i]
-                    listaTareas += tareas[i] + "-"
-                }
-            }
-            console.log(listaTareas);
-        }
-    }
 
 </script>
