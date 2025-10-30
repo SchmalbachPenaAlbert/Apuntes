@@ -13,13 +13,13 @@
     const OPCIONMINIMA = 0
     const OPCIONMAXIMA = 5
 
+    // muestro las opciones y los dos arrays iniciales
     console.log("Opciones:")
     console.log("1. Añadir un estudiante y su calificación.")
     console.log("2. Mostrar la calificación promedio de la clase.")
     console.log("3. Mostrar la calificación más alta y el nombre del estudiante correspondiente.")
     console.log("4. Mostrar la calificación más baja y el nombre del estudiante correspondiente.")
     console.log("5. Salir del programa.")
-
     console.log(alumnos)
     console.log(calificaciones)
 
@@ -27,6 +27,7 @@
         opcion = Number(prompt("Introduce una opción:"))
         if (opcion == 1) { // añadir estudiante
             nuevoAlumno = prompt("Introduce el nombre del alumno a añadir:")
+            // if/else que comprueba que el nombre introducido no es null o vacío
             if (nuevoAlumno !== null && nuevoAlumno !== "") { 
                 nuevaCalificacion = Number(prompt("Introduce la calificación del alumno a añadir:"))
                 alumnos.push(nuevoAlumno)
@@ -40,14 +41,17 @@
 
         } else if (opcion == 2) { // calculo calificacion promedio
             sumaCalificaciones = 0
+            // bucle que suma las calificaciones
             for (let i = 0; i < calificaciones.length; i++) {
                 sumaCalificaciones += calificaciones[i] 
             }
-            calificacionPromedio = sumaCalificaciones / (calificaciones.length)
+            // se divide la suma de las calificaciones entre el número de valores que existan en el array
+            calificacionPromedio = sumaCalificaciones / calificaciones.length
             console.log(`La calificacion promedio es ${calificacionPromedio.toFixed(2)}`)
 
         } else if (opcion == 3) { // calculo de la calificacion máxima
             calificacionMaxima = 0
+            // bucle que encuentra la calificacion mas alta, guardando la posicion
             for (let i = 0; i < calificaciones.length; i++) {
                 if (calificacionMaxima < calificaciones[i]) {
                     calificacionMaxima = calificaciones[i]
@@ -58,6 +62,7 @@
 
         } else if (opcion == 4) { // calculo de la calificacion minima
             calificacionMinima = 10
+            // bucle que encuentra la calificacion mas baja, guardando la posicion
             for (let i = 0; i < calificaciones.length; i++) {
                 if (calificacionMinima > calificaciones[i]) {
                     calificacionMinima = calificaciones[i]
@@ -66,7 +71,7 @@
             }
             console.log(`La calificacion mínima es de ${alumnos[posicionNombre]}: ${calificacionMinima}`)
         } else if (opcion < OPCIONMINIMA || opcion > OPCIONMAXIMA) {
-            
+            // (si el numero introducido es menor que la opcion más baja o mayor que la más alta...)
         }
     }
 
