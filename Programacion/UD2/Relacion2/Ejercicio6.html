@@ -18,8 +18,7 @@
         opcion = Number(prompt("Introduce una opción:"))
         if (opcion == "1") {
             nuevaTarea = prompt("Introduce el nombre de la nueva tarea:")
-            estadoNuevaTarea = prompt("Introduce el estado de la nueva tarea (C = completada y P = pendiente):")
-            estadoNuevaTarea.toUpperCase()
+            estadoNuevaTarea = prompt("Introduce el estado de la nueva tarea (C = completada y P = pendiente):").toUpperCase()
             while (estadoNuevaTarea != "C" && estadoNuevaTarea != "P") {
                 estadoNuevaTarea = prompt("El valor introducido no corresponde a ningún estado. Introduce el estado de la nueva tarea (C = completada y P = pendiente):").toUpperCase()
             }
