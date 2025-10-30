@@ -1,0 +1,73 @@
+<script>
+
+    let alumnos = ["Paco", "Lucas", "Pepe", "Lucía", "Roberto", "Sara", "Esteban", "Isabel"]
+    let calificaciones = [4.5, 6.3, 7.5, 8.6, 7.85, 6.4, 5.1, 8.7]
+    let opcion = 0
+    let calificacionPromedio = 0
+    let calificacionMaxima = 0
+    let calificacionMinima = 0
+    let sumaCalificaciones = 0
+    let posicionNombre = 0
+    let nuevoAlumno = ""
+    let nuevaCalificacion = 0
+    const OPCIONMINIMA = 0
+    const OPCIONMAXIMA = 5
+
+    console.log("Opciones:")
+    console.log("1. Añadir un estudiante y su calificación.")
+    console.log("2. Mostrar la calificación promedio de la clase.")
+    console.log("3. Mostrar la calificación más alta y el nombre del estudiante correspondiente.")
+    console.log("4. Mostrar la calificación más baja y el nombre del estudiante correspondiente.")
+    console.log("5. Salir del programa.")
+
+    console.log(alumnos)
+    console.log(calificaciones)
+
+    while (opcion !== 5) {
+        opcion = Number(prompt("Introduce una opción:"))
+        if (opcion == 1) { // añadir estudiante
+            nuevoAlumno = prompt("Introduce el nombre del alumno a añadir:")
+            if (nuevoAlumno !== null && nuevoAlumno !== "") { 
+                nuevaCalificacion = Number(prompt("Introduce la calificación del alumno a añadir:"))
+                alumnos.push(nuevoAlumno)
+                calificaciones.push(nuevaCalificacion)
+            } else {
+                console.log("Operación cancelada.")
+            }
+
+            console.log(alumnos)
+            console.log(calificaciones)
+
+        } else if (opcion == 2) { // calculo calificacion promedio
+            sumaCalificaciones = 0
+            for (let i = 0; i < calificaciones.length; i++) {
+                sumaCalificaciones += calificaciones[i] 
+            }
+            calificacionPromedio = sumaCalificaciones / (calificaciones.length)
+            console.log(`La calificacion promedio es ${calificacionPromedio.toFixed(2)}`)
+
+        } else if (opcion == 3) { // calculo de la calificacion máxima
+            calificacionMaxima = 0
+            for (let i = 0; i < calificaciones.length; i++) {
+                if (calificacionMaxima < calificaciones[i]) {
+                    calificacionMaxima = calificaciones[i]
+                    posicionNombre = i
+                }
+            }
+            console.log(`La calificacion máxima es de ${alumnos[posicionNombre]}: ${calificacionMaxima}`)
+
+        } else if (opcion == 4) { // calculo de la calificacion minima
+            calificacionMinima = 10
+            for (let i = 0; i < calificaciones.length; i++) {
+                if (calificacionMinima > calificaciones[i]) {
+                    calificacionMinima = calificaciones[i]
+                    posicionNombre = i
+                }
+            }
+            console.log(`La calificacion mínima es de ${alumnos[posicionNombre]}: ${calificacionMinima}`)
+        } else if (opcion < OPCIONMINIMA || opcion > OPCIONMAXIMA) {
+            
+        }
+    }
+
+</script>
