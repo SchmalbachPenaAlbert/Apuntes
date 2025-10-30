@@ -34,7 +34,7 @@ Normalmente usaremos int para los enteros, aunque a veces, para optimizar la tab
 
 ### Crear una tabla
 
-El siguiente ejemplo meustra como crear dos tabla. Una llamada cleintes y otra llamada Reservas. 
+El siguiente ejemplo muestra como crear dos tablas. Una llamada Clientes y otra llamada Reservas.
 La tabla Reservas incluye **5 columnas propias** y **una columna (llave) de la otra tabla**, clientes.
 
 ```SQL
