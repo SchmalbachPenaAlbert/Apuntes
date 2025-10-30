@@ -54,17 +54,5 @@ sudo chmod 224 /home/compartido/proyectos/plan_proyecto.txt
 <- c ->
 (pwd: /home/usuario1)
 sudo touch notas_personales.txt
-sudo chmod 600 /home/usuario1/notas_personales.txt
-(pwd: /home/usuario2)
-sudo touch notas_personales.txt
-sudo chmod 600 /home/usuario2/notas_personales.txt
-(pwd: /home/usuario3)
-sudo touch notas_personales.txt
-sudo chmod 600 /home/usuario3/notas_personales.txt
-(pwd: /home/usuario4)
-sudo touch notas_personales.txt
-sudo chmod 600 /home/usuario4/notas_personales.txt
-(pwd: /home/usuario5)
-sudo touch notas_personales.txt
-sudo chmod 600 /home/usuario5/notas_personales.txt
+sudo chmod 600 /home/{usuario1, usuario2, usuario3, usuario4, usuario5}/notas_personales.txt
 ```
