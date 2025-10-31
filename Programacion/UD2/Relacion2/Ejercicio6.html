@@ -20,12 +20,15 @@
 
     while (opcion != "5") {
         opcion = Number(prompt("Introduce una opción:"))
+
         if (opcion == "1") {
             nuevaTarea = prompt("Introduce el nombre de la nueva tarea:")
             estadoNuevaTarea = prompt("Introduce el estado de la nueva tarea: completada (c) o pendiente (p)").toUpperCase()
+            // bucle que solo permite los valores correspondientes, funcionando con mayúsculas y con minúsculas
             while (estadoNuevaTarea != "C" && estadoNuevaTarea != "P" && estadoNuevaTarea != "COMPLETADA" && estadoNuevaTarea != "PENDIENTE") {
                 estadoNuevaTarea = prompt("El valor introducido no corresponde a ningún estado. Introduce el estado de la nueva tarea: completada (c) o pendiente (p)").toUpperCase()
             }
+            // Según sea completada o pendiente, se le asigna un booleano, luego se añade el nombre y el estado a los arrays
             if (estadoNuevaTarea == "C" || estadoNuevaTarea == "COMPLETADA") {
                 estadoNuevaTarea = true
             } else {
@@ -33,23 +36,27 @@
             }
             tareas.push(nuevaTarea)
             estadoTareas.push(estadoNuevaTarea)
+
         } else if (opcion == "2") {
             tareaExistente = false
             tareaACompletar = prompt("Introduce el nombre de la tarea a marcar como completada:")
+            // bucle que comprueba si la tarea existe y si la tarea ya está completada
             for (i = 0; i < tareas.length; i++) {
-                if (tareaACompletar == tareas[i] && estadoTareas[i] != true) {
+                if (tareaACompletar == tareas[i] && estadoTareas[i] == false) {
                     estadoTareas[i] = true
                     tareaExistente = true
-                } else if (estadoTareas[i] == true) {
+                } else if (tareaACompletar == tareas[i] && estadoTareas[i] == true) {
                     alert("¡La tarea ya está completada!")
                 }
             }
             if (tareaExistente == false) {
                 alert("¡El nombre introducido NO corresponde a ninguna tarea existente!")
             }
+
         } else if (opcion == "3") {
             contadorLista = 0
             console.log("Tareas pendientes:")
+            // bucle que busca y muestra las tareas pendientes y las muestra, mostrando un mensaje si no hay ninguna tarea pendiente
             for (i = 0; i < tareas.length; i++) {
                 if (estadoTareas[i] == false) {
                     console.log(tareas[i])
@@ -59,9 +66,11 @@
             if (contadorLista == 0) {
                     console.log("¡No hay tareas pendientes!")
                 }
+    
         } else if (opcion == "4") {
             contadorLista = 0
             console.log("Tareas completadas:")
+            // bucle que busca y muestra las tareas completadas y las muestra, mostrando un mensaje si no hay ninguna tarea completada
             for (i = 0; i < tareas.length; i++) {
                 if (estadoTareas[i] == true) {
                     console.log(tareas[i])
@@ -71,6 +80,8 @@
             if (contadorLista == 0) {
                 console.log("¡No hay tareas completadas!")
             }
+            
+        // else if que checkea que la opcion i9ntroducida no se salga del rango deseado mínimo y máximo
         } else if (opcion < OPCIONMINIMA || opcion > OPCIONMAXIMA) {
             console.log("¡El valor introducido no corresponde con ninguna opción!")
         }
@@ -78,11 +89,5 @@
         console.log(tareas)
         console.log(estadoTareas)
     }
-
-
-
-
-
-
 
 </script>
