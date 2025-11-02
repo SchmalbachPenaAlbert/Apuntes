@@ -1,0 +1,24 @@
+<script>
+
+    let lista1 = ["milk", "eggs", "bread"]
+    let lista2 = ["bread", "butter", "cheese"]
+    let listaCombinada = []
+    let elementoRepetido = false
+
+    for (let i = 0; i < lista1.length; i++) {
+        listaCombinada.push(lista1[i])
+    }
+    for (let i = 0; i < lista2.length; i++) {
+        elementoRepetido = false
+        for (let j = 0; j < listaCombinada.length; j++) {
+            if (listaCombinada[j] == lista2[i]) {
+                elementoRepetido = true
+            }
+        }
+        if (elementoRepetido == false) {
+            listaCombinada.push(lista2[i])
+        }
+    }
+    console.log(listaCombinada)
+
+</script>
