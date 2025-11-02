@@ -1,0 +1,17 @@
+<script>
+
+    let nombres = ["Alice", "Bob", "Amy", "David"]
+    let letra = prompt("Introduce la letra deseada:").toUpperCase()
+    while (letra.length > 1 || letra.length < 1) {
+        letra = prompt("No se ha introducido una única letra: Solo puede introducir un dígito. Introduce la letra deseada:").toUpperCase()
+    }
+    let nombresEmpiezanLetra = []
+
+    for (let i = 0; i < nombres.length; i++) {
+        if (nombres[i].startsWith(letra) == true) {
+            nombresEmpiezanLetra.push(nombres[i])
+        }
+    }
+    console.log(nombresEmpiezanLetra)
+
+</script>
