@@ -1,0 +1,16 @@
+<script>
+
+    let palabras = ["Hello", "world", "JavaScript", "rocks"]
+    let output = ""
+
+    for (let i = 0; i < palabras.length; i++) {
+        // if/else para que, si es la última palabra de la lista, no se utilize separadore (" - ")
+        if (i == palabras.length - 1) {
+            output += palabras[i]
+        } else {
+            output += (palabras[i] + " - ")
+        }
+    }
+    console.log(output)
+
+</script>
