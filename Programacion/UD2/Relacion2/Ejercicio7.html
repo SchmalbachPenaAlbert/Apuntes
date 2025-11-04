@@ -1,7 +1,19 @@
 <script>
 
-    let nombreGastos = ["Alquiler", "Fectura agua", "Factura luz", "Gas natural", "Xbox 720", "Caramelos de menta"]
+    let nombreGastos = ["Alquiler", "Factura agua", "Factura luz", "Gas natural", "Xbox 720", "Caramelos de menta"]
     let cantidadGastos = [450, 68.73, 81.04, 30, 399.99, 5.79]
+    let opcion = 0
+    let nuevoNombre = ""
+    let nuevaCantidad = 0
+    let totalNombreGastos = ""
+    let totalCantidadGastos = 0
+    let gastoMaximo = 0
+    let gastoMinimo = 0
+    let nombreGastoMinMax = ""
+    let sumaGastos = 0
+    let promedioGastos = 0
+    let OPCIONMAXIMA = 5
+    let OPCIONMINIMA = 0
 
     console.log("Opciones:")
     console.log("1. Añadir un nuevo gasto (nombre y cantidad)")
@@ -9,5 +21,52 @@
     console.log("3. Ver los gastos más altos y más bajos del mes.")
     console.log("4. Ver el promedio de gasto diario (mes de 30 días).")
     console.log("5. Salir del programa.")
+
+    while (opcion != 5) {
+        opcion = prompt("Introduce una de las siguientes opciones:\n1. Añadir un nuevo gasto\n2. Ver el total de gastos hasta el momento.\n3. Ver los gastos más altos y más bajos del mes.\n4. Ver el promedio de gasto diario\n5. Salir del programa.")
+        if (opcion == 1) {
+            nuevoNombre = prompt("Introduce el nombre del nuevo gasto")
+            nuevaCantidad = Number(prompt("Introduce la cantidad gastada"))
+            nombreGastos.push(nuevoNombre)
+            cantidadGastos.push(nuevaCantidad)
+        } else if (opcion == 2) {
+            console.log("Lista de gastos:")
+            for (let i = 0; i < nombreGastos.length; i++) {
+                totalNombreGastos = nombreGastos[i]
+                totalCantidadGastos = cantidadGastos[i]
+                console.log("Gasto " + (i + 1) + ": " + totalNombreGastos + " | " + totalCantidadGastos + "€")
+            }
+        } else if (opcion == 3) {
+            gastoMaximo = 0
+            for (let i = 0; i < cantidadGastos.length; i++) {
+                if (gastoMaximo < cantidadGastos[i]) {
+                    gastoMaximo = cantidadGastos[i]
+                    nombreGastoMinMax = nombreGastos[i]
+                }
+            }
+            console.log("El mayor gasto del mes corresponde al pago de " + nombreGastoMinMax + ", siendo el valor del gasto de " + gastoMaximo + "€.")
+            gastoMinimo = 999999999
+            for (let i = 0; i < cantidadGastos.length; i++) {
+                if (gastoMinimo > cantidadGastos[i]) {
+                    gastoMinimo = cantidadGastos[i]
+                    nombreGastoMinMax = nombreGastos[i]
+                }
+            }
+            console.log("El menor gasto del mes corresponde al pago de " + nombreGastoMinMax + ", siendo el valor del gasto de " + gastoMinimo + "€.")
+        } else if (opcion == 4) { // no sale bien, revisar
+            sumaGastos = 0
+            for (let i = 0; i < cantidadGastos.length; i++) {
+                sumaGastos += cantidadGastos[i]
+            }
+            promedioGastos = sumaGastos / 30
+            console.log("El promedio de gasto diario este mes es de " + promedioGastos.toFixed(1) + "€.")
+        } else if (opcion > OPCIONMAXIMA || opcion < OPCIONMINIMA) {
+            console.log("¡No se ha introducido una opción válida!")
+        }
+
+        // dev
+        console.log(nombreGastos)
+        console.log(cantidadGastos)
+    }
 
 </script>
