@@ -1,0 +1,19 @@
+<script>
+
+    function mayor (numero1, numero2) {
+        let numeroMayor = 0
+        if (numero1 < numero2) {
+            numeroMayor = numero2
+        } else if (numero1 > numero2) {
+            numeroMayor = numero1
+        } else {
+            numeroMayor = undefined
+        }
+        return numeroMayor
+    }
+
+    let numero1 = Number(prompt("Introduce un número:"))
+    let numero2 = Number(prompt("Introduce otro número:"))
+    console.log(mayor(numero1, numero2))
+
+</script>
