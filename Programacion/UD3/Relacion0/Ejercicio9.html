@@ -1,0 +1,24 @@
+<script>
+
+    function menorDeTres (numero1, numero2, numero3) {
+        let numeroMenor = 0
+        if (numero1 < numero2 && numero1 < numero3) {
+            numeroMenor = numero1
+        } else if (numero1 <= numero2 && numero1 > numero3) {
+            numeroMenor = numero3
+        } else if (numero1 > numero2 && numero2 >= numero3) {
+            numeroMenor = numero1
+        } else if (numero1 > numero2 && numero2 < numero3) {
+            numeroMenor = numero2
+        } else {
+            numeroMenor = undefined
+        }
+        return numeroMenor
+    }
+
+    let numero1 = Number(prompt("Introduce un número:"))
+    let numero2 = Number(prompt("Introduce otro número:"))
+    let numero3 = Number(prompt("Introduce otro número:"))
+    console.log(menorDeTres(numero1, numero2, numero3))
+
+</script>
