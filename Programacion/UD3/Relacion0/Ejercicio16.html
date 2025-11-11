@@ -1,5 +1,17 @@
 <script>
 
-    
+    function verificarNumeroEnArray (numeros, NumeroComprobar) {
+        let numeroPresente = false
+        for (numero of numeros) {
+            if (NumeroComprobar == numero) {
+                numeroPresente = true
+            }
+        }
+        return numeroPresente
+    }
+
+    let numeros = [2, 4, 5, 7, 9, 10, 12, 14, 17, 21]
+    let numeroAComprobar = prompt("Introduce un número")
+    console.log(verificarNumeroEnArray(numeros, numeroAComprobar))
 
 </script>

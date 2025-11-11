@@ -1,5 +1,17 @@
 <script>
 
-    
+    function filtrarNumerosMayores (numeros, limite) {
+        let numerosMayores = []
+        for (numero of numeros) {
+            if (numero > limite) {
+                numerosMayores.push(numero)
+            }
+        }
+        return numerosMayores
+    }
+
+    let numeros = [2, 4, 5, 7, 9, 10, 12, 14, 17, 21]
+    let valorLimite = 7
+    console.log(filtrarNumerosMayores(numeros, valorLimite))
 
 </script>
