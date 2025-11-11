@@ -1,0 +1,16 @@
+<script>
+
+    function contarVocalesEnCadena (cadena) {
+        let cantidadVocales = 0
+        for (let i = 0 - 1; i < cadena.length; i++) {
+            if (cadena[i] == "a" || cadena[i] == "e" ||cadena[i] == "i" ||cadena[i] == "o" ||cadena[i] == "u") {
+                cantidadVocales++
+            }
+        }
+        return cantidadVocales
+    }
+
+    let cadena = "Mmhh... ¿Una frase?"
+    alert(contarVocalesEnCadena(cadena))
+
+</script>
