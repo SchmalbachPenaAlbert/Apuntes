@@ -1,0 +1,16 @@
+<script>
+
+    function promedioArray (numeros) {
+        let suma = 0
+        let promedio = 0
+        for (let numero of numeros) {
+            suma += numero
+        }
+        promedio = suma / numeros.length
+        return promedio
+    }
+
+    let numeros = [5, 10, 15]
+    console.log(promedioArray(numeros))
+
+</script>

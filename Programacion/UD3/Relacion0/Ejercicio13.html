@@ -1,0 +1,14 @@
+<script>
+
+    function invertirArray (arrayAInvertir) {
+        let arrayInvertido = []
+        for (let elemento of arrayAInvertir) {
+            arrayInvertido.unshift(elemento)
+        }
+        return arrayInvertido
+    }
+
+    let arrayAInvertir = ["G", "R", "A", "N", "A", "D", "A"]
+    console.log(invertirArray(arrayAInvertir))
+
+</script>
