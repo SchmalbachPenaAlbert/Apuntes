@@ -1,0 +1,17 @@
+<script>
+
+    function capitalizarPrimeraLetra (palabra) {
+        let palabraCapitalizada = ""
+        for (let i = 0; i < palabra.length; i++) {
+            if (i == 0) {
+                palabraCapitalizada += palabra[i].toUpperCase()
+            } else {
+                palabraCapitalizada += palabra[i]
+            }
+        }
+        return palabraCapitalizada
+    }
+
+    alert(capitalizarPrimeraLetra("tenerife"))
+
+</script>
