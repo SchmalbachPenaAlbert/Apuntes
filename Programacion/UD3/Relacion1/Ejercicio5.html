@@ -1,0 +1,29 @@
+<script>
+
+    function caraOCruz () {
+        let valor = ""
+        let resultado = Math.floor(Math.random() * 2)
+        if (resultado == 0) {
+            valor = "cara"
+        } else {
+            valor = "cruz"
+        }
+        return valor
+    }
+    function listaCarasOCruces () {
+        let cantidad = 10
+        let listaResultados = []
+        for (let i = 0; i < cantidad; i++) {
+            listaResultados.push(caraOCruz())
+        }
+        return(listaResultados)
+    }
+    let arrayCarasOCruces = listaCarasOCruces()
+    alert(caraOCruz())
+    let mensajeSalida = ""
+    for (let elemento of arrayCarasOCruces) {
+        mensajeSalida += elemento + " - "
+    }
+    console.log(mensajeSalida)
+
+</script>
