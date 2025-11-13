@@ -1,0 +1,45 @@
+<script>
+
+    function caraOCruz () {
+        let valor = ""
+        let resultado = Math.floor(Math.random() * 2)
+        if (resultado == 0) {
+            valor = "cara"
+        } else {
+            valor = "cruz"
+        }
+        return valor
+    }
+
+    function historialTiradas () {
+        return historial.join(" - ")
+    }
+
+    function tresCarasSeguidas () {
+        let contadorCaras = 0
+        let intentos = 0
+        let mensajeIntentos = ""
+        let valorMoneda = ""
+        while (contadorCaras != 26) {
+            valorMoneda = caraOCruz()
+            historial.push(valorMoneda)
+            intentos++
+            if (valorMoneda == "cara") {
+                contadorCaras++
+            } else {
+                contadorCaras = 0
+            }
+        }
+        mensajeIntentos = "Has tardado en conseguir las tres caras seguidas " + intentos + " intentos."
+        return mensajeIntentos
+    }
+
+    function mensajefinal () {
+        let mensajeJunto = tresCarasSeguidas() + "\n Historial de tiradas: " + historialTiradas()
+        return mensajeJunto
+    }
+
+    let historial = []
+    alert(mensajefinal())
+
+</script>
