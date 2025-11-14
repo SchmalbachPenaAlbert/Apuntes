@@ -38,8 +38,8 @@
 
 ## Sectores
 
-- Salud (Monitoreo reporto de pacientes, telemedicina, análisis de datos, detección temprana...)
-- Fabricación (Automatización producción, optimización cadena suministro, optimización cadena de suministro, impresión 3D...)
+- Salud (Monitoreo de pacientes, telemedicina, análisis de datos, detección temprana...)
+- Fabricación (Automatización producción, optimización cadena de suministro, impresión 3D...)
 - Monitorización y gestión energía (gestión redes eléctricas, monotorización de recursos naturales...)
 - Transporte y logística (Gestión de flotas, logistica de entrega, monotorización de paquetes, planificación de rutas...)
 - Finanzas y banca (Blockchain, detección de fraudes, análisis de riesgos...)
@@ -61,7 +61,7 @@
 
 ### Efectos negativos
 
-- **Generación de residuos electrónicos** por el rápido cinclo de obsolescencia de los dispositivos electrónicos.
+- **Generación de residuos electrónicos** por el rápido ciclo de obsolescencia de los dispositivos electrónicos.
 - **Huella de carbono de dispositivos electrónicos** a causa de su fabricación, distribución y uso.
 - **Incremento en el consumo energético** por la creciente demanda de servicios digitales.
 - **Agotamiento de recursos naturales** por la producción y uso de materiales necesarios para la fabricación de equipos electrónicos.
