@@ -150,5 +150,16 @@ Se deben comprobar las constantes vitales de la persona y llamar a emergencias s
 
 ### Ante una intoxicación
 
-Ante una intoxicación, deberemos sacar a la persona del ambiente tóxico y dejar que respire un ambiente limpio.
+Ante una intoxicación, deberemos (después de protegernos nosotros con una mascarilla o pañuelo humedo) sacar a la persona del ambiente tóxico y dejar que respire un ambiente limpio.
 Si está inconsciente y no respira, se debe avisar al 112 e informar del tóxico y de la dosis absorbida, para a continuación realizar RCP.
+
+### Como trasladar a un accidentado
+
+No se debe mover al accidentado salvo que corra peligro su vida, en cuyo caso se deberá mover a la persona accidentada como se pueda mediante el método más apropiado.
+
+## Botiquín de primeros auxilios
+
+Todas las empresas están obligadas a tener un botiquín de primeros auxilios en cada centro de trabajo.
+El botiquín de primeros auxilios debe contener antisépticos, vendas y otros utensilios que puedan ser utilizables y útilies de forma fácil en el suceso de una emergencia.
+El botiquín de primeros auxilios debe estar señalizado y ser de fácil acceso.
+Se debe verificar que los medicantos no estén caducados y que estén en buenas condiciones.
