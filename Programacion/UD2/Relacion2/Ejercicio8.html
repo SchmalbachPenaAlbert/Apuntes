@@ -1,7 +1,15 @@
 <script>
 
-    let nombresReserva = ["Saúl", "Raúl", "Baúl", "Migúl", "Tomás"]
-    let personasReserva = [2, 4, 5, 1, 6, 14]
+    let nombresReservas = ["Saúl", "Ángel", "Sara", "David", "Manolo"]
+    let personasReservas = [2, 4, 5, 1, 6]
+    let nuevoNombre = ""
+    let nuevoPersonas = 0
+    let opcion = 0
+    let mensaje = ""
+    let personasTotales = 0
+    let reservaAEliminar = ""
+    const OPCIONMINIMA = "1"
+    const OPCIONMAXIMA = "5"
 
     console.log("Opciones:")
     console.log("1. Añadir una nueva reserva (nombre del cliente y número de personas).")
@@ -9,5 +17,40 @@
     console.log("3. Calcular el total de personas reservadas para ese día.")
     console.log("4. Cancelar una reserva existente (por nombre del cliente).")
     console.log("5. Salir del programa.")
+
+    while (opcion != 5) {
+        opcion = prompt("Introduce una opción:")
+        while (opcion < OPCIONMINIMA || opcion > OPCIONMAXIMA) {
+            opcion = prompt("No has introducido una opción válida. Introduce una opción:")
+        }
+        if (opcion == "1") {
+            nuevoNombre = prompt("Introduce el nombre al cuál quieres reservar la mesa:")
+            nuevoPersonas = prompt(Number("Introduce el número de personas para las que quieres reservar la mesa:"))
+            nombresReservas.push(nuevoNombre)
+            personasReservas.push(nuevoPersonas)
+        } else if (opcion == "2") {
+            mensaje = "Reservas actuales"
+            for (let i = 0; i < nombresReservas.length; i++) {
+                mensaje += "\n- " + nombresReservas[i] + " (" + personasReservas[i] + " personas)"
+            }
+            alert(mensaje)
+        } else if (opcion == "3") {
+            for (let i = 0; i < personasReservas.length; i++) {
+                personasTotales += personasReservas[i]
+            }
+            alert("Personas totales para el día de hoy: " + personasTotales)
+        } else if (opcion == "4") {
+            reservaAEliminar = prompt("Introduce el nombre al cuál está asociada la reserva a cancelar:")
+            for (let i = 0; i < nombresReservas.length; i++) {
+                if (nombresReservas[i] == reservaAEliminar) {
+                    reservaExiste = true
+                }
+            }
+        }
+        
+        //dev
+        console.log(nombresReservas)
+        console.log(personasReservas)
+    }
 
 </script>
