@@ -1,6 +1,6 @@
-Bases de Datos: Completado, a revisar
-Entornos de Desarrollo: Completado, a revisar
-IPE: Tarea inicial y primer incremento (mejorables)
-Lenguajes de Marcas: Técnicamente completado, faltan mejoras en el html
-Sistemas Informáticos: Todo menos apartado C del segundo incremento
-Programación: Completado menos el paso a funciones del código
+Bases de Datos: Completado, a revisar y probar en SQL [~85%]
+Entornos de Desarrollo: Trabajo principal completado, falta mejorar el juego y revisar la optimización [~80%]
+IPE: Unidades 1 y 2 (mejorables), falta el tercero [~50%]
+Lenguajes de Marcas: Técnicamente completado, faltan mejoras en el html y revisar [~85]
+Sistemas Informáticos: Todo menos apartado C del segundo incremento, además de probar y capturar los resultados (foto) y exportar los programas a sh [~65%]
+Programación: Completado menos el paso a funciones del código, bugfixing y más control de errores [~75]
