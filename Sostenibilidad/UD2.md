@@ -16,4 +16,8 @@ Estas iniciativas suponen retos para las empresas como:
 * Aumento de los impuestos a las actividades y las fuentes de energía más contaminantes
 * Necesidad de realizar grandes inversiones.
 
-Pero también ofrecen beneficios.
+Pero también ofrecen beneficios como:
+
+* Ayudas para mejorar la resilencia
+* Nuevo puestos de trabajo relacionados
+* Financiación a proyecto de empresas comprometidas
