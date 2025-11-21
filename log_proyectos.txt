@@ -1,0 +1,6 @@
+Bases de Datos: Completado, a revisar
+Entornos de Desarrollo: Completado, a revisar
+IPE: Tarea inicial y primer incremento (mejorables)
+Lenguajes de Marcas: Técnicamente completado, faltan mejoras en el html
+Sistemas Informáticos: Todo menos apartado C del segundo incremento
+Programación: Completado menos el paso a funciones del código
