@@ -1,0 +1,18 @@
+# Glosario comandos sql
+
+A la hora de introducir comandos en la terminal de mysql el  proceso es el mismo que en sistemas. Vamos introduciendo comandos y estos devolverán error o un mensaje de correcto, y esto modificará la base de datos. A diferencia de sistemas, os recomiendo que acabéis vuestros comandos con ; para evitar errores y que la terminal se quede esperando el fin de la orden.
+
+Al igual que en las ordenes bash, en lugar de ir orden a orden podéis hacer un archivo sql donde las metáis todas y luego le pasáis a mysql ese archivo.
+
+Si lo pasais por archivo, los saltos de linea son indistinguibles para sql, podeis meter tantos como queráis para hacer el codigo entendible, solo tened cuidado con poner las comas y cerrar los paréntesis que hayáis abierto. os recomiendo que escribais las tablas en mayúscula y las variables/columnas en minúscula para diferenciarlas.
+
+Antes de comenzar a crear tablas hay que crear una base de datos, y luego indicar que la vais a usar, con la orden create database y luego la orden use.
+
+| Comando         | .                                                                                       | Ejemplo                                                                                                                                                                                                                   |
+| --------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CREATE DATABASE | crea una nueva base de datos                                                            | create database TROFEO_RECTOR;                                                                                                                                                                                            |
+| USE             | ordena a mysql "moverse" a esa base de datos para empezar a ejecutar ordenes sobre ella | use TROFEO_RECTOR;                                                                                                                                                                                                        |
+| CREATE TABLE    | crea una tabla nueva, especificando sus columnas y restricciones sobre las columnas     | CREATE TABLE ESTUDIANTES(<br />nombre varchar,<br />dni varchar PRIMARY KEY,<br />apellidos varchar,<br />fecha_nacimiento date,<br />facultad varchar,<br />foreign key (facultad) references FACULTADES(nombre)<br />); |
+| insert into     | inserta valores en una tabla ya creada                                                  | insert into ESTUDIANTES values<br />("Paco", "2009", "Vázquez Escobar", "25-11-1998","ciencias"),<br />("Antonio", "2008", "Lopez Lopez", "24-12-2001","Politicas");                                                     |
+|                 | ejecutar un archivo sql en mysql                                                        | sudo mysql -u root < /home/paco/comandos.sql                                                                                                                                                                              |
+| ALTER TABLE     | modificar una tabla una vez creada, por ejemplo, para añadir una columna.              | ALTER TABLE Torneos add column ganador varchar(5);<br />ALTER TABLE Torneos add foreign key (ganador) references Equipos(idEquipo);                                                                                      |
