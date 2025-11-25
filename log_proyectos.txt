@@ -1,5 +1,5 @@
 Bases de Datos: Completado, a revisar y probar en SQL [~90%]
-Entornos de Desarrollo: Trabajo principal completado, falta mejorar el juego y revisar la optimización [~80%]
+Entornos de Desarrollo: Completado. Revisar el finde [100%]
 IPE: Unidades 1 y 2 (mejorables), falta el tercero [~50%]
 Lenguajes de Marcas: Completado. Revisar el finde [100%]
 Sistemas Informáticos: Todo menos arreglar apartado C del segundo incremento, además de probar y capturar los resultados (foto) y exportar los programas a sh [~70%]
