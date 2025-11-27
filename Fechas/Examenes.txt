@@ -12,3 +12,4 @@ Martes, 25 de noviembre - Bases de Datos UD3
 Martes, 25 de noviembre - Lenguajes de Marcas UD3
 Jueves, 27 de noviembre - Sistemas Informáticos UD3
 Miércoles, 3 de diciembre - Entornos de Desarrollo UD3
+Jueves, 11 de diciembre - Programación UD3
