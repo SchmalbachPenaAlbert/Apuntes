@@ -56,24 +56,25 @@ use techcorp_db;
 
 -- ejercicios para realizar consultas sql
 -- 1. recupera los nombres y salarios de todos los empleados.
-
+select nombre, salario from empleados;
 
 -- 2. selecciona todos los datos de la tabla empleados.
-
+select * from empleados;
 
 -- 3. recupera los datos de los empleados que trabajan en el departamento de it y cuya ciudad sea madrid.
-
+select * from empleados where departamento = "it" and ciudad = "madrid";
 
 -- 4. selecciona todos los empleados con un salario mayor a 3000 pero menor o igual a 6000.
-
+select * from empleados where salario > 3000 and salario <= 6000;
 
 -- 5. muestra una lista única de todas las ciudades en las que trabajan los empleados.
-
+select ciudad from empleados;
 
 -- 6. encuentra todos los empleados que trabajan en ventas o marketing y tienen un salario mayor a 5000.
-
+select * from empleados where (departamento = "ventas" or departamento = "marketing") and salario > 5000;
 
 -- 7. recupera todos los empleados que no trabajan en el departamento de recursos humanos.
+select * from empleados where not departamento = "recursos humanos";
 
 -- 8. encuentra todos los clientes que residen en barcelona.
 
