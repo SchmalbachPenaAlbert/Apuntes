@@ -1,6 +1,0 @@
-Bases de Datos: Completado y comprobado en SQL. Revisar el finde [100%]
-Entornos de Desarrollo: Completado. Revisar el finde [100%]
-IPE: Falta mejorar fluidez, poner más ejemplos y referencias legales, y quitar lo que se repite [~85%]
-Lenguajes de Marcas: Completado. Revisar el finde [100%]
-Sistemas Informáticos: Completado excepto probar y capturar los resultados (foto) y exportar todos los programas a sh [~80%]
-Programación: Completado. Revisar lo máximo posible (para el bugfixing) el finde [100%]
