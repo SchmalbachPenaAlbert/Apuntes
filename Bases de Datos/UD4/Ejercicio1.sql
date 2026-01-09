@@ -77,9 +77,10 @@ select * from empleados where (departamento = "ventas" or departamento = "market
 select * from empleados where not departamento = "recursos humanos";
 
 -- 8. encuentra todos los clientes que residen en barcelona.
-
+select * from clientes where ciudad = "barcelona";
 
 -- 9. muestra una lista única de nombres de departamentos donde hay empleados menores de 30 años que ganan más de 4000.
-
+select departamento from empleados where edad < 30 and salario > 4000
 
 -- 10. recupera los empleados que tienen un salario mayor o igual a 3500 y están en el departamento desarrollo.
+select * from empleados where salario >= 3500 and departamento = "desarrollo"
