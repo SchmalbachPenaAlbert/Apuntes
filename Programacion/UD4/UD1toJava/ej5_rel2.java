@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ej5_rel2_ud1 {
+public class ej5_rel2 {
     public static void main(String[] args) {
         Scanner scanner1 = new Scanner(System.in);
         System.out.print("Ingrese su peso actual: ");
