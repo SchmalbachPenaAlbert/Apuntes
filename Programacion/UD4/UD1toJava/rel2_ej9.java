@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class ej9_rel2 {
+public class rel2_ej9 {
 
     public static void main(String[] args) {
         Scanner scanner1 = new Scanner(System.in);
