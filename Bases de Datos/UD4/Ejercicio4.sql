@@ -85,7 +85,7 @@ select count(id), distinct cliente from venta;
 select nombre from departamento where count(departamento.empleado) > 3;
 
 -- 5. Calcula el promedio de edad de los empleados por ciudad.
-select avg(edad), distinct ciudad from empleado;
+select avg(edad), ciudad from empleado group by ciudad;
 
 -- 6. Muestra las ciudades en las que hay empleados, sin duplicados.
 select distinct ciudad from empleado;
@@ -100,21 +100,21 @@ select min(importe) from venta;
 select max(importe) from venta;
 
 -- 10. Encuentra los empleados con un salario mayor al promedio de todos los salarios.
-select salario from empleado where salario > avg(salario);
+select * from empleado where salario > (select avg(salario) from empleado);
 
 -- Ejercicios de Subconsultas
 
 -- 1. Lista los nombres de empleados que trabajan en departamentos existentes en la tabla departamento.
-select nombre from empleado where departamento is not null
+select nombre from empleado where departamento in (select nombre from departamento);
 
 -- 2. Encuentra todos los empleados cuyo salario sea mayor a 4000 y muestra su nombre y salario.
 select nombre, salario from empleado where salario > 4000;
 
 -- 3. Encuentra el nombre del empleado con el salario más alto.
-select nombre from empleado where max(salario)
+select nombre from empleado where max(salario);
 
 -- 4. Calcula el promedio de salarios por departamento y muestra los departamentos con un salario promedio mayor a 5000.
-select avg(salario), distinct departamento from empleado where avg(salario) > 5000;
+select departamento from empleado group by departamento having avg(salario) > 5000;
 
 -- 5. Encuentra los clientes que han realizado ventas superiores al promedio de todas las ventas.
-select cliente from venta where importe > avg(importe)
+select cliente from venta where importe > (select avg(importe) from venta);
