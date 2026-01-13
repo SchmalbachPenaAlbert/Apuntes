@@ -114,25 +114,25 @@ VALUES
 select * from partidos where goles_local + goles_visitante > 4;
 
 -- 4. Mostrar jugadores de un equipo con ID conocido (por ejemplo, equipos de Madrid).
-select * from jugadores where id_equipo = 1;
+select nombre_jugador from jugadores where id_equipo = 1;
 
 -- 5. Listar partidos donde el equipo local marcó más goles que el visitante.
 select * from partidos where goles_local > goles_visitante;
 
 -- 6. Ordenar equipos por ciudad alfabéticamente.
-select * from equipos order by ciudad;
+select nombre_equipo from equipos order by ciudad;
 
 -- 7. Filtrar jugadores que juegan como "Delantero" y tienen más de 20 goles.
-select * from jugadores where posicion = "delantero" and goles > 20;
+select nombre_jugador from jugadores where posicion = "delantero" and goles > 20;
 
 -- 8. Obtener el promedio de goles por partido para un equipo con un ID específico.
-select avg(goles_local + goles_visitante) from equipos where id_equipo = 11;
+select avg(goles_local + goles_visitante) from equipos where id_equipo_local = 11 or id_equipo_visitante = 11;
 
 -- 9. Mostrar partidos jugados en enero de 2023.
 select * from partidos where fecha between "2023-01-01" and "2023-01-31";
 
 -- 10. Contar jugadores de un equipo con ID específico.
-select count(nombre_jugador) from jugadores where id_equipo = 11;
+select count(*) from jugadores where id_equipo = 11;
 
 -- 11. Ordenar equipos por ciudad alfabéticamente y despues por año de fundacion descendente.
 select nombre_equipo, ciudad, fundado from equipos order by ciudad, fundado desc;
@@ -141,10 +141,10 @@ select nombre_equipo, ciudad, fundado from equipos order by ciudad, fundado desc
 select nombre_equipo, sum(edad) / count(nombre_jugador) as edad_promedio from jugadores order by id_equipo, edad_promedio desc;
 
 -- 13. Mostrar el promedio de goles y asistencias de cada equipo, con alias "promedio_goles" y "promedio_asistencias", ordenados por promedio de goles descendente y promedio de asistencias ascendente.
-select nombre_equipo, avg(goles) as goles_promedio, avg(asistencias) as asistencias_promedio from jugadores order by goles desc, asistencias;
+select nombre_equipo, avg(goles) as promedio_goles, avg(asistencias) as promedio_asistencias from jugadores group by id_equipo order by promedio_goles desc, promedio_asistencias;
 
 -- 14. Obtener los equipos con el total de goles anotados en sus partidos como local, usando alias "total_goles", ordenados por total de goles descendente.
-select nombre_equipo, 
+select id_equipo_local, sum(goles_local) as total_goles from partidos group by id_equipo_local order by total_goles desc;
 
 -- 15. Contar la cantidad de partidos jugados por cada equipo local, con alias "partidos_local", cantidad de partidos descendente.
 select count(id_equipo_local) as partidos_local from equipos order by id_equipo_local desc
