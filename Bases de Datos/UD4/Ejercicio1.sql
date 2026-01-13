@@ -68,19 +68,19 @@ select * from empleados where departamento = "it" and ciudad = "madrid";
 select * from empleados where salario > 3000 and salario <= 6000;
 
 -- 5. muestra una lista única de todas las ciudades en las que trabajan los empleados.
-select ciudad from empleados;
+select distinct ciudad from empleados;
 
 -- 6. encuentra todos los empleados que trabajan en ventas o marketing y tienen un salario mayor a 5000.
-select * from empleados where (departamento = "ventas" or departamento = "marketing") and salario > 5000;
+select nombre from empleados where (departamento = "ventas" or departamento = "marketing") and salario > 5000;
 
 -- 7. recupera todos los empleados que no trabajan en el departamento de recursos humanos.
-select * from empleados where not departamento = "recursos humanos";
+select nombre from empleados where not departamento = "recursos humanos";
 
 -- 8. encuentra todos los clientes que residen en barcelona.
-select * from clientes where ciudad = "barcelona";
+select nombre from clientes where ciudad = "barcelona";
 
 -- 9. muestra una lista única de nombres de departamentos donde hay empleados menores de 30 años que ganan más de 4000.
 select departamento from empleados where edad < 30 and salario > 4000
 
 -- 10. recupera los empleados que tienen un salario mayor o igual a 3500 y están en el departamento desarrollo.
-select * from empleados where salario >= 3500 and departamento = "desarrollo"
+select nombre from empleados where salario >= 3500 and departamento = "desarrollo"
