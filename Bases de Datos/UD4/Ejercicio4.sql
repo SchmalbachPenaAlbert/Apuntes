@@ -73,47 +73,48 @@ INSERT INTO venta VALUES
 -- Relación de ejercicios prácticos
 
 -- 1. Encuentra el número total de empleados por departamento.
-
+select count(id), distinct departamento from empleado;
 
 -- 2. Calcula el salario promedio por ciudad, mostrando solo las ciudades con un salario promedio mayor a 4000.
-
+select avg(salario), distinct ciudad from empleado where avg(salario) > 4000;
 
 -- 3. Encuentra el total de ventas por cada cliente.
-
+select count(id), distinct cliente from venta;
 
 -- 4. Muestra los departamentos con más de 3 empleados.
-
+select nombre from departamento where count(departamento.empleado) > 3;
 
 -- 5. Calcula el promedio de edad de los empleados por ciudad.
-
+select avg(edad), distinct ciudad from empleado;
 
 -- 6. Muestra las ciudades en las que hay empleados, sin duplicados.
-
+select distinct ciudad from empleado;
 
 -- 7. Muestra el número total de ventas y la suma total de importes.
-
+select count(id), sum(importe) from venta;
 
 -- 8. Encuentra el/los cliente/clientes con la venta más baja.
-
+select min(importe) from venta;
 
 -- 9. Encuentra el cliente que realizó la venta de mayor importe.
-
+select max(importe) from venta;
 
 -- 10. Encuentra los empleados con un salario mayor al promedio de todos los salarios.
-
+select salario from empleado where salario > avg(salario);
 
 -- Ejercicios de Subconsultas
 
 -- 1. Lista los nombres de empleados que trabajan en departamentos existentes en la tabla departamento.
-
+select nombre from empleado where departamento is not null
 
 -- 2. Encuentra todos los empleados cuyo salario sea mayor a 4000 y muestra su nombre y salario.
-
+select nombre, salario from empleado where salario > 4000;
 
 -- 3. Encuentra el nombre del empleado con el salario más alto.
-
+select nombre from empleado where max(salario)
 
 -- 4. Calcula el promedio de salarios por departamento y muestra los departamentos con un salario promedio mayor a 5000.
-
+select avg(salario), distinct departamento from empleado where avg(salario) > 5000;
 
 -- 5. Encuentra los clientes que han realizado ventas superiores al promedio de todas las ventas.
+select cliente from venta where importe > avg(importe)
