@@ -58,39 +58,65 @@ VALUES
 
 -- Ejercicios de Funciones de Texto
 -- 1. Concatenar nombres y apellidos de los ciudadanos en un único campo "nombre_completo".
-
+SELECT CONCAT(nombre, ' ', apellido) AS nombre_completo 
+FROM Ciudadano;
 -- 2. Obtener las primeras 3 letras de los nombres de los ciudadanos.
-
+SELECT SUBSTRING(nombre, 1, 3)
+ FROM ciudadano;
 -- 3. Calcular la longitud de los nombres de los ciudadanos.
-
+SELECT nombre, CHAR_LENGTH(nombre) as longitud 
+FROM Ciudadano;
 -- 4. Reemplazar la palabra "hospitales" por "clínicas" en las descripciones de actividades.
-
+SELECT REPLACE(descripcion, 'hospitales', 'clínicas') 
+FROM Actividad;
 -- 5. Eliminar espacios al inicio y al final de los nombres de los ministerios.
-
+SELECT TRIM(nombre) AS nombre_sin_espacios
+FROM Ministerio;
 
 -- Ejercicios de Funciones NuEXTRACTméricas
 -- 6. Redondear el presupuesto de las actividades a millones.
-
+SELECT ROUND(presupuesto_asignado / 1000000,2) AS REDONDEO 
+FROM Actividad;
 -- 7. Calcular la diferencia entre los ingresos anuales de cada ciudadano y el promedio de ingresos.
+SELECT AVG(ingresos_anuales) FROM Ciudadano;
 
+SELECT 
+    nombre, 
+    apellido,
+    ingresos_anuales,
+    (ingresos_anuales - (SELECT AVG(ingresos_anuales) FROM Ciudadano)) AS DIFERENCIA
+FROM Ciudadano;
 -- 8. Obtener el entero más cercano hacia abajo y hacia arriba de los presupuestos de los ministerios.
-
+SELECT id, presupuesto, FLOOR(presupuesto), CEIL(presupuesto)
+FROM Ministerio;
 -- 9. Generar un número aleatorio para asignar un identificador único temporal a cada actividad.
-
+SELECT id, descripcion, FLOOR(RAND() * 1000000) AS id_temportal_unico
+FROM Actividad;
 -- Ejercicios de Funciones de Fecha y Hora
 -- 10. Calcular la antigüedad de cada ministerio en años.
-
+SELECT nombre, EXTRACT(YEAR FROM NOW()) - EXTRACT(YEAR FROM fecha_creacion) as Antiguedad
+FROM Ministerio;
 -- Para mi esta es la mejor:
-
+SELECT nombre, YEAR(NOW()) - YEAR(fecha_creacion) as Antiguedad
+FROM Ministerio;
 -- 11. Formatear las fechas de inicio y fin de las actividades en formato "DD-MM-YYYY".
-
+SELECT descripcion, DATE_FORMAT(fecha_inicio, '%d-%m-%Y') AS fecha_inicio, DATE_FORMAT(fecha_fin, '%d-%m-%Y') as fecha_fin
+FROM ACTIVIDAD;
 -- 12. Calcular cuántos días faltan para que termine cada actividad.
-
+SELECT id, DATEDIFF(fecha_fin, Now()) as dias_faltantes
+FROM Actividad;
 -- 13. Extraer el mes y el año de las fechas de nacimiento de los ciudadanos.
-
+SELECT nombre, EXTRACT(MONTH FROM fecha_nacimiento) as mes, EXTRACT(YEAR FROM fecha_nacimiento) as Nacimiento
+From Ciudadano;
 -- Para mi la mejor es:
-
+SELECT nombre, MONTH(fecha_nacimiento) as mes,  YEAR(fecha_nacimiento) as Nacimiento
+From Ciudadano;
 -- 14. Filtrar ciudadanos nacidos después del año 1990.
-
+select nombre
+FROM Ciudadano
+WHERE YEAR(fecha_nacimiento) > 1990;
 
 -- 15. Calcular el tiempo total en días que dura cada actividad gubernamental.
+
+SELECT descripcion, DATEDIFF(fecha_fin, fecha_inicio) as duracion_dias
+FROM actividad;
