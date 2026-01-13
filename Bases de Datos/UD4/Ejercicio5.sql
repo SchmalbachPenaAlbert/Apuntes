@@ -58,37 +58,47 @@ VALUES
 
 -- Ejercicios de Funciones de Texto
 -- 1. Concatenar nombres y apellidos de los ciudadanos en un único campo "nombre_completo".
+select concat(nombre, " ", apellido) as nombre_completo from Empleado;
 
 -- 2. Obtener las primeras 3 letras de los nombres de los ciudadanos.
+select substring(nombre, 1, 3) from Ciudadano;
 
 -- 3. Calcular la longitud de los nombres de los ciudadanos.
+select char_length(nombres) from Ciudadano;
 
 -- 4. Reemplazar la palabra "hospitales" por "clínicas" en las descripciones de actividades.
+select replace(descripcion, "hospitales", "clínicas") from Actividad;
 
 -- 5. Eliminar espacios al inicio y al final de los nombres de los ministerios.
-
+select trim(nombre) from Ministerio;
 
 -- Ejercicios de Funciones NuEXTRACTméricas
+
 -- 6. Redondear el presupuesto de las actividades a millones.
+select round(presupuesto, 100000000) from Actividad;
 
 -- 7. Calcular la diferencia entre los ingresos anuales de cada ciudadano y el promedio de ingresos.
 
+
 -- 8. Obtener el entero más cercano hacia abajo y hacia arriba de los presupuestos de los ministerios.
+
 
 -- 9. Generar un número aleatorio para asignar un identificador único temporal a cada actividad.
 
+
 -- Ejercicios de Funciones de Fecha y Hora
+
 -- 10. Calcular la antigüedad de cada ministerio en años.
 
--- Para mi esta es la mejor:
 
 -- 11. Formatear las fechas de inicio y fin de las actividades en formato "DD-MM-YYYY".
 
+
 -- 12. Calcular cuántos días faltan para que termine cada actividad.
+
 
 -- 13. Extraer el mes y el año de las fechas de nacimiento de los ciudadanos.
 
--- Para mi la mejor es:
 
 -- 14. Filtrar ciudadanos nacidos después del año 1990.
 
