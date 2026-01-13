@@ -18,6 +18,15 @@ public class PT1 {
         int unidadesFlechaCompradas = 0;
         int unidadesEscudoCompradas = 0;
         int unidadesEspadaCompradas = 0;
+        final int GASTOMADERAFLECHA = 1;
+        final double GASTOACEROFLECHA = 0.05;
+        final int GASTOMONEDASFLECHA = 2;
+        final int GASTOMADERAESPADA = 3;
+        final double GASTOACEROESPADA = 1.5;
+        final int GASTOMONEDASESPADA = 30;
+        final int GASTOMADERAESCUDO = 1;
+        final double GASTOACEROESCUDO = 1.2;
+        final int GASTOMONEDASESCUDO = 25;
         // crea un escaner
         Scanner scanner1 = new Scanner(System.in);
         // pregunta al usuario por los datos
@@ -31,25 +40,38 @@ public class PT1 {
         while (encargosTotales - encargoActual != 0) {
             encargoActual++;
             System.out.println("--- Encargo " + encargoActual + " ---");
-            // pide el articulo al usuario y asigna un gasto dependiendo del articulo
+            // pide el tipo de articulo al usuario
             System.out.print("Indique el artículo a comprar (flecha, espada, escudo): ");
             articulo = scanner1.next();
+            // control de errores para el tipo de articulo
+            while (!articulo.equalsIgnoreCase("flecha") && !articulo.equalsIgnoreCase("espada") && !articulo.equalsIgnoreCase("escudo")) {
+                System.out.print("¡No se ha introducido un tipo válido! Indique el artículo a comprar (flecha, espada, escudo): ");
+                articulo = scanner1.next();
+            }
+            // pide las unidades del articulo elegido
             System.out.print("Indique el número de unidades a comprar: ");
             unidadesArticulo = scanner1.nextInt();
+            scanner1.nextLine(); // limpia el buffer
+            while (unidadesArticulo < 0) {
+                System.out.print("¡No se pueden comprar unidades negativas! Indique el número de unidades a comprar: ");
+                unidadesArticulo = scanner1.nextInt();
+                scanner1.nextLine(); // limpia el buffer
+            }
+            // asigna un gasto dependiendo del articulo
             if (articulo.equalsIgnoreCase("flecha")) {
-                maderaGastada = 1 * unidadesArticulo;
-                aceroGastado = 0.05 * unidadesArticulo;
-                monedasGastadas = 2 * unidadesArticulo;
+                maderaGastada = GASTOMADERAFLECHA * unidadesArticulo;
+                aceroGastado = GASTOACEROFLECHA * unidadesArticulo;
+                monedasGastadas = GASTOMONEDASFLECHA * unidadesArticulo;
                 unidadesFlechaCompradas += unidadesArticulo;
             } else if (articulo.equalsIgnoreCase("espada")) {
-                maderaGastada = 3 * unidadesArticulo;
-                aceroGastado = 1.5 * unidadesArticulo;
-                monedasGastadas = 30 * unidadesArticulo;
+                maderaGastada = GASTOMADERAESPADA * unidadesArticulo;
+                aceroGastado = GASTOACEROESPADA * unidadesArticulo;
+                monedasGastadas = GASTOMONEDASESPADA * unidadesArticulo;
                 unidadesEspadaCompradas += unidadesArticulo;
             } else {
-                maderaGastada = 1 * unidadesArticulo;
-                aceroGastado = 1.2 * unidadesArticulo;
-                monedasGastadas = 25 * unidadesArticulo;
+                maderaGastada = GASTOMADERAESCUDO * unidadesArticulo;
+                aceroGastado = GASTOACEROESCUDO * unidadesArticulo;
+                monedasGastadas = GASTOMONEDASESCUDO * unidadesArticulo;
                 unidadesEscudoCompradas += unidadesArticulo;
             }
             // suma los gastos
@@ -68,9 +90,9 @@ public class PT1 {
         // muestra el resumen final
         System.out.println("--- RESUMEN FINAL ---");
         System.out.println("Encargos registrados: " + encargoActual + " de " + encargosTotales);
-        System.out.println("Unmidades -> Flecha: " + unidadesFlechaCompradas + " | Escudo: " + unidadesEscudoCompradas + " | Espada: " + unidadesEspadaCompradas);
-        System.out.printf("Consumo total -> Madera: %2.f | Acero: %2.f", maderaAcumulada, aceroAcumulado);
-        System.out.printf("Stock restante -> Madera: %2.f | Acero: %2.f", stockMadera, stockAcero);
+        System.out.println("Unidades -> Flecha: " + unidadesFlechaCompradas + " | Escudo: " + unidadesEscudoCompradas + " | Espada: " + unidadesEspadaCompradas);
+        System.out.printf("Consumo total -> Madera: %d | Acero: %.2f\n", maderaAcumulada, aceroAcumulado);
+        System.out.printf("Stock restante -> Madera: %d | Acero: %.2f\n", stockMadera, stockAcero);
         System.out.println("Importe total: " + gastoMonedasAcumulado);
         // dependiendo de si se ha completado sin problemas o no, muestra un u otro mensaje
         if (encargosTotales - encargoActual == 0) {
