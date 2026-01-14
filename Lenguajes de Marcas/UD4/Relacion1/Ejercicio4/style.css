@@ -1,0 +1,10 @@
+h2 {
+    color:yellowgreen
+}
+section {
+    background-image: url("https://i.pinimg.com/736x/8e/84/71/8e8471b8ebde799b24636efef40e19e2.jpg");
+    background-size: cover;
+}
+p:hover {
+    color:fuchsia
+}
