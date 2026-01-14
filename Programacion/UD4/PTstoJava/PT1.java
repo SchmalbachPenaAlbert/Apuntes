@@ -111,7 +111,7 @@ public class PT1 {
         System.out.printf("Consumo total -> Madera: %d | Acero: %.2f\n", maderaAcumulada, aceroAcumulado);
         System.out.printf("Stock restante -> Madera: %d | Acero: %.2f\n", stockMadera, stockAcero);
         System.out.println("Importe total: " + gastoMonedasAcumulado);
-        // dependiendo de si se ha completado sin problemas o no, muestra un u otro mensaje
+        // dependiendo del motivo del fin del programa, muestra un u otro mensaje
         if (!stockSuperado) {
             System.out.println("Registro completado con éxito.");
         } else {
