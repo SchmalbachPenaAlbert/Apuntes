@@ -18,15 +18,16 @@ public class PT1 {
         int unidadesFlechaCompradas = 0;
         int unidadesEscudoCompradas = 0;
         int unidadesEspadaCompradas = 0;
+        boolean stockSuperado = false;
         final int GASTOMADERAFLECHA = 1;
         final double GASTOACEROFLECHA = 0.05;
         final int GASTOMONEDASFLECHA = 2;
-        final int GASTOMADERAESPADA = 3;
-        final double GASTOACEROESPADA = 1.5;
-        final int GASTOMONEDASESPADA = 30;
-        final int GASTOMADERAESCUDO = 1;
-        final double GASTOACEROESCUDO = 1.2;
-        final int GASTOMONEDASESCUDO = 25;
+        final int GASTOMADERAESPADA = 1;
+        final double GASTOACEROESPADA = 1.2;
+        final int GASTOMONEDASESPADA = 25;
+        final int GASTOMADERAESCUDO = 3;
+        final double GASTOACEROESCUDO = 1.5;
+        final int GASTOMONEDASESCUDO = 30;
         // crea un escaner
         Scanner scanner1 = new Scanner(System.in);
         // pregunta al usuario por los datos
@@ -37,7 +38,7 @@ public class PT1 {
         System.out.print("Stock de acero (kg): ");
         stockAcero = scanner1.nextDouble();
         // bucle para los encargos
-        while (encargosTotales - encargoActual != 0) {
+        while ((encargosTotales - encargoActual != 0) && !stockSuperado) {
             encargoActual++;
             System.out.println("--- Encargo " + encargoActual + " ---");
             // pide el tipo de articulo al usuario
@@ -52,6 +53,7 @@ public class PT1 {
             System.out.print("Indique el número de unidades a comprar: ");
             unidadesArticulo = scanner1.nextInt();
             scanner1.nextLine(); // limpia el buffer
+            // control de errores para las unidades negativas
             while (unidadesArticulo < 0) {
                 System.out.print("¡No se pueden comprar unidades negativas! Indique el número de unidades a comprar: ");
                 unidadesArticulo = scanner1.nextInt();
@@ -74,16 +76,31 @@ public class PT1 {
                 monedasGastadas = GASTOMONEDASESCUDO * unidadesArticulo;
                 unidadesEscudoCompradas += unidadesArticulo;
             }
-            // suma los gastos
-            maderaAcumulada += maderaGastada;
-            aceroAcumulado += aceroGastado;
-            gastoMonedasAcumulado += monedasGastadas;
+            // suma el stock y comprueba si es negativo, alertando al usuario si es así y devolviendo el stock gastado
             stockMadera -= maderaGastada;
             stockAcero -= aceroGastado;
-            // imprimir resultados de la compra
-            System.out.println("Artículo: " + articulo + " | Unidades: " + unidadesArticulo + " | Importe cobrado: " + monedasGastadas);
-            System.out.println("Madera gastada: " + maderaGastada + " | Acumulada: " + maderaAcumulada);
-            System.out.printf("Acero gastado: %.2f | Acumulado: %.2f\n", aceroGastado, aceroAcumulado);
+            if (stockMadera < 0) {
+                System.out.println("¡ALERTA! Has superado el stock de madera.");
+                stockSuperado = true;
+                encargoActual--;
+                stockMadera += maderaGastada;
+                stockAcero += aceroGastado;
+            } else if (stockAcero < 0) {
+                System.out.println("¡ALERTA! Has superado el stock de acero.");
+                stockSuperado = true;
+                encargoActual--;
+                stockMadera += maderaGastada;
+                stockAcero += aceroGastado;
+            } else {
+                // suma el resto de los gastos si pasa las comprobaciones
+                maderaAcumulada += maderaGastada;
+                aceroAcumulado += aceroGastado;
+                gastoMonedasAcumulado += monedasGastadas;
+                // imprimir resultados de la compra
+                System.out.println("Artículo: " + articulo + " | Unidades: " + unidadesArticulo + " | Importe cobrado: " + monedasGastadas);
+                System.out.println("Madera gastada: " + maderaGastada + " | Acumulada: " + maderaAcumulada);
+                System.out.printf("Acero gastado: %.2f | Acumulado: %.2f\n", aceroGastado, aceroAcumulado);
+            }
         }
         // cierra el escaner
         scanner1.close();
@@ -95,7 +112,7 @@ public class PT1 {
         System.out.printf("Stock restante -> Madera: %d | Acero: %.2f\n", stockMadera, stockAcero);
         System.out.println("Importe total: " + gastoMonedasAcumulado);
         // dependiendo de si se ha completado sin problemas o no, muestra un u otro mensaje
-        if (encargosTotales - encargoActual == 0) {
+        if (!stockSuperado) {
             System.out.println("Registro completado con éxito.");
         } else {
             System.out.println("Registro interrumpido por superación de stock.");
