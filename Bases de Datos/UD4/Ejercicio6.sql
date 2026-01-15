@@ -93,49 +93,49 @@ INSERT INTO reparto (id_pelicula, id_actor) VALUES
 -- Ejercicios (Ampliados)
 
 -- 1. Listar todos los títulos de las películas.
-
+select titulo from pelicula;
 
 -- 2. Mostrar los géneros de las películas sin repetir.
-
+select genero distinct from pelicula;
 
 -- 3. Seleccionar el título y año de todas las películas estrenadas después del año 2000.
-
+select titulo, anio from pelicula where anio >= 2000;
 
 -- 4. Listar los nombres de todos los directores y sus países de origen.
-
+select nombre, pais_origen from director;
 
 -- 5. Mostrar los títulos de las películas con duración mayor a 150 minutos.
-
+select titulo from pelicula where duracion > 150;
 
 -- 6. Seleccionar el título de las películas del género 'Drama'.
-
+select titulo from pelicula where genero = "Drama";
 
 -- 7. Mostrar los nombres de los actores que participan en la película 'Titanic'. (Mostrar los nombres de los actores asociados con el id de 'Titanic')
-
+select nombre from actor where (select id_pelicula from reparto) = 2;
 
 -- 8. Contar cuántas películas hay en cada género.
-
+select count(genero) from pelicula;
 
 -- 9. Mostrar los directores nacidos después de 1950.
-
+select nombre from director where anio_nacimiento >= 1950;
 
 -- 10. Listar los títulos de las películas y su duración ordenados de mayor a menor.
-
+select titulo, duracion from pelicula order by duracion asc;
 
 -- 11. Mostrar los nombres de los actores y las películas en las que participan. (Mostrar los nombres de los actores asociados con las películas mediante sus identificadores)
 
 
 -- 12. Seleccionar las películas cuya duración está entre 120 y 180 minutos.
-
+select titulo from pelicula where duracion is between 120 and 180;
 
 -- 13. Mostrar los títulos de las películas ordenados por año de estreno.
-
+select titulo from peliculas order by anio asc;
 
 -- 14. Calcular el promedio de duración de las películas.
-
+select avg(duracion) from peliculas;
 
 -- 15. Mostrar los actores que no nacieron en EE.UU.
-
+select nombre from actor where not pais_origen = "EE.UU.";
 
 -- 17. Mostrar el título de las películas que tienen más de un actor en su reparto.
 
