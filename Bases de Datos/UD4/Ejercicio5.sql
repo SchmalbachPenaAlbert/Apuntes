@@ -58,7 +58,7 @@ VALUES
 
 -- Ejercicios de Funciones de Texto
 -- 1. Concatenar nombres y apellidos de los ciudadanos en un único campo "nombre_completo".
-select concat(nombre, " ", apellido) as nombre_completo from Empleado;
+select concat(nombre, " ", apellido) as nombre_completo from Ciudadano;
 
 -- 2. Obtener las primeras 3 letras de los nombres de los ciudadanos.
 select substring(nombre, 1, 3) from Ciudadano;
@@ -75,32 +75,34 @@ select trim(nombre) from Ministerio;
 -- Ejercicios de Funciones NuEXTRACTméricas
 
 -- 6. Redondear el presupuesto de las actividades a millones.
-select round(presupuesto, 100000000) from Actividad;
+select round(presupuesto_asignado, 100000000) from Actividad;
 
 -- 7. Calcular la diferencia entre los ingresos anuales de cada ciudadano y el promedio de ingresos.
-
+select avg(ingresos_anuales) from Ciudadano;
+select nombre, apellido, ingresos_anuales, (ingresos_anuales - (select avg(ingresos_anuales) from ciudadano) as diferencia_ingresos) from Ciudadano;
 
 -- 8. Obtener el entero más cercano hacia abajo y hacia arriba de los presupuestos de los ministerios.
-
+select nombre, floor(presupuesto), ceil(presupuesto) from Ministerio;
 
 -- 9. Generar un número aleatorio para asignar un identificador único temporal a cada actividad.
-
+select id, descripcion, floor(1 + (rand() * 1000)) as identificador_temp from Actividad;
 
 -- Ejercicios de Funciones de Fecha y Hora
 
 -- 10. Calcular la antigüedad de cada ministerio en años.
-
+select nombre, datediff(now(), fecha_creacion) / 365 as antiguedad (años) from Ministerio;
 
 -- 11. Formatear las fechas de inicio y fin de las actividades en formato "DD-MM-YYYY".
-
+select id, descripcion, date_format(fecha_inicio, '%d/%m/%Y'), date_format(fecha_fin, '%d/%m/%Y') from Actividad;
 
 -- 12. Calcular cuántos días faltan para que termine cada actividad.
-
+select id, descripcion , datediff(now(), fecha_fin) as dias_faltantes from Actividad;
 
 -- 13. Extraer el mes y el año de las fechas de nacimiento de los ciudadanos.
-
+select extract(year_month from fecha_nacimiento) from Ciudadano;
 
 -- 14. Filtrar ciudadanos nacidos después del año 1990.
-
+select * from ciudadanos where fecha_nacimiento > "1990-01-01" from Ciudadano;
 
 -- 15. Calcular el tiempo total en días que dura cada actividad gubernamental.
+select id, descripcion, datediff(-fecha_inicio, fecha_fin) as dias_duracion from Actividad;
