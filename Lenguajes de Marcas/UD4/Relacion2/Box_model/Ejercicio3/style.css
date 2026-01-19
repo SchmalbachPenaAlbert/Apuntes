@@ -1,0 +1,10 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+div > li {
+    color:midnightblue
+}
+li + p {
+    background-color: aqua;
+}
