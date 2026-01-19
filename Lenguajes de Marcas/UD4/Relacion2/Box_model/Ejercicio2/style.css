@@ -1,9 +1,9 @@
-p {
-    color:magenta
+.caja-1 {
+    padding: 30px;
+    background-color: lightblue;
 }
-.destacado {
-    background-color: rebeccapurple;
-}
-#accion {
-    font-size: 3px;
+.caja-2 {
+
+    margin: 30px;
+    background-color: lightgreen;
 }
