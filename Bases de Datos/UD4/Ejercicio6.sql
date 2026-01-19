@@ -122,9 +122,6 @@ select nombre from director where anio_nacimiento >= 1950;
 -- 10. Listar los títulos de las películas y su duración ordenados de mayor a menor.
 select titulo, duracion from pelicula order by duracion asc;
 
--- 11. Mostrar los nombres de los actores y las películas en las que participan. (Mostrar los nombres de los actores asociados con las películas mediante sus identificadores)
-
-
 -- 12. Seleccionar las películas cuya duración está entre 120 y 180 minutos.
 select titulo from pelicula where duracion is between 120 and 180;
 
@@ -138,12 +135,13 @@ select avg(duracion) from peliculas;
 select nombre from actor where not pais_origen = "EE.UU.";
 
 -- 17. Mostrar el título de las películas que tienen más de un actor en su reparto.
-
+select titulo from peliculas where (select count(id_actor) from reparto) > 1;
 
 -- 18. Calcular el número total de actores en la base de datos.
-
+select count(id_actor) from reparto;
 
 -- 19. Mostrar las películas que no tienen actores en el reparto. **Devolverá vacío.**
-
+select nombre from pelicula where (select count(id_actor) from reparto) = 0;
 
 -- 20. Seleccionar las películas estrenadas en los últimos 10 años.
+select nombre from pelicula where anio > (select year(curdate()) - 10);
