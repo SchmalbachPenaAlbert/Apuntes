@@ -1,10 +1,10 @@
-h2 {
-    color:yellowgreen
+.caja-em-rem {
+    font-size: 40px;
+    padding: 2em;
 }
-section {
-    background-image: url("https://i.pinimg.com/736x/8e/84/71/8e8471b8ebde799b24636efef40e19e2.jpg");
-    background-size: cover;
+h1 {
+    font-size: 2rem;
 }
-p:hover {
-    color:fuchsia
+p {
+    font-size: 1.5em;
 }
