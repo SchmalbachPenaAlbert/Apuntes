@@ -40,33 +40,37 @@ public class PT2 {
 
         // bucle para el juego, que se ejecuta mientras que no se cumplan las opciones de derrota/victoria
         while (bombaExplotada == false && tuberiasSegurasDescubiertas == false) {
+            eleccionJugador = null;
             // bucle que pide al usuario imputs si el imput es nulo o ninguno
             while (eleccionJugador == null) {
-                System.out.println("JUGADOR " + numeroJugador + "\nIntroduce el índice de la tubería a descubrir:");
+                System.out.print("JUGADOR " + numeroJugador + "\nIntroduce el índice de la tubería a descubrir:");
                 if (scanner1.hasNextInt()) {
                     eleccionJugador = scanner1.nextInt();
                 } else {
-                    System.out.println("Entrada inválida! Introduce el índice de la tubería a descubrir:");
+                    System.out.print("Entrada inválida! Introduce el índice de la tubería a descubrir:");
                     scanner1.next(); // limpiar entrada incorrecta
                 }
             }
-            // bucle que pide al usuario imputs si su elección es una tubería ya descubierta
-            while ((tableroVisible.get(posicionBombaActual)).equals("⚪️")) {
-                System.out.println("JUGADOR " + numeroJugador + "\n¡Esa tubería ya ha sido descubierta! Introduce el índice de la tubería a descubrir:");
+            while (eleccionJugador < 0 || eleccionJugador > (NUMEROPOSICIONESTABLERO - 1)) {
+                System.out.print("JUGADOR " + numeroJugador + "\n¡Esa tubería no existe! Introduce el índice de la tubería a descubrir:");
                 eleccionJugador = scanner1.nextInt();
-                scanner1.close();
             }
-            numeroTuberiasElegidas++;
+            // bucle que pide al usuario imputs si su elección es una tubería ya descubierta
+            while ((tableroVisible.get(eleccionJugador)).equals("⚪️")) {
+                System.out.print("JUGADOR " + numeroJugador + "\n¡Esa tubería ya ha sido descubierta! Introduce el índice de la tubería a descubrir:");
+                eleccionJugador = scanner1.nextInt();
+            }
             // verificacion del tipo de tuberia (segura/con bomba)
             if (tableroInterno.get(eleccionJugador).equals(0)) {
                 tableroVisible.set(eleccionJugador, "⚪️");
                 mensajeDesvelar = "Tubería segura";
+                numeroTuberiasElegidas++;
             } else {
                 tableroVisible.set(eleccionJugador, "💣");
                 mensajeDesvelar = "Tubería con topo-bomba";
                 bombaExplotada = true;
             }
-            System.out.println(mensajeDesvelar + "\n" + String.join(",", tableroVisible));
+            System.out.println(mensajeDesvelar + "\n" + String.join(" ", tableroVisible));
             // cambio de jugador después de cada turno
             if (numeroJugador == 1) {
             numeroJugador++;
@@ -78,7 +82,7 @@ public class PT2 {
                 tuberiasSegurasDescubiertas = true;
             }
         }
-
+        scanner1.close();
         // mensajes de derrota/victoria
         if (bombaExplotada == true) {
             if (numeroJugador == 2) {
@@ -90,5 +94,4 @@ public class PT2 {
             System.out.println("¡Se han descubierto todas las tuberías seguras!\n¡Los topo-bomba restantes se han visto acorralados y han huido!\n\nMario y Luigi ganan.");
         }
     }
-}   
-// Known issues: when selecting which pipe you want to uncover, the number of correct answers rises until the player automatically wins
+}
