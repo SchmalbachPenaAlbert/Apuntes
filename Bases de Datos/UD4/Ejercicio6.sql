@@ -1,4 +1,5 @@
 -- Ejercicios de MySQL - Base de Datos de Películas (Extendida)
+drop database cine_db;
 
 CREATE DATABASE cine_db;
 USE cine_db;
@@ -96,7 +97,7 @@ INSERT INTO reparto (id_pelicula, id_actor) VALUES
 select titulo from pelicula;
 
 -- 2. Mostrar los géneros de las películas sin repetir.
-select genero distinct from pelicula;
+select distinct genero from pelicula;
 
 -- 3. Seleccionar el título y año de todas las películas estrenadas después del año 2000.
 select titulo, anio from pelicula where anio >= 2000;
@@ -147,10 +148,10 @@ select nombre from pelicula where (select count(id_actor) from reparto) = 0;
 select nombre from pelicula where anio > (select year(curdate()) - 10);
 
 -- 21. dime la mediana del año de estreno de las peliculas.
-select anio as Mediana from pelicula order by anio asc limit 1 offset (select (count(titulo) / 2) from pelicula); // ordeno por año -> limito a 1 resultado y salto a la mitad (dividiendo entre 2 el num de peliculas)
+select anio as Mediana from pelicula order by anio asc limit 1 offset (select (count(titulo) - 1 / 2) from pelicula); // ordeno por año -> limito a 1 resultado y salto a la mitad (dividiendo entre 2 el num de peliculas menos 1)
 
 -- 22 dime la moda del año de nacimiento de los actores.
-SELECT TOP 1 nombre FROM actor GROUP BY nombre_columna ORDER BY COUNT(*) DESC;
+select anio_nacimiento, count(nombre) as Frecuencia from actor group by anio_nacimiento having count(*) = (select max(conteo) from (select count(*) as conteo from actor group by anio_nacimiento) as tablaParaElConteo);
 
 -- 23 dime la media de edad de los actores agrupados por pais de nacimiento.
-select avg(((select year(curdate())) - anio_nacimiento)) order by pais_origen asc;
+select avg(((select year(curdate())) - anio_nacimiento) from actor) from actor order by pais_origen asc;
