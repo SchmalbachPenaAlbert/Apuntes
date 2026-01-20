@@ -147,7 +147,7 @@ select nombre from pelicula where (select count(id_actor) from reparto) = 0;
 select nombre from pelicula where anio > (select year(curdate()) - 10);
 
 -- 21. dime la mediana del año de estreno de las peliculas.
-select percentile_cont(0.5) within group (order by anio) over() as mediana from pelicula;
+select anio as Mediana from pelicula order by anio asc limit 1 offset (select (count(titulo) / 2) from pelicula); // ordeno por año -> limito a 1 resultado y salto a la mitad (dividiendo entre 2 el num de peliculas)
 
 -- 22 dime la moda del año de nacimiento de los actores.
 SELECT TOP 1 nombre FROM actor GROUP BY nombre_columna ORDER BY COUNT(*) DESC;
