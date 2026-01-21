@@ -209,7 +209,7 @@ return total / numbers.length
 }
 ```
 
-Este código recibe una lista de números y devuelve un valor calculado array partir de ella.
+Este código recibe una lista de números y devuelve un valor calculado a partir de ella.
 
 ### 3.3. Código B
 
@@ -225,7 +225,7 @@ return result
 }
 ```
 
-Este código recorre una lista de usuarios y devuelve un ArrayResultado en función de un criterio de búsqueda.
+Este código recorre una lista de usuarios y devuelve un resultado en función de un criterio de búsqueda.
 
 ### 3.4. Instrucciones
 
