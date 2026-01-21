@@ -47,8 +47,8 @@ public class PT2 {
                 if (scanner1.hasNextInt()) {
                     eleccionJugador = scanner1.nextInt();
                 } else {
-                    System.out.print("Entrada inválida! Introduce el índice de la tubería a descubrir:");
-                    scanner1.next(); // limpiar entrada incorrecta
+                    System.out.println("¡Entrada inválida!");
+                    scanner1.nextLine(); // descartar entrada invalida
                 }
             }
             while (eleccionJugador < 0 || eleccionJugador > (NUMEROPOSICIONESTABLERO - 1)) {
