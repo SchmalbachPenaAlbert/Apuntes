@@ -149,21 +149,24 @@ Este código realiza un cálculo sobre una lista de números y devuelve un array
 ### 2.4. Código C
 
 ```javascript
-function k(array, b, c) {
-if (array === b || array === c || b === c) {
-return false
-}
-if (array > b && array > c) {
-return array
-}
-if (b > array && b > c) {
-return b
-}
-return c
+function numeroMayor(numeroA, numeroB, numeroC) {
+  // si dos numeros son iguales, ninguno es mayor
+  let esMayor
+  if (numeroA === numeroB || numeroA === numeroC || numeroB === numeroC) {
+    esMayor = false
+  // si ningun numero es igual a otro, se devuelve el mayor
+  } else if (numeroA > numeroB && numeroA > numeroC) {
+    esMayor = numeroA
+  } else if (numeroB > numeroA && numeroB > numeroC) {
+    esMayor = numeroB
+  } else {
+    esmayor = numeroC
+  }
+  return esMayor
 }
 ```
 
-Este código compara varios valores y devuelve un array en función de una serie de condiciones.
+Este código compara varios valores y devuelve un valor en función de una serie de condiciones.
 
 ### 2.5. Instrucciones
 
