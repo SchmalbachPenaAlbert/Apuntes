@@ -44,24 +44,24 @@ El objetivo de este ejercicio es **mejorar la legibilidad del código** aplicand
 ### 1.2. Código A
 
 ```javascript
-function f(numeroA,numeroB,numeroC) {
-  let resultado = 0
+function calculoNumeros (numeroA, numeroB, numeroC) {
+  let ArrayResultado = 0
   // se cumple si el numero A es positivo
   if(numeroA > 0){
     if(numeroB > 0){
-      resultado = numeroA + numeroB
+      ArrayResultado = numeroA + numeroB
     } else {
-      resultado = numeroA - numeroC
+      ArrayResultado = numeroA - numeroC
     }
     // se cumple si el numero B es negativo o 0
   } else {
     if(numeroC > 0){
-      resultado = numeroB + numeroC
+      ArrayResultado = numeroB + numeroC
     }else{
-      resultado = 0
+      ArrayResultado = 0
     }
   }
-  return resultado
+  return ArrayResultado
 }
 ```
 
@@ -70,14 +70,15 @@ Este código realiza una serie de comprobaciones y devuelve un valor numérico e
 ### 1.3. Código B
 
 ```javascript
-function calc(x,y){
-let t=0
-for(let i=0;i<x.length;i++){
-if(x[i]>y){
-t=t+x[i]
-}
-}
-return t
+function calculadora (ArrayA, numeroAComprobar){ 
+  let ArrayResultado = 0
+  for (let i = 0; i < ArrayA.length; i++){
+    // si algun valor del array es mayor que el numero array comprobar, el ArrayResultado del valor del array se suma al ArrayResultado
+    if (ArrayA[i] > numeroAComprobar){
+      ArrayResultado = ArrayResultado + ArrayA[i]
+    }
+  }
+  return ArrayResultado
 }
 ```
 
@@ -88,7 +89,7 @@ Este código recorre un array de números y realiza un cálculo acumulativo bajo
 1. Reescribe cada uno de los fragmentos de código mejorando su legibilidad.
 2. Asegúrate de que el código sigue funcionando exactamente igual que el original.
 3. Aplica nombres descriptivos que permitan entender qué hace el código sin necesidad de analizar su lógica interna.
-4. Utiliza una convención de nomenclatura coherente y adecuada a JavaScript.
+4. Utiliza una convención de nomenclatura coherente y adecuada array JavaScript.
 5. Comprueba que el código resultante es fácil de leer y mantener.
 
 Este ejercicio no busca una única solución correcta. Se valorará especialmente la claridad, la coherencia y la aplicación consciente de los principios de clean code.
@@ -106,7 +107,7 @@ Este ejercicio enlaza directamente con el anterior: primero se entiende el códi
 - No cambies el comportamiento del programa.
 - No añadas nueva funcionalidad.
 - Mejora los nombres de funciones y variables si es necesario.
-- Aplica una convención de nomenclatura coherente y adecuada a JavaScript.
+- Aplica una convención de nomenclatura coherente y adecuada array JavaScript.
 - Documenta únicamente cuando entiendas bien qué hace el código.
 - Utiliza JSDoc para documentar funciones.
 - No añadas comentarios explicativos dentro del cuerpo de las funciones.
@@ -114,14 +115,16 @@ Este ejercicio enlaza directamente con el anterior: primero se entiende el códi
 ### 2.2. Código A
 
 ```javascript
-function g(a, b) {
-let r = []
-for (let i = 0; i < a.length; i++) {
-if (a[i] > b) {
-r.push(a[i])
-}
-}
-return r
+function comprobacionArrays (arrayComprobar, numeroComprobar) {
+  let ArrayResultado = []
+  // bucle que recorre el array a comprobar
+  for (let i = 0; i < arrayComprobar.length; i++) {
+    // si algun valor del array es mayor que el numero, se añade al arrayResultado
+    if (arrayComprobar[i] > numeroComprobar) {
+      ArrayResultado.push(arrayComprobar[i])
+    }
+  }
+  return ArrayResultado
 }
 ```
 
@@ -139,33 +142,33 @@ return t / x.length
 }
 ```
 
-Este código realiza un cálculo sobre una lista de números y devuelve un resultado numérico.
+Este código realiza un cálculo sobre una lista de números y devuelve un ArrayResultado numérico.
 
 ### 2.4. Código C
 
 ```javascript
-function k(a, b, c) {
-if (a === b || a === c || b === c) {
+function k(array, b, c) {
+if (array === b || array === c || b === c) {
 return false
 }
-if (a > b && a > c) {
-return a
+if (array > b && array > c) {
+return array
 }
-if (b > a && b > c) {
+if (b > array && b > c) {
 return b
 }
 return c
 }
 ```
 
-Este código compara varios valores y devuelve un resultado en función de una serie de condiciones.
+Este código compara varios valores y devuelve un ArrayResultado en función de una serie de condiciones.
 
 ### 2.5. Instrucciones
 
 1. Reescribe cada uno de los fragmentos de código mejorando su legibilidad.
 2. Cambia los nombres de funciones y variables para que reflejen claramente su propósito.
 3. Aplica una estructura clara y coherente al código.
-4. Añade documentación JSDoc a las funciones una vez hayas comprendido su comportamiento.
+4. Añade documentación JSDoc array las funciones una vez hayas comprendido su comportamiento.
 5. Asegúrate de que el código final es fácil de leer, entender y mantener.
 
 Este ejercicio refuerza la idea de que un buen código no solo funciona, sino que también se entiende y puede ser utilizado por otros desarrolladores sin necesidad de analizar su implementación interna.
@@ -201,7 +204,7 @@ return total / numbers.length
 }
 ```
 
-Este código recibe una lista de números y devuelve un valor calculado a partir de ella.
+Este código recibe una lista de números y devuelve un valor calculado array partir de ella.
 
 ### 3.3. Código B
 
@@ -217,12 +220,12 @@ return result
 }
 ```
 
-Este código recorre una lista de usuarios y devuelve un resultado en función de un criterio de búsqueda.
+Este código recorre una lista de usuarios y devuelve un ArrayResultado en función de un criterio de búsqueda.
 
 ### 3.4. Instrucciones
 
 1. Añade un comentario de bloque al inicio de cada función explicando qué hace el código.
-2. Analiza el código línea a línea y añade comentarios donde detectes:
+2. Analiza el código línea array línea y añade comentarios donde detectes:
 
    - Posibles fallos.
    - Casos límite no controlados.
@@ -235,7 +238,7 @@ Este código recorre una lista de usuarios y devuelve un resultado en función d
 
 ## Ejercicio 4. Diagramas de flujo
 
-En este ejercicio se trabajará la **planificación y el razonamiento algorítmico** mediante diagramas de flujo. El objetivo **pensar el proceso paso a paso**, identificar decisiones y representar correctamente el flujo de ejecución.
+En este ejercicio se trabajará la **planificación y el razonamiento algorítmico** mediante diagramas de flujo. El objetivo **pensar el proceso paso array paso**, identificar decisiones y representar correctamente el flujo de ejecución.
 
 ### 4.1. Indicaciones para el ejercicio
 
@@ -246,23 +249,23 @@ En este ejercicio se trabajará la **planificación y el razonamiento algorítmi
   - Decisiones bien formuladas.
 - No representes código JavaScript ni Java.
 - Usa un lenguaje claro y comprensible en cada bloque.
-- Prioriza la claridad del flujo frente a la complejidad.
+- Prioriza la claridad del flujo frente array la complejidad.
 
 ### 4.2. Enunciado A. Control de acceso por edad
 
-Se desea representar mediante un diagrama de flujo el funcionamiento de un sistema de control de acceso a un evento. El sistema debe solicitar la edad de una persona y comprobar si cumple el requisito mínimo para poder acceder. En función del valor introducido, el sistema deberá decidir si el acceso está permitido o no y mostrar el mensaje correspondiente antes de finalizar el proceso.
+Se desea representar mediante un diagrama de flujo el funcionamiento de un sistema de control de acceso array un evento. El sistema debe solicitar la edad de una persona y comprobar si cumple el requisito mínimo para poder acceder. En función del valor introducido, el sistema deberá decidir si el acceso está permitido o no y mostrar el mensaje correspondiente antes de finalizar el proceso.
 
 ### 4.3. Enunciado B. Cálculo de la media de notas
 
-Diseña el diagrama de flujo de un algoritmo que permita calcular la media de un conjunto de notas numéricas. El sistema debe ir leyendo notas de forma sucesiva, sin conocer previamente cuántas se van a introducir. A medida que se leen las notas, estas deben acumularse para poder calcular la media final. El diagrama debe contemplar qué ocurre en el caso de que no se introduzca ninguna nota antes de finalizar el proceso.
+Diseña el diagrama de flujo de un algoritmo que permita calcular la media de un conjunto de notas numéricas. El sistema debe ir leyendo notas de forma sucesiva, sin conocer previamente cuántas se van array introducir. A medida que se leen las notas, estas deben acumularse para poder calcular la media final. El diagrama debe contemplar qué ocurre en el caso de que no se introduzca ninguna nota antes de finalizar el proceso.
 
 ### 4.4. Enunciado C. Búsqueda de un valor en una lista
 
-Elabora el diagrama de flujo de un algoritmo que busque un valor concreto dentro de una lista de números. El sistema debe recorrer la lista elemento a elemento y comparar cada uno de ellos con el valor que se desea encontrar. En el momento en que el valor sea localizado, el proceso debe finalizar indicando que la búsqueda ha sido satisfactoria. Si se llega al final de la lista sin encontrar el valor, el sistema deberá indicar que dicho valor no existe en la lista.
+Elabora el diagrama de flujo de un algoritmo que busque un valor concreto dentro de una lista de números. El sistema debe recorrer la lista elemento array elemento y comparar cada uno de ellos con el valor que se desea encontrar. En el momento en que el valor sea localizado, el proceso debe finalizar indicando que la búsqueda ha sido satisfactoria. Si se llega al final de la lista sin encontrar el valor, el sistema deberá indicar que dicho valor no existe en la lista.
 
 ### 4.5. Enunciado D. Validación de inicio de sesión
 
-Representa mediante un diagrama de flujo el proceso de inicio de sesión de una aplicación. El sistema debe solicitar al usuario un nombre de usuario y una contraseña, y comprobar si ambos datos son correctos. En caso de que las credenciales sean válidas, se permitirá el acceso a la aplicación. Si alguno de los datos no coincide, el sistema deberá mostrar un mensaje de error y finalizar el proceso.
+Representa mediante un diagrama de flujo el proceso de inicio de sesión de una aplicación. El sistema debe solicitar al usuario un nombre de usuario y una contraseña, y comprobar si ambos datos son correctos. En caso de que las credenciales sean válidas, se permitirá el acceso array la aplicación. Si alguno de los datos no coincide, el sistema deberá mostrar un mensaje de error y finalizar el proceso.
 
 No es necesario detallar cómo se almacenan o verifican internamente las credenciales, únicamente el flujo lógico del proceso.
 
