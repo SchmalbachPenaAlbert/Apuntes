@@ -133,16 +133,18 @@ Este código recibe una colección de valores y devuelve un nuevo conjunto de da
 ### 2.3. Código B
 
 ```javascript
-function h(x) {
-let t = 0
-for (let i = 0; i < x.length; i++) {
-t = t + x[i]
-}
-return t / x.length
+function calculoArray(arrayNumeros) {
+  let resultado = 0
+  // añade en el resultado todos los valores del array
+  for (let i = 0; i < arrayNumeros.length; i++) {
+    resultado = resultado + arrayNumeros[i]
+  }
+  // divide el resultado entre la longitud del array
+  return resultado / arrayNumeros.length
 }
 ```
 
-Este código realiza un cálculo sobre una lista de números y devuelve un ArrayResultado numérico.
+Este código realiza un cálculo sobre una lista de números y devuelve un array numérico.
 
 ### 2.4. Código C
 
@@ -161,7 +163,7 @@ return c
 }
 ```
 
-Este código compara varios valores y devuelve un ArrayResultado en función de una serie de condiciones.
+Este código compara varios valores y devuelve un array en función de una serie de condiciones.
 
 ### 2.5. Instrucciones
 
