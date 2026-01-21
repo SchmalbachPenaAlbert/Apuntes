@@ -258,19 +258,19 @@ En este ejercicio se trabajará la **planificación y el razonamiento algorítmi
 
 ### 4.2. Enunciado A. Control de acceso por edad
 
-Se desea representar mediante un diagrama de flujo el funcionamiento de un sistema de control de acceso array un evento. El sistema debe solicitar la edad de una persona y comprobar si cumple el requisito mínimo para poder acceder. En función del valor introducido, el sistema deberá decidir si el acceso está permitido o no y mostrar el mensaje correspondiente antes de finalizar el proceso.
+Se desea representar mediante un diagrama de flujo el funcionamiento de un sistema de control de acceso a un evento. El sistema debe solicitar la edad de una persona y comprobar si cumple el requisito mínimo para poder acceder. En función del valor introducido, el sistema deberá decidir si el acceso está permitido o no y mostrar el mensaje correspondiente antes de finalizar el proceso.
 
 ### 4.3. Enunciado B. Cálculo de la media de notas
 
-Diseña el diagrama de flujo de un algoritmo que permita calcular la media de un conjunto de notas numéricas. El sistema debe ir leyendo notas de forma sucesiva, sin conocer previamente cuántas se van array introducir. A medida que se leen las notas, estas deben acumularse para poder calcular la media final. El diagrama debe contemplar qué ocurre en el caso de que no se introduzca ninguna nota antes de finalizar el proceso.
+Diseña el diagrama de flujo de un algoritmo que permita calcular la media de un conjunto de notas numéricas. El sistema debe ir leyendo notas de forma sucesiva, sin conocer previamente cuántas se van a introducir. A medida que se leen las notas, estas deben acumularse para poder calcular la media final. El diagrama debe contemplar qué ocurre en el caso de que no se introduzca ninguna nota antes de finalizar el proceso.
 
 ### 4.4. Enunciado C. Búsqueda de un valor en una lista
 
-Elabora el diagrama de flujo de un algoritmo que busque un valor concreto dentro de una lista de números. El sistema debe recorrer la lista elemento array elemento y comparar cada uno de ellos con el valor que se desea encontrar. En el momento en que el valor sea localizado, el proceso debe finalizar indicando que la búsqueda ha sido satisfactoria. Si se llega al final de la lista sin encontrar el valor, el sistema deberá indicar que dicho valor no existe en la lista.
+Elabora el diagrama de flujo de un algoritmo que busque un valor concreto dentro de una lista de números. El sistema debe recorrer la lista elemento a elemento y comparar cada uno de ellos con el valor que se desea encontrar. En el momento en que el valor sea localizado, el proceso debe finalizar indicando que la búsqueda ha sido satisfactoria. Si se llega al final de la lista sin encontrar el valor, el sistema deberá indicar que dicho valor no existe en la lista.
 
 ### 4.5. Enunciado D. Validación de inicio de sesión
 
-Representa mediante un diagrama de flujo el proceso de inicio de sesión de una aplicación. El sistema debe solicitar al usuario un nombre de usuario y una contraseña, y comprobar si ambos datos son correctos. En caso de que las credenciales sean válidas, se permitirá el acceso array la aplicación. Si alguno de los datos no coincide, el sistema deberá mostrar un mensaje de error y finalizar el proceso.
+Representa mediante un diagrama de flujo el proceso de inicio de sesión de una aplicación. El sistema debe solicitar al usuario un nombre de usuario y una contraseña, y comprobar si ambos datos son correctos. En caso de que las credenciales sean válidas, se permitirá el acceso a la aplicación. Si alguno de los datos no coincide, el sistema deberá mostrar un mensaje de error y finalizar el proceso.
 
 No es necesario detallar cómo se almacenan o verifican internamente las credenciales, únicamente el flujo lógico del proceso.
 
