@@ -44,22 +44,24 @@ El objetivo de este ejercicio es **mejorar la legibilidad del código** aplicand
 ### 1.2. Código A
 
 ```javascript
-function f(a,b,c){
-let r=0
-if(a>0){
-if(b>0){
-r=a+b
-}else{
-r=a-c
-}
-}else{
-if(c>0){
-r=b+c
-}else{
-r=0
-}
-}
-return r
+function f(numeroA,numeroB,numeroC) {
+  let resultado = 0
+  // se cumple si el numero A es positivo
+  if(numeroA > 0){
+    if(numeroB > 0){
+      resultado = numeroA + numeroB
+    } else {
+      resultado = numeroA - numeroC
+    }
+    // se cumple si el numero B es negativo o 0
+  } else {
+    if(numeroC > 0){
+      resultado = numeroB + numeroC
+    }else{
+      resultado = 0
+    }
+  }
+  return resultado
 }
 ```
 
