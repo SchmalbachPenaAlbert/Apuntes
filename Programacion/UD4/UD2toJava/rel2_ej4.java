@@ -7,11 +7,12 @@ public class rel2_ej4 {
     public static void main(String[] args) {
         ArrayList<String> titulos = new ArrayList<String>(Arrays.asList("1983", "La casa de Bernarda Alba", "Poeta en Nueva York", "Fahrenheit 432", "Nada"));
         ArrayList<Integer> stock = new ArrayList<Integer>(Arrays.asList(6, 3, 4, 2, 5));
-        String nuevoTitulo;
+        String nuevoTitulo = "";
         Integer nuevoStock = null;
         String tituloSolicitado = "";
         int opcion = 0;
         boolean libroEnStock;
+        boolean tituloYaExistente;
         final int MINIMAOPCION = 1;
         final int MAXIMAOPCION = 1;
         System.out.println("Opciones:");
@@ -26,16 +27,29 @@ public class rel2_ej4 {
 
         Scanner scanner1 = new Scanner(System.in);
         while (opcion != 4) {
+            // se reinicia el stock y se asume que el titulo ya existe
             nuevoStock = null;
+            tituloYaExistente = true;
             System.out.print("Introduce una opción:");
             opcion = scanner1.nextInt();
             scanner1.nextLine();
             if (opcion == 1) {
-                System.out.print("Introduce el título del libro a añadir:");
-                nuevoTitulo = scanner1.nextLine();
+                while (tituloYaExistente == true) {
+                    System.out.print("Introduce el título del libro a añadir:");
+                    nuevoTitulo = scanner1.nextLine();
+                    for (int i = 0; i < titulos.size(); i++) {
+                        if (titulos.get(i).equals(nuevoTitulo)) {
+                            System.out.println("El título ya existe en el inventario!");
+                        } else {
+                            tituloYaExistente = false;
+                        }
+                    }
+                }
                 while (nuevoStock == null) {
                     System.out.print("Introduce el stock del libro:");
+                    // comprueba que el input es un entero
                     if (scanner1.hasNextInt()) {
+                        // si es un entero, se comprueba si es positivo
                         nuevoStock = scanner1.nextInt();
                         if (nuevoStock < 0) {
                             System.out.println("El stock no puede ser negativo!");
