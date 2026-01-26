@@ -2,7 +2,6 @@ package Programacion.UD4.UD3toJava;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class rel2_ej5 {
     static int detectarPalabrasClave(String textoComprobar, ArrayList<String> claves) {
