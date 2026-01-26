@@ -1,3 +1,4 @@
+- 1er Trimestre -
 Jueves, 9 de octubre - Lenguajes de Marcas UD1
 Martes, 14 de octubre - Bases de Datos UD1
 Jueves, 16 de octubre - Sistemas Informáticos UD1
@@ -13,3 +14,9 @@ Martes, 25 de noviembre - Lenguajes de Marcas UD3
 Jueves, 27 de noviembre - Sistemas Informáticos UD3
 Miércoles, 3 de diciembre - Entornos de Desarrollo UD3
 Jueves, 11 de diciembre - Programación UD3
+
+- 2º Trimestre -
+Jueves, 29 de Diciembre - Bases de Datos UD4
+Lunes, 2 de Diciembre - Sistemas Informáticos UD4
+Martes, 3 de Diciembre - Programación UD4
+Miércoles, 4 de Diciembre - Lenguajes de Marcas UD4
