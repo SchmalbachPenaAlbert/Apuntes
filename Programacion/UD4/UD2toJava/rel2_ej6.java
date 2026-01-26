@@ -19,6 +19,11 @@ public class rel2_ej6 {
         do {
             System.out.print("Introduce una opción:");
             opcion = scanner1.nextLine();
+            if (opcion == "1") {
+                System.out.print("Introduce el nombre de la nueva tarea:");
+                nuevaTarea = scanner1.nextLine();
+                estadoNuevaTarea = scanner1.nextLine();
+            }
         } while (!(opcion.equals("5")));
     }
 }
