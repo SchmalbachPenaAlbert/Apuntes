@@ -85,37 +85,37 @@ select round(avg(ingresos_anuales), 2) as media_salario, provincia from personas
 select round(avg(datediff(now(), fecha_nacimiento) / 365), 1) as edad, nivel_socioeconomico from personas group by nivel_socioeconomico;
 
 --4. Dime la edad de las personas de menos de 60 años ordenadas por situación laboral.
-
+select nombre, apellido, (datediff(now(), fecha_nacimiento) / 365) as edad, situacion_laboral from personas where (datediff(now(), fecha_nacimiento) / 365) < 60 order by situacion_laboral;
 
 --5. Muestra el nombre de la persona parada de más edad.
-
+select nombre from personas where situacion_laboral = "Desempleado" order by (datediff(now(), fecha_nacimiento) / 365) desc limit 1;
 
 --6. Dime la moda de Edad de cada municipio.
 
 
 --7. Dime la provincia con la máxima edad media.
-
+select provincia, avg(datediff(now(), fecha_nacimiento) / 365) as edad_media from personas group by provincia order by avg(datediff(now(), fecha_nacimiento) / 365) desc limit 1;
 
 --8. Dime la media de hijos de personas con menos de 30 años.
+select avg(num_hijos) from personas where (datediff(now(), fecha_nacimiento) / 365) < 30;
 
-
---9. Muestra el valor de numero de hijos que más se repite entre las mujeres.
-
+--9. Muestra el valor de numero de hijos que más se repite entre las mujeres. (aka moda)
+select num_hijos , count(*) as Frecuencia from personas where sexo = "M" group by num_hijos order by count(*) desc limit 1;
 
 --10. Dime la media de edad de las mujeres sin hijos de Sevilla provincia
-
+select avg(datediff(now(), fecha_nacimiento) / 365) as media_edad from personas where sexo = "M" and num_hijos = 0;
 
 --11. Dime la media de las modas del campo edad.
 
 
 --12. Dime la provincia con menor edad media de las personas paradas.
-
+select provincia, avg(datediff(now(), fecha_nacimiento) / 365) as edad_media from personas where ocupacion = "Desempleado" group by provincia order by avg(datediff(now(), fecha_nacimiento) / 365) asc limit 1;
 
 --13. Órdename los municipios por numero total de hijos en cada uno.
-
+select municipio, sum(num_hijos) as hijos_totales from personas group by municipio order by sum(num_hijos) desc;
 
 --14. ordena las provincias por mayor número medio de hijos por mujer (tasa de natalidad)
-
+select municipio, round(avg(num_hijos) / count(nombre), 2) as tasa_de_natalidad from personas where sexo = "M" group by municipio order by avg(num_hijos) desc;
 
 --15. Dime los municipios que no superan la tasa de reemplazo (más de 2 hijos por mujer) pero tienen un salario medio mayor a 3000
 
