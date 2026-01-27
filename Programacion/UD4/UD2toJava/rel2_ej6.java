@@ -19,15 +19,16 @@ public class rel2_ej6 {
         System.out.println("Opciones:\n1. Añadir una nueva tarea\n2. Marcar una tarea como completada\n3. Ver la lista de tareas pendientes\n4. Ver la lista de tareas completadas\n5. Salir del programa.");
         Scanner scanner1 = new Scanner(System.in);
         do {
-            System.out.print("Introduce una opción:");
+            System.out.print("Introduce una opción: ");
             opcion = scanner1.nextInt();
+            scanner1.nextLine();
             if (opcion == 1) {
-                System.out.print("Introduce el nombre de la nueva tarea:");
+                System.out.print("Introduce el nombre de la nueva tarea: ");
                 nuevaTarea = scanner1.nextLine();
-                System.out.print("Introduce el estado de la nueva tarea: completada (c) o pendiente (p)");
-                inputEstadoTarea = scanner1.nextLine();
+                System.out.print("Introduce el estado de la nueva tarea: completada (c) o pendiente (p): ");
+                inputEstadoTarea = scanner1.nextLine().toUpperCase();
                 // Según sea completada o pendiente, se le asigna un booleano, luego se añade el nombre y el estado a los arrays
-                if (inputEstadoTarea == "C" || inputEstadoTarea == "COMPLETADA") {
+                if (inputEstadoTarea.equals("C") || inputEstadoTarea.equals("COMPLETADA")) {
                     estadoNuevaTarea = true;
                 } else {
                     estadoNuevaTarea = false;
@@ -36,7 +37,7 @@ public class rel2_ej6 {
                 estadoTareas.add(estadoNuevaTarea);
             } else if (opcion == 2) {
                 tareaExistente = false;
-                System.out.print("Introduce el nombre de la tarea a marcar como completada:");
+                System.out.print("Introduce el nombre de la tarea a marcar como completada: ");
                 tareaCompletar = scanner1.nextLine();
                 // bucle que comprueba si la tarea existe y si la tarea ya está completada
                 for (int i = 0; i < tareas.size(); i++) {
@@ -63,11 +64,10 @@ public class rel2_ej6 {
                 }
                 if (contadorLista == 0) {
                     System.out.println("¡No hay tareas pendientes!");
-                    scanner1.nextLine();
                 }
             } else if (opcion == 4) {
                 contadorLista = 0;
-                System.out.println("Tareas completadas:");
+                System.out.println("Tareas completadas: ");
                 // bucle que busca y muestra las tareas completadas y las muestra, mostrando un mensaje si no hay ninguna tarea completada
                 for (int i = 0; i < tareas.size(); i++) {
                     if (estadoTareas.get(i) == true) {
@@ -78,7 +78,6 @@ public class rel2_ej6 {
                 if (contadorLista == 0) {
                     System.out.println("¡No hay tareas completadas!");
                 }
-
             // else if que checkea que la opcion introducida no se salga del rango deseado mínimo y máximo
             } else if (opcion < OPCIONMINIMA || opcion > OPCIONMAXIMA) {
                 System.out.println("¡El valor introducido no corresponde con ninguna opción!");
@@ -90,4 +89,4 @@ public class rel2_ej6 {
         scanner1.close();
     }
 }
-// FALTA REVISAR, CONTROL DE ERRORES Y TRASLADARLO A FUNCIONES
+// FALTA CONTROL DE ERRORES Y TRASLADARLO A FUNCIONES
