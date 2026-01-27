@@ -22,21 +22,37 @@ public class PT_recu_T1{
         Scanner scanner1 = new Scanner(System.in);
         do {
             System.out.print("Introduce una opción: ");
+            while (!(scanner1.hasNextInt())) {
+                scanner1.nextLine();
+                System.out.print("¡Opcion fuera de rango! Introduce una opción: ");
+                opcion = scanner1.nextInt();
+            }
             opcion = scanner1.nextInt();
             scanner1.nextLine();
             if (opcion == 1) {
                 System.out.print("Introduce el nombre del nuevo estudiante: ");
                 nuevoNombre = scanner1.nextLine();
                 System.out.print("Introduce la nota del nuevo estudiante: ");
+                while (!(scanner1.hasNextInt())) {
+                    scanner1.nextLine();
+                    System.out.print("¡Entrada inválida! Introduce la nota del nuevo estudiante: ");
+                }
                 nuevaNota = scanner1.nextDouble();
                 while (nuevaNota < 0.0 || nuevaNota > 10.0) {
                     System.out.print("¡Nota fuera de rango (0 - 10)! Introduce la nota del nuevo estudiante: ");
                     nuevaNota = scanner1.nextDouble();
                 }
                 System.out.print("Introduce la asistencia del nuevo estudiante: ");
+                while (!(scanner1.hasNextInt())) {
+                    scanner1.nextLine();
+                    System.out.print("¡Entrada inválida! Introduce la nota del nuevo estudiante: ");
+                    nuevaNota = scanner1.nextDouble();
+                }
                 nuevaAsistencia = scanner1.nextDouble();
                 while (nuevaAsistencia < 0 || nuevaAsistencia > 1) {
+                    scanner1.nextLine();
                     System.out.print("¡Asistencia fuera de rango (0 - 1)! Introduce la asistencia del nuevo estudiante: ");
+                    nuevaAsistencia = scanner1.nextDouble();
                 }
                 nombres.add(nuevoNombre);
                 notas.add(nuevaNota);
