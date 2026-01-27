@@ -24,7 +24,54 @@ CREATE TABLE personas (
     ocupacion VARCHAR(50)
 );
 
-LOAD DATA INFILE '/var/lib/mysql-files/andalucia.csv' INTO TABLE personas FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+SET FOREIGN_KEY_CHECKS=0;
+INSERT INTO personas VALUES
+(1091,'Margarita','Romero','M','1958-06-10','Cádiz','Jerez','Primarios','Desempleada',7200,'Divorciada',1,'Bajo','Limpieza'),
+(1092,'Crisostomo','Rosales','H','1950-02-15','Almería','Roquetas','Secundarios','Jubilado',14500,'Casado',2,'Medio','Ex-agricultor'),
+(1093,'Natividad','Rossi','M','1954-08-23','Almería','Roquetas','Universitarios','Profesora',22000,'Casada',1,'Medio','Docente'),
+(1094,'Demóstenes','Roza','H','1948-04-07','Huelva','Huelva','Primarios','Jubilado',8200,'Viudo',3,'Bajo','Obrero'),
+(1095,'Octavia','Rubio','M','1952-10-14','Huelva','Huelva','Primarios','Pensionista',5400,'Viuda',2,'Bajo','Costurera'),
+(1096,'Donaciano','Rueda','H','1956-07-29','Sevilla','Dos Hermanas','Secundarios','Autónomo',18500,'Casado',1,'Medio','Fontanero'),
+(1097,'Perpetua','Ruelas','M','1960-01-06','Sevilla','Dos Hermanas','Secundarios','Empleada',14800,'Casada',1,'Medio','Administrativa'),
+(1098,'Doroteo','Ruiz','H','1952-11-18','Málaga','Marbella','Universitarios','Jubilado',21000,'Casado',0,'Alto','Arquitecto'),
+(1099,'Prudencia','Salas','M','1956-05-25','Málaga','Marbella','Universitarios','Autónoma',19500,'Casada',0,'Alto','Gestora'),
+(1100,'Egidio','Salazar','H','1950-03-11','Cádiz','Cádiz','Primarios','Jubilado',9800,'Casado',3,'Bajo','Marinero'),
+(1101,'Quiteria','Salcedo','M','1954-09-19','Cádiz','Cádiz','Primarios','Empleada',12600,'Casada',3,'Medio','Cocinera'),
+(1102,'Eligio','Salinas','H','1948-07-02','Granada','Motril','Secundarios','Jubilado',11200,'Casado',2,'Medio','Transportista'),
+(1103,'Rafaela','Saltara','M','1952-01-08','Granada','Motril','Sin estudios','Pensionista',4600,'Viuda',4,'Bajo','—'),
+(1104,'Epifanio','Samaniego','H','1956-11-14','Jaén','Úbeda','Primarios','Desempleado',0,'Casado',3,'Bajo','Albañil'),
+(1105,'Sabina','Sampedro','M','1960-06-22','Jaén','Úbeda','Secundarios','Empleada',13800,'Casada',2,'Medio','Dependienta'),
+(1106,'Estanislao','Sánchez','H','1954-09-03','Córdoba','Lucena','Universitarios','Funcionario',24500,'Casado',1,'Alto','Inspector'),
+(1107,'Tecla','Sandoval','M','1958-03-11','Córdoba','Lucena','Universitarios','Profesora',23000,'Casada',1,'Alto','Docente'),
+(1108,'Eusebio','Santamaría','H','1950-12-27','Sevilla','Alcalá','Secundarios','Jubilado',13200,'Casado',2,'Medio','Mecánico'),
+(1109,'Ursulina','Santana','M','1954-04-05','Sevilla','Alcalá','Primarios','Empleada',10400,'Casada',2,'Bajo','Limpieza'),
+(1110,'José','Sarmiento','H','1948-08-19','Málaga','Fuengirola','Universitarios','Jubilado',22500,'Divorciado',1,'Alto','Ingeniero'),
+(1111,'Valeriana','Satauste','M','1952-02-26','Málaga','Fuengirola','Universitarios','Pensionista',15800,'Divorciada',1,'Medio','Abogada'),
+(1112,'Evaristo','Saucedo','H','1956-06-04','Huelva','Lepe','Primarios','Autónomo',16200,'Casado',2,'Medio','Pescador'),
+(1113,'Walburga','Saudo','M','1960-12-12','Huelva','Lepe','Secundarios','Empleada',13400,'Casada',2,'Medio','Auxiliar'),
+(1114,'Fabiano','Sauz','H','1952-04-18','Almería','El Ejido','Secundarios','Agricultor',17800,'Casado',3,'Medio','Agricultor'),
+(1115,'Xenia','Sayas','M','1956-09-26','Almería','El Ejido','Secundarios','Autónoma',16400,'Casada',2,'Medio','Comerciante'),
+(1116,'Paco','Saynos','H','1950-07-08','Cádiz','San Fernando','Primarios','Jubilado',9900,'Casado',2,'Bajo','Militar'),
+(1117,'Yanira','Saza','M','1954-01-15','Cádiz','San Fernando','Universitarios','Funcionaria',23800,'Casada',1,'Alto','Gestión pública'),
+(1118,'Fulgencio','Scheid','H','1948-10-29','Sevilla','Coria','Universitarios','Jubilado',20500,'Viudo',2,'Alto','Economista'),
+(1119,'Zenaida','Seco','M','1952-03-07','Sevilla','Coria','Primarios','Pensionista',5200,'Viuda',3,'Bajo','—'),
+(1120,'Gerasimo','Secreto','H','1956-08-13','Sevilla','Sevilla','Universitarios','Directivo',42000,'Casado',0,'Alto','Gerente'),
+(1121,'Abigaíl','Segovia','M','1960-04-21','Sevilla','Sevilla','Universitarios','Consultora',31500,'Soltera',0,'Alto','Consultoría'),
+(1122,'Gildardo','Seis','H','1954-01-05','Málaga','Málaga','Secundarios','Autónomo',18800,'Casado',1,'Medio','Reparaciones'),
+(1123,'Blanca','Seisdos','M','1958-07-11','Málaga','Málaga','Universitarios','Empleada',21200,'Casada',1,'Alto','RRHH'),
+(1124,'Gislerio','Selma','H','1950-11-17','Córdoba','Córdoba','Secundarios','Jubilado',11800,'Casado',2,'Medio','Carpintero'),
+(1125,'Cristina','Semence','M','1954-05-24','Córdoba','Córdoba','Universitarios','Psicóloga',26500,'Divorciada',1,'Alto','Sanidad'),
+(1126,'Godofredo','Semeno','H','1948-02-08','Granada','Granada','Primarios','Jubilado',8700,'Casado',4,'Bajo','Peón'),
+(1127,'Dionisia','Sencillo','M','1952-08-16','Granada','Granada','Primarios','Pensionista',4800,'Viuda',4,'Bajo','—'),
+(1128,'Gómez','Senén','H','1956-04-24','Jaén','Linares','Secundarios','Autónomo',19200,'Casado',2,'Medio','Taller'),
+(1129,'Emilia','Senís','M','1960-10-02','Jaén','Linares','Universitarios','Enfermera',26800,'Casada',2,'Alto','Sanidad'),
+(1130,'Graciano','Seno','H','1952-09-11','Cádiz','Jerez','Secundarios','Jubilado',10400,'Casado',1,'Medio','Bodega'),
+(1131,'Fabiana','Senra','M','1956-02-19','Cádiz','Jerez','Secundarios','Autónoma',17600,'Casada',1,'Medio','Estética'),
+(1132,'Graciliano','Senta','H','1950-06-27','Almería','Adra','Primarios','Jubilado',8200,'Casado',1,'Bajo','Pesca'),
+(1133,'Gabriela','Sentana','M','1954-12-05','Almería','Adra','Universitarios','Gestora',24800,'Divorciada',1,'Alto','Administración'),
+(1134,'Jaime','Velázquez','M','1979-03-15','Granada','Armilla','Universitarios','Desempleado',0,'Casado',0,'Medio','—');
+
+SET FOREIGN_KEY_CHECKS=1;
 
 -- Ejercicios
 
