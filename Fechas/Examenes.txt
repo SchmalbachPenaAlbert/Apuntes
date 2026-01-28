@@ -16,7 +16,7 @@ Miércoles, 3 de diciembre - Entornos de Desarrollo UD3
 Jueves, 11 de diciembre - Programación UD3
 
 - 2º Trimestre -
-Jueves, 29 de Diciembre - Bases de Datos UD4
-Lunes, 2 de Diciembre - Sistemas Informáticos UD4
-Martes, 3 de Diciembre - Programación UD4
-Miércoles, 4 de Diciembre - Lenguajes de Marcas UD4
+Jueves, 29 de enero - Bases de Datos UD4
+Lunes, 2 de febrero - Sistemas Informáticos UD4
+Miércoles, 4 de febrero - Programación UD4
+Lunes, 9 de febrero - Lenguajes de Marcas UD4
