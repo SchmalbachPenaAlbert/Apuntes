@@ -2,16 +2,39 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #89d0ff;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+body {
+    background-color: #89d0ff;
 }
 .intro {
     background-image: url("https://viajesatlantis.com/wp-content/uploads/2023/11/descubre-los-secretos-magicos-de-disney-portadas-posts-viajes-atlantis.jpg");
     background-size: cover;
     background-position: center;
+    text-align: center;
+    padding: 60px 20px;
 }
-.intro > button:hover {
+.boton-intro:hover {
     transform: scale(1.1);
+}
+.boton-intro {
+    padding: 10px 20px;
+    color: white;
+    margin:20px;
+    background-color: midnightblue;
+}
+header {
+    justify-content: space-between;
+    background-color: darkblue;
+    color:whitesmoke;
+    align-items:center;
+}
+.navegacion {
+    display: flex;
+    list-style: none;
+}
+.navegacion li {
+    margin: 0 10px;
 }
 .peliculas {
     display: flex;
