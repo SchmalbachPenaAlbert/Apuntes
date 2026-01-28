@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #89d0ff;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.intro {
+    background-image: url("https://viajesatlantis.com/wp-content/uploads/2023/11/descubre-los-secretos-magicos-de-disney-portadas-posts-viajes-atlantis.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.intro > button:hover {
+    transform: scale(1.1);
+}
+.peliculas {
+    display: flex;
+    justify-content: space-between;
+}
+.peliculas img {
+    border-radius:10px;
+}
+.peliculas > h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.personajes {
+    display: flex;
+    justify-content: space-between;
+}
+.personaje1 {
+    background-color: darkslategray;
+}
+.personaje2 {
+    background-color:coral;
+}
+.personaje3 {
+    background-color:blueviolet;
+}
+.personaje4 {
+    background-color:aquamarine;
+}
+.personajes > div > p {
+    color:midnightblue;
+    font-size: 0.95em;
+}
+.evento1, .evento2 {
+    background-color: darksalmon;
+}
+.evento3 {
+    background-color: darkmagenta;
+}
+a:hover {
+    color: rgb(43, 111, 167);
+}
+a:active {
+    background-color: aliceblue;
+}
+footer {
+    background-color:midnightblue;
+}
+footer > p {
+    text-align: center;
+    color:azure
+}
+footer > ul {
+    display: flex;
+    justify-content: space-around;
+}
