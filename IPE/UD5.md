@@ -22,3 +22,43 @@ Pueden trabajar:
 * Las personas extranejeras no ciudadanas de la UE, siempre que tengan autorización de residencia y trabajo.
 
 #### La empresa
+
+Una empresa puede ser una persona física o jurídica, o una comunidad de bienes (p. ej. comunidad de vecino o herederos). El empresario debe ser mayor de 18 años o, si es menor de edad, considerarse como tal a través de sus guardadores en caso de sucesiones en caso de fallecimiento paterno.
+
+### Forma del contrato
+
+Puede ser escrito o verbal. Todos los contratos deben realizarse por escrito excepto los indefinidos ordinarios y los realizados por circunstancias de la producción, cuya duración sea inferior a 4 semanas.
+La persona trabajadora puede exigir en cualquier momento que le empresa realice el contrato por escrito, sin posibilidad de que la empresa se niege a ello.
+
+### La formalización y expedición del contrato
+
+Si la empresa no formaliza el contrato, la persona trabajadora queda desprotegida, ya que, en caso de accidente, enfermeddad o desempleo, no cobraría ninguna prestación de la Seguridad Social. Además, la persona trabajadora no cotizaría, por lo que no computaría para su jubiliación y, ante una posible denuncia, sería más probable probar los hechos ante el Juzgado de lo Social.
+
+Cualquier persona debe firmar el contrato antes de comenzar a trabajar.
+Una copia se la queda la empresa, otra el trabajador, otra al Servicio Público de Empleo, y otra básica a los representantes de los trabajadores.
+
+### Clausulas de un contrato de trabajo
+
+Las cláusulas más importantes recogidas en el contrato son:
+
+* Grupo profesional
+* Periodo de prueba
+* Pacto de no competencia contractual
+* Pacto de dedicación exclusiva
+* Pacto de permanencia
+
+Los contratos de trabajo tienen que ajustarse a los modelos elaborados por el Ministerio de Trabajao y Seguridad Social. En ellos se presentan notas aclaratorias a pie de página sobre las cuestiones legales que el Estatuto de los Trabajadores establece.
+
+## Tipos de contrato de trabajo
+
+### El contrato indefinido
+
+El contrato **indefinido** es un acuerdo de trabajo en el que no existe fecha de finalización. Por tanto, permancece vigente hasta que la empresa o la persona trabajadora deciden terminar la relación laboral. No hay indemnización por fin de contrato.
+Los contratos **fijos-discontinuos** se aplican a trabajos estacionales o de temporada, como la recogida de fruta. Tambíen se clasifica como indefinido.
+
+### El contrato temporal
+
+El contrato temporal se divide según las caresterísticas del puesto a cubrir:
+
+* Contrato temporal por circumstancias de la producción - Seis meses (ampliable a doce) en caso de demanda imprevista. Se le indemniza a la persona trabajadora con doce dias de salario por año trabajado.
+* Contrato de sustitución - Hasta que se incorpora la persona sustituida, o tres meses si se utiliza para cubrir una vacante durante un periodo de selección. No supone indemnización.
