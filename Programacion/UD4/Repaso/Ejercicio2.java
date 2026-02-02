@@ -7,13 +7,13 @@ public class Ejercicio2 {
         ArrayList<String> matricula = new ArrayList<String>();
         ArrayList<String> tipoRevision = new ArrayList<String>();
         ArrayList<Integer> extras = new ArrayList<Integer>();
-        ArrayList<Integer> costeFinal = new ArrayList<Integer>();
+        ArrayList<Double> costeFinal = new ArrayList<Double>();
         ArrayList<Boolean> descuentoAplicado = new ArrayList<Boolean>();
         int opcion = 0;
         String nuevaMatricula;
         String nuevoTipoRevision;
         int nuevoExtras;
-        int nuevoCosteFinal;
+        Double nuevoCosteFinal;
         int costeBase;
         final int COSTEEXTRA = 15;
         int descuento;
@@ -21,6 +21,7 @@ public class Ejercicio2 {
         Boolean terminaEnPar;
         String ultimoCaracter;
         int ultimoNumero;
+        String matriculaActual;
         System.out.println("Opciones:\n1. Añadir revisión\n2. Listar revisiones\n3. MOstrar coste\n4. Eliminar revisión\n0. Salir");
         Scanner scanner1 = new Scanner(System.in);
         do {
@@ -50,11 +51,12 @@ public class Ejercicio2 {
                 matricula.add(nuevaMatricula);
                 tipoRevision.add(nuevoTipoRevision);
                 extras.add(nuevoExtras);
-                nuevoCosteFinal = costeBase + COSTEEXTRA * nuevoExtras;
-                // aplicar descuento
-                for (int i = 0; i < matricula.size(); i++) {
-                    ultimoCaracter = matricula.get(i);
-                    if (scanner1.hasNextInt()) {
+                nuevoCosteFinal = (double) (costeBase + COSTEEXTRA * nuevoExtras);
+                // aplicar descuento (si el ultimo caracter es numero par)
+                terminaEnPar = false;
+                if (!nuevaMatricula.isEmpty()) { 
+                    ultimoCaracter = nuevaMatricula.substring(nuevaMatricula.length() - 1);
+                    if (Character.isDigit(ultimoCaracter.charAt(0))) {
                         ultimoNumero = Integer.parseInt(ultimoCaracter);
                         if (ultimoNumero % 2 == 0) {
                             terminaEnPar = true;
@@ -63,6 +65,7 @@ public class Ejercicio2 {
                 }
                 if (terminaEnPar == true) {
                     descuentoAplicado.add(true);
+                    nuevoCosteFinal = nuevoCosteFinal * 0.9; // 10% de descuento
                 } else {
                     descuentoAplicado.add(false);
                 }
