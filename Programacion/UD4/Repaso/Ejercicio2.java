@@ -16,6 +16,8 @@ public class Ejercicio2 {
         int costeBase;
         final int COSTEEXTRA = 15;
         int descuento;
+        Boolean revisionExiste = false;
+        int revisionEliminar;
         System.out.println("Opciones:\n1. Añadir revisión\n2. Listar revisiones\n3. MOstrar coste\n4. Eliminar revisión\n0. Salir");
         Scanner scanner1 = new Scanner(System.in);
         do {
@@ -48,9 +50,29 @@ public class Ejercicio2 {
                 nuevoCosteFinal = costeBase + COSTEEXTRA * nuevoExtras;
                 costeFinal.add(nuevoCosteFinal);
             } else if (opcion == 2) {
-
+                if (matricula.isEmpty()) {
+                    System.out.println("¡No hay datos!");
+                } else {
+                    for (int i = 0; i < matricula.size(); i++) {
+                        System.out.println((i + 1) + " -> " + matricula.get(i) + " | " + tipoRevision.get(i) + " | extras: " + extras.get(i) + " | coste: " + costeFinal.get(i));
+                    }
+                }
             } else if (opcion == 3) {
-
+                revisionExiste = false;
+                System.out.print("Introduce el ínidice de la revisión a eliminar: ");
+                revisionEliminar = scanner1.nextInt();
+                scanner1.nextLine();
+                // manejar excepciones si el indice introducido no existe
+                try {
+                    revisionExiste = true;
+                    matricula.remove(revisionEliminar);
+                    tipoRevision.remove(revisionEliminar);
+                    extras.remove(revisionEliminar);
+                    costeFinal.remove(revisionEliminar);
+                    System.out.println("Revisión eliminada correctamente.");
+                } catch (Exception ArrayIndexOutOfBoundsException) {
+                    System.out.println("El índice introducido no corresponde con ninguna revisión.");
+                }
             } else if (opcion == 4) {
 
             }
