@@ -8,6 +8,7 @@ public class Ejercicio2 {
         ArrayList<String> tipoRevision = new ArrayList<String>();
         ArrayList<Integer> extras = new ArrayList<Integer>();
         ArrayList<Integer> costeFinal = new ArrayList<Integer>();
+        ArrayList<Boolean> descuentoAplicado = new ArrayList<Boolean>();
         int opcion = 0;
         String nuevaMatricula;
         String nuevoTipoRevision;
@@ -16,8 +17,10 @@ public class Ejercicio2 {
         int costeBase;
         final int COSTEEXTRA = 15;
         int descuento;
-        Boolean revisionExiste = false;
-        int revisionEliminar;
+        int revisionConsultar;
+        Boolean terminaEnPar;
+        String ultimoCaracter;
+        int ultimoNumero;
         System.out.println("Opciones:\n1. Añadir revisión\n2. Listar revisiones\n3. MOstrar coste\n4. Eliminar revisión\n0. Salir");
         Scanner scanner1 = new Scanner(System.in);
         do {
@@ -48,6 +51,21 @@ public class Ejercicio2 {
                 tipoRevision.add(nuevoTipoRevision);
                 extras.add(nuevoExtras);
                 nuevoCosteFinal = costeBase + COSTEEXTRA * nuevoExtras;
+                // aplicar descuento
+                for (int i = 0; i < matricula.size(); i++) {
+                    ultimoCaracter = matricula.get(i);
+                    if (scanner1.hasNextInt()) {
+                        ultimoNumero = Integer.parseInt(ultimoCaracter);
+                        if (ultimoNumero % 2 == 0) {
+                            terminaEnPar = true;
+                        }
+                    }
+                }
+                if (terminaEnPar == true) {
+                    descuentoAplicado.add(true);
+                } else {
+                    descuentoAplicado.add(false);
+                }
                 costeFinal.add(nuevoCosteFinal);
             } else if (opcion == 2) {
                 if (matricula.isEmpty()) {
@@ -58,23 +76,34 @@ public class Ejercicio2 {
                     }
                 }
             } else if (opcion == 3) {
-                revisionExiste = false;
-                System.out.print("Introduce el ínidice de la revisión a eliminar: ");
-                revisionEliminar = scanner1.nextInt();
+                System.out.print("Introduce el ínidice de la revisión a consultar: ");
+                revisionConsultar = scanner1.nextInt();
                 scanner1.nextLine();
                 // manejar excepciones si el indice introducido no existe
                 try {
-                    revisionExiste = true;
-                    matricula.remove(revisionEliminar);
-                    tipoRevision.remove(revisionEliminar);
-                    extras.remove(revisionEliminar);
-                    costeFinal.remove(revisionEliminar);
-                    System.out.println("Revisión eliminada correctamente.");
+                    System.out.println(costeFinal.get(revisionConsultar));
+                    if (descuentoAplicado.get(revisionConsultar) == true) {
+                        System.out.println("(Fue aplicado un descuento del 10%)");
+                    } else {
+                        System.out.println("(No fue aplicado ningún descuento)");
+                    }
                 } catch (Exception ArrayIndexOutOfBoundsException) {
                     System.out.println("El índice introducido no corresponde con ninguna revisión.");
                 }
             } else if (opcion == 4) {
-
+                System.out.print("Introduce el ínidice de la revisión a eliminar: ");
+                revisionConsultar = scanner1.nextInt();
+                scanner1.nextLine();
+                // manejar excepciones si el indice introducido no existe
+                try {
+                    matricula.remove(revisionConsultar);
+                    tipoRevision.remove(revisionConsultar);
+                    extras.remove(revisionConsultar);
+                    costeFinal.remove(revisionConsultar);
+                    System.out.println("Revisión eliminada correctamente.");
+                } catch (Exception ArrayIndexOutOfBoundsException) {
+                    System.out.println("El índice introducido no corresponde con ninguna revisión.");
+                }
             }
 
             // debug
@@ -82,7 +111,9 @@ public class Ejercicio2 {
             System.out.println("(Debug) Rev: " + tipoRevision);
             System.out.println("(Debug) Ext: " + extras);
             System.out.println("(Debug) Cos: " + costeFinal);
+            System.out.println("(Debug) Des: " + descuentoAplicado);
         } while (opcion != 0);
+        System.out.println("Programa finalizado.");
         scanner1.close();
     }
 }
