@@ -9,19 +9,19 @@ public class Ejercicio2 {
         ArrayList<Integer> extras = new ArrayList<Integer>();
         ArrayList<Double> costeFinal = new ArrayList<Double>();
         ArrayList<Boolean> descuentoAplicado = new ArrayList<Boolean>();
-        int opcion = 0;
+        int opcion = -1;
         String nuevaMatricula;
         String nuevoTipoRevision;
         int nuevoExtras;
         Double nuevoCosteFinal;
         int costeBase;
         final int COSTEEXTRA = 15;
-        int descuento;
+        final int OPCIONMINIMA = 0;
+        final int OPCIONMAXIMA = 0;
         int revisionConsultar;
         Boolean terminaEnPar;
         String ultimoCaracter;
         int ultimoNumero;
-        String matriculaActual;
         System.out.println("Opciones:\n1. Añadir revisión\n2. Listar revisiones\n3. MOstrar coste\n4. Eliminar revisión\n0. Salir");
         Scanner scanner1 = new Scanner(System.in);
         do {
@@ -30,7 +30,6 @@ public class Ejercicio2 {
             while (!(scanner1.hasNextInt())) {
                 scanner1.nextLine();
                 System.out.print("¡Opcion fuera de rango! Introduce una opción: ");
-                opcion = scanner1.nextInt();
             }
             opcion = scanner1.nextInt();
             scanner1.nextLine();
@@ -107,6 +106,8 @@ public class Ejercicio2 {
                 } catch (Exception ArrayIndexOutOfBoundsException) {
                     System.out.println("El índice introducido no corresponde con ninguna revisión.");
                 }
+            } else if (opcion < OPCIONMINIMA || opcion > OPCIONMAXIMA) {
+                System.out.println("¡La opción introducida no se encuentra dentro del rango!");
             }
 
             // debug
