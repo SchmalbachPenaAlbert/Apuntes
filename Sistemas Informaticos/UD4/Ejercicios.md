@@ -17,15 +17,17 @@ Ahora, de esos 400kbps calculamos el tamaño de los datos útiles de aplicación
 **2- Queremos enviar un archivo de 2000 bytes usando paquetes de 1000 bytes por un enlace de 120 Mbps entre dos torres situadas a 15 Km de distancia. Teniendo en cuenta que las cabeceras ocupan 50 bytes también por tanto los paquetes de confirmación, ¿Cuánto tiempo tardaremos en enviar el primer paquete? ¿Cúanto tiempo tardaremos (desde que comienza el primer envío, si no hay errores) en recibir la confirmación del correcto envío de todos los paquetes?**
 
 archivo completo: 2000 bytes -> paquetes 1000 bytes
-enlace 120Mbps (megabits por seg) = 15 000 000 bytes por segundo
+enlace 120Mbps (megabits por seg) = 120 000 000 bits por seg (*10^6) = 15 000 000 bytes por segundo
 cabezeras = 50 bytes
-primer paquete = 1000+50 = 1050 bytes -> 1050 / 15 000 000 = 0.00007 segundos = 0.07 ms (envío)
+primer paquete = 1000+50 = 1050 bytes -> 1050 / 15 000 000 = 0.00007 segundos = 0.07 ms
 primer paquete de confirmación = 50 bytes -> 50 / 15 000 000 = 0.000003 segundos = 0.003 ms
-segundo paquete = 1000+50  1050 bytes -> 1050 / 15 000 000 = 0.00007 segundos = 0.07 ms (envío)
+segundo paquete = 1000+50  1050 bytes -> 1050 / 15 000 000 = 0.00007 segundos = 0.07 ms
 primer paquete de confirmación = 50 bytes -> 50 / 15 000 000 = 0.000003 segundos = 0.003 ms
 total -> 0.07 + 0.07 + 0.003 + 0.003 = 0.146 ms
 
-// no esta correcto del todo
+d = v * t -> tiempo = distancia / velocidad = 15 000 m / 2*10^8 = 0.000075 s = 0.075 ms (tiempo de propagación)
+
+Por tanto, el tiempo total será -> el tiempo de transmisión del primer paquete + el tiempo de transmision del segundo + el tiempo de propagacion del segundo paquete + el tiempo de transmisión de la confirmación del segundo paquete + el tiempo de propagación de la confirmación del segundo paquete (ya que los paquetes se enevian uno detras del otro, sin esperar uno a recibir la confirmacion de que el otro ha llegado) = 0.07 ms + 0.07 ms + 0.075 ms + 0.075 ms + 0.003 ms + 0.075 ms = 0.293 ms
 
 **3- Tengo una red 192.170.0.0 /24 y quiero hacer 3 subredes lo más grandes posible. (minima mascara de red que puedas hacer). Dentro de cada subred que hayas creado, asigna una ip a 3 dispositivos diferentes (9 en total) en una de las 3 subredes que has creado, la que tú quieras, define 2 subredes más.**
 
