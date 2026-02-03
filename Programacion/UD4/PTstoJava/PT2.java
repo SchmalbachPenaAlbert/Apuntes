@@ -1,5 +1,3 @@
-package Programacion.UD4.PTstoJava;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 

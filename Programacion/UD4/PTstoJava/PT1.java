@@ -1,4 +1,3 @@
-package Programacion.UD4.PTstoJava;
 import java.util.Scanner;
 public class PT1 {
     public static void main(String[] args) {
