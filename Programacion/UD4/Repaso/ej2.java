@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class ej2 {
     public static void main(String[] args) {
-        ArrayList<String> matricula = new ArrayList<String>();
-        ArrayList<String> tipoRevision = new ArrayList<String>();
-        ArrayList<Integer> extras = new ArrayList<Integer>();
-        ArrayList<Double> costeFinal = new ArrayList<Double>();
-        ArrayList<Boolean> descuentoAplicado = new ArrayList<Boolean>();
+        ArrayList<String> matricula = new ArrayList<String>(Arrays.asList("4372CLD"));
+        ArrayList<String> tipoRevision = new ArrayList<String>(Arrays.asList("completa"));
+        ArrayList<Integer> extras = new ArrayList<Integer>(Arrays.asList(4));
+        ArrayList<Double> costeFinal = new ArrayList<Double>(Arrays.asList(180.00));
+        ArrayList<Boolean> descuentoAplicado = new ArrayList<Boolean>(Arrays.asList(false));
         int opcion = -1;
         String nuevaMatricula;
         String nuevoTipoRevision;
@@ -36,19 +36,19 @@ public class Ejercicio2 {
             if (opcion == 1) {
                 System.out.print("Introduce la nueva matricula: ");
                 nuevaMatricula = scanner1.nextLine();
+                matricula.add(nuevaMatricula);
                 System.out.print("Introduce el tipo de revisión (básica o completa): ");
                 nuevoTipoRevision = scanner1.nextLine();
                 if (nuevoTipoRevision.equalsIgnoreCase("completa")) {
                     costeBase = 120;
+                    tipoRevision.add("completa");
                 } else {
                     costeBase = 60;
+                    tipoRevision.add("básica");
                 }
                 System.out.print("Introduce el número de extras: ");
                 nuevoExtras = scanner1.nextInt();
                 scanner1.nextLine();
-                // añadir los valores a los arrays, una vez comprobados
-                matricula.add(nuevaMatricula);
-                tipoRevision.add(nuevoTipoRevision);
                 extras.add(nuevoExtras);
                 nuevoCosteFinal = (double) (costeBase + COSTEEXTRA * nuevoExtras);
                 // aplicar descuento (si el ultimo caracter es numero par)

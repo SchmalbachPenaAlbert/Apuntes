@@ -1,4 +1,4 @@
-public class u5e2 {
+public class Ejercicio2 {
     public static void main(String[] args) {
         CuentaBancaria cuenta1 = new CuentaBancaria("Pepe", 29.00);
         System.out.println(cuenta1.saldo);
