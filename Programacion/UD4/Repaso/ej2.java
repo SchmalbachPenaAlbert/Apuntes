@@ -12,7 +12,7 @@ public class ej2 {
         int opcion = -1;
         String nuevaMatricula;
         String nuevoTipoRevision;
-        int nuevoExtras;
+        int nuevoExtras = 0;
         Double nuevoCosteFinal;
         int costeBase;
         final int COSTEEXTRA = 15;
@@ -22,24 +22,34 @@ public class ej2 {
         Boolean terminaEnPar;
         String ultimoCaracter;
         int ultimoNumero;
-        System.out.println("Opciones:\n1. Añadir revisión\n2. Listar revisiones\n3. MOstrar coste\n4. Eliminar revisión\n0. Salir");
+        final int LONGITUDMAXIMAMATRICULA = 7;
+        final int LONGITUDMINIMAMATRICULA = 3;
+        System.out.println("Opciones:\n1. Añadir revisión\n2. Listar revisiones\n3. Mostrar coste\n4. Eliminar revisión\n0. Salir");
         Scanner scanner1 = new Scanner(System.in);
         do {
             System.out.print("Introduce una opción: ");
             // control de errores para el input de la opción
             while (!(scanner1.hasNextInt())) {
                 scanner1.nextLine();
-                System.out.print("¡Opcion fuera de rango! Introduce una opción: ");
+                System.out.print("¡Se debe introducir un número entero! Introduce una opción: ");
             }
             opcion = scanner1.nextInt();
             scanner1.nextLine();
             if (opcion == 1) {
                 System.out.print("Introduce la nueva matricula: ");
                 nuevaMatricula = scanner1.nextLine();
+                while (nuevaMatricula.length() > LONGITUDMAXIMAMATRICULA || nuevaMatricula.length() < LONGITUDMINIMAMATRICULA) {
+                    System.out.print("¡Longitud no válida! Introduce la nueva matricula: ");
+                    nuevaMatricula = scanner1.nextLine();
+                }
                 matricula.add(nuevaMatricula);
                 System.out.print("Introduce el tipo de revisión (básica o completa): ");
                 nuevoTipoRevision = scanner1.nextLine();
-                if (nuevoTipoRevision.equalsIgnoreCase("completa")) {
+                while (!(nuevoTipoRevision.equalsIgnoreCase("completa") || nuevoTipoRevision.equalsIgnoreCase("basica") || nuevoTipoRevision.equalsIgnoreCase("básica") || nuevoTipoRevision.equalsIgnoreCase("c") || nuevoTipoRevision.equalsIgnoreCase("b"))) {
+                    System.out.print("¡Tipo introducido inválido! Introduce el tipo de revisión (básica o completa): ");
+                    nuevoTipoRevision = scanner1.nextLine();
+                }
+                if (nuevoTipoRevision.equalsIgnoreCase("completa") || nuevoTipoRevision.equalsIgnoreCase("c")) {
                     costeBase = 120;
                     tipoRevision.add("completa");
                 } else {
@@ -47,7 +57,17 @@ public class ej2 {
                     tipoRevision.add("básica");
                 }
                 System.out.print("Introduce el número de extras: ");
+                while (!(scanner1.hasNextInt())) {
+                    scanner1.nextLine();
+                    System.out.print("¡Se debe introducir un número entero! Introduce el número de extras: ");
+                }
                 nuevoExtras = scanner1.nextInt();
+                while (nuevoExtras < 0) {
+                    scanner1.nextLine();
+                    System.out.print("¡No se puede introducir un número negativo! Introduce el número de extras: ");
+                    nuevoExtras = scanner1.nextInt();
+                }
+                // TODO: Si se introduce un numero negativo y despues un tipo no valido, salta una excepción. Resolver de alguna manera comprobar las dos cada vez que se introduce un input
                 scanner1.nextLine();
                 extras.add(nuevoExtras);
                 nuevoCosteFinal = (double) (costeBase + COSTEEXTRA * nuevoExtras);
