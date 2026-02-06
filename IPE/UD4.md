@@ -28,7 +28,7 @@ España está adscrita a las normas de la Unión Europea y la Organización Inte
 
 ### Principios de aplicación
 
-A la hora de aplicar estas normas del derecho laboral se recurre al principio de jerarquía normativa 
+A la hora de aplicar estas normas del derecho laboral se recurre al principio de jerarquía normativa.
 
 ## Derechos y obligaciones de las personas trabajadoras
 
