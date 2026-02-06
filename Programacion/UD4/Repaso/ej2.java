@@ -24,6 +24,7 @@ public class ej2 {
         int ultimoNumero;
         final int LONGITUDMAXIMAMATRICULA = 7;
         final int LONGITUDMINIMAMATRICULA = 3;
+        boolean inputValido;
         System.out.println("Opciones:\n1. Añadir revisión\n2. Listar revisiones\n3. Mostrar coste\n4. Eliminar revisión\n0. Salir");
         Scanner scanner1 = new Scanner(System.in);
         do {
