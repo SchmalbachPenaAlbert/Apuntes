@@ -57,7 +57,7 @@ a:active {
     flex-wrap: wrap;
     gap: 20px;
 }
-.tarjeta {
+.casos {
     flex:1 1 150px;
     background-color: darkmagenta;
     border-color: black;
@@ -69,12 +69,26 @@ a:active {
 .tarjetas h2 {
     width: 100%;   /* Forces the title to take full row */
 }
-.tarjeta img {
+.casos img {
     border-radius: 3px;
 }
-.tarjeta > h3 {
+.casos > h3 {
     font-style: oblique;
 }
-.tarjeta button:hover {
+.casos button:hover {
     background-color:hotpink;
+}
+.amenazas {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.ejemplosAmenazas {
+    background-color: darkolivegreen;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+.ejemplosAmenazas img:hover + h3 {
+    font-style: italic;
 }
