@@ -51,3 +51,30 @@ a:active {
     transform: scale(1.1);
     background-color: darkblue;
 }
+.tarjetas {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.tarjeta {
+    flex:1 1 150px;
+    background-color: darkmagenta;
+    border-color: black;
+    border-radius: 10px; /* redondea cada contenedor .tarjeta */
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+.tarjetas h2 {
+    width: 100%;   /* Forces the title to take full row */
+}
+.tarjeta img {
+    border-radius: 3px;
+}
+.tarjeta > h3 {
+    font-style: oblique;
+}
+.tarjeta button:hover {
+    background-color:hotpink;
+}
