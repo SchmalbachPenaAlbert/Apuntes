@@ -1,3 +1,4 @@
+/* ESTILOS GLOBALES: Configuración de fondo, tipografía y espaciado base */
 body {
     background-color: lime;
     padding: 15px;
@@ -9,6 +10,7 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
 }
+/* Título principal con estilo contundente y borde decorativo */
 h1 {
     text-shadow: 10px;
     color:black;
@@ -18,6 +20,7 @@ h1 {
     padding: 5px;
     border-color: blueviolet;
 }
+/* Menú de navegación: Alineación horizontal y eliminación de viñetas */
 .menu ul {
     display: flex;
     justify-content: flex-end;
@@ -25,6 +28,7 @@ h1 {
     gap: 20px; /* espacio entre enlaces */
     padding: 5px;
 }
+/* Efectos visuales para los enlaces (hover y estado activo) */
 a:hover {
     color: aqua;
 }
@@ -32,32 +36,38 @@ a:hover {
     font-style: italic;
     color: midnightblue;
 }
+/* Imagen de fondo centrada y altura destacada */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 10px;
-    background-image: url(https://www.esedsl.com/hs-fs/hubfs/2--Imagen-Blog---atutentificaci%C3%B3n-de-los-factores.jpg?width=750&name=2--Imagen-Blog---atutentificaci%C3%B3n-de-los-factores.jpg);
+    background-image: url(https://cdn.dribbble.com/userupload/22148904/file/original-56b19720d83b146e748d69554e264aff.jpg?resize=752x&vertical=center.redd.it/uu3ig2az6c121.jpg?auto=webp&s=63b38c231e0b6d3c614cdd19e47a30d59c7d9c58.com/hs-fs/hubfs/2--Imagen-Blog---atutentificaci%C3%B3n-de-los-factores.jpg?width=750&name=2--Imagen-Blog---atutentificaci%C3%B3n-de-los-factores.jpg);
     min-height: 25vh;
+    background-size:contain;
 }
 .hero h2 {
     font-size: 30px;
 }
+/* Selector de hermano adyacente para el subtítulo del Hero */
 .hero h2 + p {
     font-size: 20px;
     color:beige;
 }
+/* Botón de acción con efecto de escala y cambio de color al pasar el ratón */
 .hero button:hover {
     transform: scale(1.1);
     background-color: darkblue;
 }
+/* Distribución de tarjetas con Flexbox y envoltura */
 .tarjetas {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
 }
+/* Diseño individual de tarjeta con fondo, bordes y sombra */
 .casos {
     flex:1 1 150px;
     background-color: darkmagenta;
@@ -70,15 +80,18 @@ a:hover {
 .tarjetas h2 {
     width: 100%;   /* Forces the title to take full row */
 }
+/* Selector de descendiente para redondear las imágenes de las tarjetas */
 .casos img {
     border-radius: 3px;
 }
+/* Estilar el título de la tarjeta */
 .casos > h3 {
     font-style: oblique;
 }
 .casos button:hover {
     background-color:hotpink;
 }
+/* Alinear perfiles destacados */
 .amenazas {
     display: flex;
     justify-content: space-between;
@@ -96,6 +109,7 @@ a:hover {
 .ejemplosAmenazas img:hover + h3 {
     font-style: italic;
 }
+/* Elimina los estilos de lista y añade espacio entre cada evento */ 
 .campañas {
     list-style: none;
 }
@@ -120,11 +134,13 @@ a:hover {
 .campaña3 {
     background-color: rgb(255, 154, 210);
 }
+/* Resalte visual de la fecha dentro de los eventos */
 .campañas time {
     font-style: oblique;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:linen
 }
+/* PIE DE PÁGINA: Alineación horizontal, fondo oscuro y efectos en redes sociales */
 .piePagina {
     display: flex;
     justify-content: space-between;
