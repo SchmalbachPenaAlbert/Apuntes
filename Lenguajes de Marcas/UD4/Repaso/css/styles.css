@@ -23,14 +23,14 @@ h1 {
     justify-content: flex-end;
     list-style: none;
     gap: 20px; /* espacio entre enlaces */
-    margin: 0;
     padding: 5px;
 }
 a:hover {
     color: aqua;
 }
-a:active {
-    color: aqua;
+.menu a.activo {
+    font-style: italic;
+    color: midnightblue;
 }
 .hero {
     display: flex;
@@ -39,6 +39,7 @@ a:active {
     text-align: center;
     padding: 10px;
     background-image: url(https://www.esedsl.com/hs-fs/hubfs/2--Imagen-Blog---atutentificaci%C3%B3n-de-los-factores.jpg?width=750&name=2--Imagen-Blog---atutentificaci%C3%B3n-de-los-factores.jpg);
+    min-height: 25vh;
 }
 .hero h2 {
     font-size: 30px;
@@ -84,6 +85,9 @@ a:active {
     flex-wrap: wrap;
     gap: 15px;
 }
+.amenazas h2 {
+    width: 100%;   /* Forces the title to take full row */
+}
 .ejemplosAmenazas {
     background-color: darkolivegreen;
     padding: 10px;
@@ -91,4 +95,54 @@ a:active {
 }
 .ejemplosAmenazas img:hover + h3 {
     font-style: italic;
+}
+.campañas {
+    list-style: none;
+}
+.campañas ul > li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+/* estilo para primera y segunda campaña */
+.campaña1, .campaña2 {
+    background-color: darkmagenta;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.campaña1 > h3, .campaña2 > h3, .campaña1 > p, .campaña2 > p {
+    border-right: 3px;
+    border-right-style: dotted;
+    margin: 3px;
+    padding: 6px;
+}
+/* estilo para tercera campaña */
+.campaña3 {
+    background-color: rgb(255, 154, 210);
+}
+.campañas time {
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:linen
+}
+.piePagina {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: indigo;
+    color: white;
+}
+.piePagina ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 20px; /* espacio entre enlaces */
+    padding: 5px;
+}
+.piePagina a {
+    color:deepskyblue;
+}
+.piePagina a:hover {
+    color: azure;
 }
