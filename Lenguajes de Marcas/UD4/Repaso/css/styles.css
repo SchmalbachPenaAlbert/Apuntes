@@ -1,6 +1,7 @@
 /* ESTILOS GLOBALES: Configuración de fondo, tipografía y espaciado base */
 body {
-    background-color: lime;
+    background: #b43aac;
+    background: linear-gradient(90deg, rgba(180, 58, 172, 1) 0%, rgba(253, 29, 29, 1) 57%, rgba(252, 176, 69, 1) 100%);
     padding: 15px;
 }
 h1, h2, h3 {
@@ -59,6 +60,7 @@ a:hover {
 .hero button:hover {
     transform: scale(1.1);
     background-color: darkblue;
+    color: white;
 }
 /* Distribución de tarjetas con Flexbox y envoltura */
 .tarjetas {
@@ -127,7 +129,8 @@ a:hover {
 .campaña1 > h3, .campaña2 > h3, .campaña1 > p, .campaña2 > p {
     border-right: 3px;
     border-right-style: dotted;
-    margin: 3px;
+    flex:1 1 auto;
+    justify-content: space-around;
     padding: 6px;
 }
 /* estilo para tercera campaña */
