@@ -32,3 +32,22 @@ a:hover {
 a:active {
     color: aqua;
 }
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-image: url(https://www.esedsl.com/hs-fs/hubfs/2--Imagen-Blog---atutentificaci%C3%B3n-de-los-factores.jpg?width=750&name=2--Imagen-Blog---atutentificaci%C3%B3n-de-los-factores.jpg);
+}
+.hero h2 {
+    font-size: 30px;
+}
+.hero h2 + p {
+    font-size: 20px;
+    color:beige;
+}
+.hero button:hover {
+    transform: scale(1.1);
+    background-color: darkblue;
+}
