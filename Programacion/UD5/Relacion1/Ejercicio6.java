@@ -17,15 +17,31 @@ class Reloj {
     }
     void sumarMinutos(int minutos) {
         minuto += minutos;
+        while (minuto >= 60) {
+            minuto -= 60;
+            hora++;
+        }
     }
     void restarMinutos(int minutos) {
         minuto -= minutos;
+        while (minuto < 0) {
+            hora--;
+            minuto = 0;
+        }
     }
     void sumarSegundos(int segundos) {
         segundo += segundos;
+        while (segundo >= 60) {
+            segundo += 60;
+            minuto++;
+        }
     }
     void restarSegundos(int segundos) {
         segundo -= segundos;
+        while (segundo < 0) {
+            minuto--;
+            segundo = 0;
+        }
     }
 
     @Override
