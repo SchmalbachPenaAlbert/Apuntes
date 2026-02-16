@@ -5,5 +5,8 @@ public class Ejercicio1 {
         // usando el getter y el setter
         alfredo.setNombre("Alfredo Velázquez");
         System.out.println(alfredo.getNombre());
+        // si el input es incorrecto (menor de 17 en este caso), no se actualiza el atributo
+        alfredo.setEdad(16);
+        System.out.println(alfredo.getEdad());
     }
 }

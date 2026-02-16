@@ -7,14 +7,25 @@ public class Estudiante {
         this.edad = edad;
         this.numeroMatricula = numeroMatricula;
     }
-    
+
+    // getter/setter para el nombre
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     public String getNombre() {
         return nombre;
     }
+    // getter/setter para la edad
+    public void setEdad(int edad) {
+        if (edad >= 17) {
+            this.edad = edad; 
+        }
+    }
+    public int getEdad() {
+        return edad;
+    }
 
+    // metodo para el output
     @Override
     public String toString() {
         return nombre + " | " + edad + " años | " + numeroMatricula;
