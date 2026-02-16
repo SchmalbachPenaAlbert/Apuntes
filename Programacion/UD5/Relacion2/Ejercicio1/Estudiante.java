@@ -1,11 +1,18 @@
 public class Estudiante {
-    String nombre;
-    int edad;
-    String numeroMatricula;
+    private String nombre;
+    private int edad;
+    private String numeroMatricula;
     Estudiante(String nombre, int edad, String numeroMatricula) {
         this.nombre = nombre;
         this.edad = edad;
         this.numeroMatricula = numeroMatricula;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public String getNombre() {
+        return nombre;
     }
 
     @Override
