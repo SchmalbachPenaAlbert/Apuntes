@@ -24,6 +24,12 @@ public class Estudiante {
     public int getEdad() {
         return edad;
     }
+    public void setNumeroMatricula(String numeroMatricula) {
+        this.numeroMatricula = numeroMatricula;
+    }
+    public String getNumeroMatricula() {
+        return numeroMatricula;
+    }
 
     // metodo para el output
     @Override
