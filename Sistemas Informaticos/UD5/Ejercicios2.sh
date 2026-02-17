@@ -28,6 +28,15 @@ modulo() {
     echo $resultado
 }
 
+verificar_par() {
+    if [[ $(($1 % 2)) == 0 ]]
+    then
+        echo "$1 es par"
+    else
+        echo "$1 es impar"
+    fi
+}
+
 echo "Ej 4:"
 multiplicar $1 $2
 echo "Ej 5:"
@@ -37,7 +46,7 @@ volumen_cubo $1
 echo "Ej 8:"
 modulo $1 $2
 echo "Ej 9:"
-
+verificar_par $1
 echo "Ej 10:"
 
 echo "Ej 11:"
