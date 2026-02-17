@@ -37,6 +37,18 @@ verificar_par() {
     fi
 }
 
+mayor_de_tres() {
+    if [[ $1 -gt $2 && $1 -gt $3 ]]
+    then
+        echo $1
+    elif [[ $2 -gt $1 && $2 -gt $3 ]]
+    then
+        echo $2
+    else
+        echo $3
+    fi
+}
+
 echo "Ej 4:"
 multiplicar $1 $2
 echo "Ej 5:"
@@ -48,7 +60,7 @@ modulo $1 $2
 echo "Ej 9:"
 verificar_par $1
 echo "Ej 10:"
-
+mayor_de_tres $1 $2 $3
 echo "Ej 11:"
 
 echo "Ej 12:"
