@@ -49,6 +49,17 @@ mayor_de_tres() {
     fi
 }
 
+factorial() {
+    i=2
+    resultado=1
+    while [ $i -le $1 ]
+    do
+        resultado=$((resultado * $i))
+        ((i++))
+    done
+    echo $resultado
+}
+
 echo "Ej 4:"
 multiplicar $1 $2
 echo "Ej 5:"
@@ -62,7 +73,7 @@ verificar_par $1
 echo "Ej 10:"
 mayor_de_tres $1 $2 $3
 echo "Ej 11:"
-
+factorial $1
 echo "Ej 12:"
 
 echo "Ej 13:"
