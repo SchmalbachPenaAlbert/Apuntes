@@ -60,6 +60,25 @@ factorial() {
     echo $resultado
 }
 
+es_primo() {
+    divisor_encontrado=0
+    i=2
+    while [ $i -lt $1 ]
+    do
+        if [[ $(($1 % $i)) == 0 ]]
+        then
+            divisor_encontrado=1
+        fi
+        ((i++))
+    done
+    if [[ divisor_encontrado -eq 0 ]]
+    then
+        echo "$1 es primo"
+    else
+        echo "$1 no es primo"
+    fi
+}
+
 echo "Ej 4:"
 multiplicar $1 $2
 echo "Ej 5:"
@@ -75,5 +94,6 @@ mayor_de_tres $1 $2 $3
 echo "Ej 11:"
 factorial $1
 echo "Ej 12:"
-
+es_primo $1
 echo "Ej 13:"
+fibonacci $1
