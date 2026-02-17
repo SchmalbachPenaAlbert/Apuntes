@@ -71,12 +71,27 @@ es_primo() {
         fi
         ((i++))
     done
-    if [[ divisor_encontrado -eq 0 ]]
+    if [[ $divisor_encontrado -eq 0 ]]
     then
         echo "$1 es primo"
     else
         echo "$1 no es primo"
     fi
+}
+
+fibonacci() {
+    primer_numero=0
+    segundo_numero=1
+    i=0
+    while [ $i -lt $1 ]
+    do
+        resultado=$primer_numero
+        resultado_parcial=$(($primer_numero + segundo_numero))
+        primer_numero=$segundo_numero
+        segundo_numero=$resultado_parcial
+        ((i++))
+    done
+    echo $resultado
 }
 
 echo "Ej 4:"
