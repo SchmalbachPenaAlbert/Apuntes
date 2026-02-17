@@ -1,3 +1,5 @@
+package Programacion.UD5.Relacion2.Ejercicio1;
+import Programacion.UD5.Relacion2.Faker;
 public class Ejercicio1 {
     public static void main(String[] args) {
         Estudiante alfredo = new Estudiante("Alfredo", 22, "STEM001");

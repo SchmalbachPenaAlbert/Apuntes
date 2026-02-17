@@ -1,3 +1,4 @@
+package Programacion.UD5.Relacion2.Ejercicio1;
 import java.util.ArrayList;
 public class Universidad {
     ArrayList<Estudiante> alumnado;
@@ -18,7 +19,7 @@ public class Universidad {
     public String mostrarEstudiantesCompletos() {
         String lista = "";
         for (Estudiante estudiante : alumnado) {
-            lista += estudiante + "||\n";
+            lista += estudiante + "\n";
         }
         return lista;
     }

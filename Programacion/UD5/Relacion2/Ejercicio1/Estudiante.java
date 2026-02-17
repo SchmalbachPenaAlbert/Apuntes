@@ -1,3 +1,4 @@
+package Programacion.UD5.Relacion2.Ejercicio1;
 public class Estudiante {
     private String nombre;
     private int edad;
