@@ -1,3 +1,1 @@
-window.addEventListener("load", function() {
-    document.getElementById("imagen").src = "https://library.sportingnews.com/styles/twitter_card_120x120/s3/2024-10/GettyImages-2181233719.jpg?itok=LHUzJFHB"
-})
+document.getElementById("imagen").src = "https://library.sportingnews.com/styles/twitter_card_120x120/s3/2024-10/GettyImages-2181233719.jpg?itok=LHUzJFHB"
