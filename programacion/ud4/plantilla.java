@@ -1,4 +1,4 @@
-package Programacion.UD4;
+package programacion.ud4;
 
 import java.util.ArrayList;
 import java.util.Scanner;
