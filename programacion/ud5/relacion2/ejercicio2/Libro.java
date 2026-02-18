@@ -48,4 +48,15 @@ public class Libro {
     public boolean getDisponible() {
         return disponible;
     }
+
+    @Override
+    public String toString() {
+        String mensaje;
+        if (disponible == true) {
+            mensaje = id + " | " + titulo + " | Autor: " + autor + " | Sinopsis: " + sinopsis + " | Disponibilidad: En stock";
+        } else {
+            mensaje = id + " | " + titulo + " | Autor: " + autor + " | Sinopsis: " + sinopsis + " | Disponibilidad: Sin stock";
+        }
+        return mensaje;
+    }
 }
