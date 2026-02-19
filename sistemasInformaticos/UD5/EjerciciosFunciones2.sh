@@ -86,7 +86,8 @@ fibonacci() {
     while [ $i -lt $1 ]
     do
         resultado=$primer_numero
-        resultado_parcial=$(($primer_numero + segundo_numero))
+        resultado_parcial=$(($primer_numero + $segundo_numero))
+        # Actualizar los numeros para la siguiente iteración
         primer_numero=$segundo_numero
         segundo_numero=$resultado_parcial
         ((i++))
