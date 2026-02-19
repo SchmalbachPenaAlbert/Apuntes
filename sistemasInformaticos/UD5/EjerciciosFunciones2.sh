@@ -2,97 +2,184 @@
 # Ejercicios funciones Bash 2
 
 multiplicar() {
-    resultado=$( echo "$1 * $2" | bc -l)
-    echo $resultado
+    # control de errores
+    if [ $# -lt 2 ]
+    then
+        echo "No se han introducido valores suficientes!"
+    else
+        # funcionalidad principal
+        resultado=$( echo "$1 * $2" | bc -l)
+        echo $resultado
+    fi
 }
 
 potencia() {
-    base=$1
-    exponente=$2
-    i=0
-    while [ $i -lt $exponente ]
-    do
-        resultado=$( echo "$resultado * $base" | bc -l)
-        ((i++))
-    done
-    echo $resultado
+    # control de errores
+    if [ $# -lt 2 ]
+    then
+        echo "No se han introducido valores suficientes!"
+    elif [ $2 -eq 0 ]
+    then
+        echo "1"
+    else
+        # funcionalidad principal
+        base=$1
+        exponente=$2
+        i=0
+        while [ $i -lt $exponente ]
+        do
+            resultado=$( echo "$resultado * $base" | bc -l)
+            ((i++))
+        done
+        echo $resultado
+    fi
 }
 
 volumen_cubo() {
-    resultado=$( echo "$1 * $1 * $1" | bc -l)
-    echo $resultado
+    # control de errores
+    if [ $# -eq 0 ]
+    then
+        echo "No se han introducido valores suficientes!"
+    elif [ $1 -eq 0 ]
+    then
+        echo "La longitud del lado no puede ser 0!"
+    else
+        # funcionalidad principal
+        resultado=$( echo "$1 * $1 * $1" | bc -l)
+        echo $resultado
+    fi
 }
 
 modulo() {
-    resultado=$(($1 % $2))
-    echo $resultado
+    # control de errores
+    if [ $# -lt 2 ]
+    then
+        echo "No se han introducido valores suficientes!"
+    elif [ $2 -eq 0 ]
+    then
+        echo "No se puede dividir entre 0!"
+    else
+        # funcionalidad principal
+        resultado=$(($1 % $2))
+        echo $resultado
+    fi
 }
 
 verificar_par() {
-    if [[ $(($1 % 2)) == 0 ]]
+    # control de errores
+    if [ $# -eq 0 ]
     then
-        echo "$1 es par"
+        echo "No se han introducido valores suficientes!"
+    elif [ $1 -eq 0 ]
+    then
+        echo "$1 no es ni par ni impar."
     else
-        echo "$1 es impar"
+        # funcionalidad principal
+        if [[ $(($1 % 2)) == 0 ]]
+        then
+            echo "$1 es par"
+        else
+            echo "$1 es impar"
+        fi
     fi
 }
 
 mayor_de_tres() {
-    if [[ $1 -gt $2 && $1 -gt $3 ]]
+    # control de errores
+    if [ $# -lt 3 ]
     then
-        echo $1
-    elif [[ $2 -gt $1 && $2 -gt $3 ]]
-    then
-        echo $2
+        echo "No se han introducido valores suficientes!"
     else
-        echo $3
+        # funcionalidad principal
+        if [[ $1 -gt $2 && $1 -gt $3 ]]
+        then
+            echo $1
+        elif [[ $2 -gt $1 && $2 -gt $3 ]]
+        then
+            echo $2
+        elif [[ $3 -gt $1 && $3 -gt $2 ]]
+        then
+            echo $3
+        else
+            echo "No hay ningún número único que sea el mayor."
+        fi
     fi
 }
 
 factorial() {
-    i=2
-    resultado=1
-    while [ $i -le $1 ]
-    do
-        resultado=$((resultado * $i))
-        ((i++))
-    done
-    echo $resultado
+    # control de errores
+    if [ $# -eq 0 ]
+    then
+        echo "No se han introducido valores suficientes!"
+    elif [ $1 -lt 0 ]
+    then
+        echo "Los números negativos no tienen factorial!"
+    else
+        # funcionalidad principal
+        i=2
+        resultado=1
+        while [ $i -le $1 ]
+        do
+            resultado=$((resultado * $i))
+            ((i++))
+        done
+        echo $resultado
+    fi
 }
 
 es_primo() {
-    divisor_encontrado=0
-    i=2
-    while [ $i -lt $1 ]
-    do
-        if [[ $(($1 % $i)) == 0 ]]
-        then
-            divisor_encontrado=1
-        fi
-        ((i++))
-    done
-    if [[ $divisor_encontrado -eq 0 ]]
+    # control de errores
+    if [ $# -eq 0 ]
     then
-        echo "$1 es primo"
+        echo "No se han introducido valores suficientes!"
+    elif [ $1 -le 1 ]
+    then
+        echo "Los numeros menores a 2, por definición, no son primos."
     else
-        echo "$1 no es primo"
+        # funcionalidad principal
+        divisor_encontrado=0
+        i=2
+        while [ $i -lt $1 ]
+        do
+            if [[ $(($1 % $i)) == 0 ]]
+            then
+                divisor_encontrado=1
+            fi
+            ((i++))
+        done
+        if [[ $divisor_encontrado -eq 0 ]]
+        then
+            echo "$1 es primo"
+        else
+            echo "$1 no es primo"
+        fi
     fi
 }
 
 fibonacci() {
-    primer_numero=0
-    segundo_numero=1
-    i=0
-    while [ $i -lt $1 ]
-    do
-        resultado=$primer_numero
-        resultado_parcial=$(($primer_numero + $segundo_numero))
-        # Actualizar los numeros para la siguiente iteración
-        primer_numero=$segundo_numero
-        segundo_numero=$resultado_parcial
-        ((i++))
-    done
-    echo $resultado
+    # control de errores
+    if [ $# -eq 0 ]
+    then
+        echo "No se han introducido valores suficientes!"
+    elif [ $1 -le 0 ]
+    then
+        echo "No se ha introducido un indice correcto! Debe ser un número positivo!"
+    else
+        # funcionalidad principal
+        primer_numero=0
+        segundo_numero=1
+        i=0
+        while [ $i -lt $1 ]
+        do
+            resultado=$primer_numero
+            resultado_parcial=$(($primer_numero + $segundo_numero))
+            # Actualizar los numeros para la siguiente iteración
+            primer_numero=$segundo_numero
+            segundo_numero=$resultado_parcial
+            ((i++))
+        done
+        echo $resultado
+    fi
 }
 
 echo "Ej 4:"
