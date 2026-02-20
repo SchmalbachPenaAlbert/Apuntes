@@ -52,6 +52,19 @@ obtener_propietario() {
     echo "Propietario -> $usuario_propietario | Grupo -> $grupo_propietario"
 }
 
+respaldo() {
+    fecha_actual=$(date +%Y%m%d_%H%M%S)
+    origen=$(basename "$1")
+    mkdir -p /home/alumnoT/backups # create if doesn't exist
+    if [ ! -e $1 ] # si no existe...
+    then
+        echo "El fichero no existe!"
+    else
+        cp -- $1 /home/alumnoT/backups/${origen}.bak-${fecha_actual}
+        echo "Respaldo del fichero creado satisfactoriamente."
+    fi
+}
+
 echo "Ej 1:"
 crear_directorio $1
 echo "Ej 2:"
