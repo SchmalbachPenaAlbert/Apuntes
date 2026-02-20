@@ -65,6 +65,15 @@ respaldo() {
     fi
 }
 
+tamaño_directorio() {
+    if [ ! -e $1 ] # si no existe...
+    then
+        echo "El directorio no existe!"
+    else
+        echo "$(ls -ld $1 | cut -d" " -f5)"
+    fi
+}
+
 echo "Ej 1:"
 crear_directorio $1
 echo "Ej 2:"
