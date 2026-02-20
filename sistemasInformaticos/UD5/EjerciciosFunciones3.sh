@@ -70,7 +70,17 @@ tamaño_directorio() {
     then
         echo "El directorio no existe!"
     else
-        echo "$(ls -ld $1 | cut -d" " -f5)"
+        echo "$(ls -ld $1 | cut -d" " -f5) bits"
+    fi
+}
+
+puerto_abierto() {
+    conexion_posible=$(nc -z $1 $2 &>/dev/null && echo "true")
+    if [ $conexion_posible == "true" 2>/dev/null ]
+    then
+        echo "Puerto $2 abierto en $1"
+    else
+        echo "Puerto $2 cerrado en $1"
     fi
 }
 
@@ -89,6 +99,6 @@ respaldo $1
 echo "Ej 7:"
 tamaño_directorio $1
 echo "Ej 8:"
-puerto_abierto $1
+puerto_abierto $1 $2
 echo "Ej 9:"
 verificar_conectividad $1
