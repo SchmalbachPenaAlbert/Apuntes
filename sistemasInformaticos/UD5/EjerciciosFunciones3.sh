@@ -42,7 +42,14 @@ cambiar_permisos() {
 }
 
 obtener_propietario() {
-    
+    if [ ! -e $1 ] # si no existe...
+    then
+        echo "El directorio no existe!"
+    else
+        usuario_propietario=$(ls -ld $1 | cut -d" " -f3)
+        grupo_propietario=$(ls -ld $1 | cut -d" " -f4)
+    fi
+    echo "Propietario -> $usuario_propietario | Grupo -> $grupo_propietario"
 }
 
 echo "Ej 1:"
