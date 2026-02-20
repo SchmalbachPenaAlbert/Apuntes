@@ -84,6 +84,17 @@ puerto_abierto() {
     fi
 }
 
+verificar_conectividad() {
+    conexion_posible=$(ping -c 1 $1 &>/dev/null && echo "true")
+    if [ $conexion_posible == "true" 2>/dev/null ]
+    then
+    latencia=$(ping -c 1 $1 | head -2 | tail -1 | cut -d" " -f7 | cut -d"=" -f2)
+    echo "$1 responde (latencia: $latencia ms)"
+    else
+        echo "$1 no responde"
+    fi
+}
+
 echo "Ej 1:"
 crear_directorio $1
 echo "Ej 2:"
