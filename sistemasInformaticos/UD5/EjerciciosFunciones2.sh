@@ -183,10 +183,20 @@ fibonacci() {
 }
 
 sumatorio() {
-    numero=$1
-    # duplicamos los numeros hasta el numero, haciendo que todas las sumas sean ese numero + 1, y dividimos entre dos ya que tenemos el doble
-    resultado=$(( numero * (numero + 1) / 2 ))
-    echo $resultado
+    # control de errores
+    if [ $# -eq 0 ]
+    then
+        echo "No se han introducido valores suficientes!"
+    elif [ $1 -le 0 ]
+    then
+        echo "No se ha introducido un indice correcto! Debe ser un número positivo!"
+    else
+        # funcionalidad principal
+        numero=$1
+        # duplicamos los numeros hasta el numero, haciendo que todas las sumas sean ese numero + 1, y dividimos entre dos ya que tenemos el doble
+        resultado=$(( numero * (numero + 1) / 2 ))
+        echo $resultado
+    fi
 }
 
 echo "Ej 4:"
