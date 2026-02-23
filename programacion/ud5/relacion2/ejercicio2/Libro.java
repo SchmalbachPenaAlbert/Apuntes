@@ -53,9 +53,9 @@ public class Libro {
     public String toString() {
         String mensaje;
         if (disponible == true) {
-            mensaje = id + " | " + titulo + " | Autor: " + autor + " | Sinopsis: " + sinopsis + " | Disponibilidad: En stock";
+            mensaje = "ID " + id + " | " + titulo + " | Autor: " + autor + " | Sinopsis: " + sinopsis + " | Disponibilidad: En stock";
         } else {
-            mensaje = id + " | " + titulo + " | Autor: " + autor + " | Sinopsis: " + sinopsis + " | Disponibilidad: Sin stock";
+            mensaje = "ID " + id + " | " + titulo + " | Autor: " + autor + " | Sinopsis: " + sinopsis + " | Disponibilidad: Sin stock";
         }
         return mensaje;
     }
