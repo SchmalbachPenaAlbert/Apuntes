@@ -182,6 +182,13 @@ fibonacci() {
     fi
 }
 
+sumatorio() {
+    numero=$1
+    # duplicamos los numeros hasta el numero, haciendo que todas las sumas sean ese numero + 1, y dividimos entre dos ya que tenemos el doble
+    resultado=$(( numero * (numero + 1) / 2 ))
+    echo $resultado
+}
+
 echo "Ej 4:"
 multiplicar $1 $2
 echo "Ej 5:"
@@ -200,3 +207,5 @@ echo "Ej 12:"
 es_primo $1
 echo "Ej 13:"
 fibonacci $1
+echo "Ej 14:"
+sumatorio $1
