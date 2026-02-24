@@ -6,6 +6,13 @@ public class Producto {
     public String descripcion;
     public double precio;
     public int cantidadEnStock;
+    Producto(int id, String nombre, String descripcion, double precio, int cantidadEnStock) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.cantidadEnStock = cantidadEnStock;
+    }
 
     // getters/setters
     public int getId() {
@@ -41,5 +48,10 @@ public class Producto {
     }
     public void setCantidadEnStock(int cantidadEnStock) {
         this.cantidadEnStock = cantidadEnStock;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " (ID de producto " + id + "). " + descripcion + ". Precio actual de " + precio + "€. Stock actual de " + cantidadEnStock + " unidades.";
     }
 }
