@@ -9,8 +9,8 @@ public class Supermercado {
     }
 
     // metodos
-    public void agregarProductos(Producto productos, int cantidad) {
-        
+    public void agregarProductos(Producto producto) {
+        productos.add(producto);
     }
     public void venderProductos(int id, int cantidad) {
         int stockActual;
@@ -24,7 +24,7 @@ public class Supermercado {
         }
     }
     public String mostrarInventario() {
-        String mensaje = "";
+        String mensaje = "Productos:\n";
         for (Producto producto : productos) {
             mensaje += producto.toString() + "\n";
         }
