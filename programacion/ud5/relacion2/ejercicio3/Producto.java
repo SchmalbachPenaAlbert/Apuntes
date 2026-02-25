@@ -52,6 +52,6 @@ public class Producto {
 
     @Override
     public String toString() {
-        return nombre + " (ID de producto " + id + "). " + descripcion + ". Precio actual de " + precio + "€. Stock actual de " + cantidadEnStock + " unidades.";
+        return nombre + " (ID de producto " + id + "). " + descripcion + ". Precio actual de " + String.format("%.2f", precio) + "€. Stock actual de " + cantidadEnStock + " unidades.";
     }
 }
