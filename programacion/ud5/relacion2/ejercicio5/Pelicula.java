@@ -4,9 +4,9 @@ public class Pelicula {
     private String titulo;
     private String sinopsis;
     private String director;
-    private double duracion;
+    private int duracion;
 
-    Pelicula(String titulo, String sinopsis, String director, double duracion) {
+    Pelicula(String titulo, String sinopsis, String director, int duracion) {
         this.titulo = titulo;
         this.sinopsis = sinopsis;
         this.director = director;
@@ -35,15 +35,15 @@ public class Pelicula {
         this.director = director;
     }
 
-    public double getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
-    public void setDuracion(double duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 
     @Override
     public String toString() {
-        return "\"" + titulo + "\"" + ", dirigida por " + director + ". Sinopsis: " + sinopsis + ". Duración: " + " horas.";
+        return "\"" + titulo + "\"" + ", dirigida por " + director + ". Sinopsis: " + sinopsis + ". Duración: " + " minutos.";
     }
 }
