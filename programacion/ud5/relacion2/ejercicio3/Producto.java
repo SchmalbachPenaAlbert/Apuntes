@@ -1,11 +1,11 @@
 package programacion.ud5.relacion2.ejercicio3;
 
 public class Producto {
-    public int id;
-    public String nombre;
-    public String descripcion;
-    public double precio;
-    public int cantidadEnStock;
+    private int id;
+    private String nombre;
+    private String descripcion;
+    private double precio;
+    private int cantidadEnStock;
     Producto(int id, String nombre, String descripcion, double precio, int cantidadEnStock) {
         this.id = id;
         this.nombre = nombre;
