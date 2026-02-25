@@ -26,11 +26,9 @@ campoTexto.addEventListener("keydown", function(event) {
 })
 // ej4
 formulario.addEventListener("submit", function(event) {
-    event.preventDefault() // prevenir que se refresque la pagina
+    event.preventDefault()
     let nombre = inputNombre.value
-    let mensajeEj4 = document.createElement("p")
-    mensajeEj4.textContent = "Energía recargada, " + nombre + "!"
-    resultado.appendChild(mensaje)
+    resultado.innerHTML += "Energía recargada, " + nombre + "!<br>"
 })
 // ej5
 inputCodigo.addEventListener("focus", function(event) {
