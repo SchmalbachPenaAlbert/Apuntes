@@ -51,4 +51,17 @@ echo "El precio con IVA es $precioTotal"
 }
 
 echo "Ej 4:"
-calcular_iva $1 $2
+calcular_iva $1 $2 
+
+validar_argumentos() {
+    numeroDeseado=3
+    if [ $# -lt $numeroDeseado ]
+    then
+        echo "No se han introducido valores suficientes!"
+    else
+        echo "To bien"
+    fi
+}
+
+echo "Ej 5:"
+validar_argumentos $@
