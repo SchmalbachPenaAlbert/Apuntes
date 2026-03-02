@@ -11,7 +11,6 @@ public class Tramite {
     int duracionDias;
 
     Tramite(int numeroTramites, String codigo, String nombreTramite, double precioBase, boolean requiereCita, int duracionDias) {
-        Tramite.numeroTramites = numeroTramites;
         this.codigo = codigo; // TODO: autogenerar codigo
         this.nombreTramite = nombreTramite;
         this.precioBase = precioBase;

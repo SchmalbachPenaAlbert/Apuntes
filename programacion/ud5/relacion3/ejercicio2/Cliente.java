@@ -10,7 +10,6 @@ public class Cliente {
     String direccion;
 
     Cliente(int numeroClientes, int id, String nombre, String dni, String telefono, String email, String direccion) {
-        Cliente.numeroClientes = numeroClientes;
         this.id = id; // TODO: autogenerar id
         this.nombre = nombre;
         this.dni = dni;
