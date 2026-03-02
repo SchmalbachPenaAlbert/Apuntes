@@ -3,15 +3,22 @@ package programacion.ud5.pt5;
 import java.util.ArrayList;
 
 public class Zoologico {
-    ArrayList<Animal> coleccion;
 
     // constructor para si el zoo YA EXISTE
-    Zoologico(ArrayList<Animal> coleccion) {
+    String nombre;
+    ArrayList<Animal> coleccion;
+    public static ArrayList<Zoologico> allZoologicos = new ArrayList<>(); 
 
+    public Zoologico(String nombre, ArrayList<Animal> coleccion) {
+        this.nombre = nombre;
+        this.coleccion = coleccion;
+        allZoologicos.add(this);
     }
     // constructor para si el constructor NO EXISTE (crea un nuevo ArrayList)
-    public Zoologico() {
+    public Zoologico(String nombre) {
+        this.nombre = nombre;
         this.coleccion = new ArrayList<>();
+        allZoologicos.add(this);
     }
 
     public ArrayList<Animal> getColeccion() {
