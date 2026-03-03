@@ -5,102 +5,92 @@ import java.util.Scanner;
 
 public class ASP_PT5 {
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    
-    final int MAXANIMALES = 1000;
+        Scanner scanner = new Scanner(System.in);
+
+        final int MAXANIMALES = 1000;
         final int OPCIONSALIR = 6;
         int opciónUsuario = 0;
         int cantidadModificar = 0;
 
-        Animal animal1 = null;
-
         String codigoBuscar = "";
-        String mensajeMenu = 
-        "===== GESTIÓN DE ZOOLÓGICO =====\n\n" +
-        "    1. Mostrar todos los animales\n" +
-        "    2. Buscar un animal por código\n" +
-        "    3. Agregar ejemplares a un animal\n" +
-        "    4. Retirar ejemplares de un animal\n" +
-        "    5. Eliminar un animal\n" +
-        "    6. Salir\n\n" +
-        "Seleccione una opción: ";
+        String mensajeMenu = "===== GESTIÓN DE ZOOLÓGICO =====\n\n" +
+                "    1. Mostrar todos los animales\n" +
+                "    2. Buscar un animal por código\n" +
+                "    3. Agregar ejemplares a un animal\n" +
+                "    4. Retirar ejemplares de un animal\n" +
+                "    5. Eliminar un animal\n" +
+                "    6. Salir\n\n" +
+                "Seleccione una opción: ";
 
         ArrayList<Animal> animalesBase = new ArrayList<>();
-        for(int i = 0; i < MAXANIMALES; i++) {
-            animalesBase.add(new Animal("ANIMAL" + i, i + 15, i + 23 * i * 0.35));
+        for (int i = 0; i < MAXANIMALES; i++) {
+            animalesBase.add(new Animal(Faker.nombreAnimal(), Faker.cantidadAnimal(), Faker.precioAnimal()));
         }
+        Zoologico LoroParque = new Zoologico("zoo1", animalesBase);
+        // En caso de que sea para más de un zoo
+        Zoologico zooIterar = LoroParque;
 
-        Zoologico LoroParque = new Zoologico("LoroParque",animalesBase);
-
-        // -------------------------------------------------
-        
         while (opciónUsuario != OPCIONSALIR) {
-            opciónUsuario = Funciones.pedirNumeroEntero2valores(scanner, 0, OPCIONSALIR, mensajeMenu); //? que es Funciones??
+            opciónUsuario = Funciones.pedirNumeroEntero2valores(scanner, 0, OPCIONSALIR, mensajeMenu);
             scanner.nextLine();
             // enseña todos los animales
             if (opciónUsuario == 1) {
-                System.out.println(LoroParque.mostraColeccion());
+                Funciones.printLn(zooIterar.mostrarTodosAnimales());
             }
-            // Buscar animal por codigo. hace un toString() del animal
+            // Buscar animal por codigo. Hace un toString() del animal
             if (opciónUsuario == 2) {
+                Funciones.print("Introduce el código del animal a buscar: ");
                 codigoBuscar = scanner.nextLine();
-                animal1 = LoroParque.buscarAnimal(codigoBuscar);
 
-                if (animal1 != null) {
-                    System.out.println(animal1);
-                } else {
-                    System.out.println("No se ha encontrado el animal.");
+                try {
+                    Funciones.printLn(zooIterar.buscarAnimal(codigoBuscar));
+                } catch (NullPointerException excepcion) {
+                    Funciones.printLn("Error: " + excepcion.getMessage());
                 }
             }
-            // agregar ejemplares a una especie
+            // agregar ejemplares a una especie (por codigo)
             if (opciónUsuario == 3) {
-                System.out.print("Introduce el código del animal al que quieras agregar ejemplares: ");
+                Funciones.print("Introduce el código del animal al que quieras agregar ejemplares: ");
                 codigoBuscar = scanner.nextLine();
-                cantidadModificar = Funciones.pedirNumeroEntero1valorMIN(scanner, 0, "Introduce la cantidad que quieres añadir: "); //? que es Funciones??
-    
-                if (LoroParque.buscarAnimal(codigoBuscar) != null) {
-                    if(LoroParque.agregarEjemplares(codigoBuscar, cantidadModificar)) { //? esto que es? no debería poder funcionar, no?
-                        System.out.println("Se han agregado correctamente los ejemplares");
-                    } else {
-                        System.out.println("No se han agregado correctamente los ejemplares");
-                    } 
-                } else {
-                    System.out.println("No se ha encontrado el animal sobre el que interactuar ");
+
+                try {
+                    if (zooIterar.buscarAnimal(codigoBuscar) == null) throw new NullPointerException("Animal no encontrado.");
+
+                    cantidadModificar = Funciones.pedirNumeroEntero1valorMIN(scanner, 0, "Introduce la cantidad para agregar: ");
+                    zooIterar.agregarEjemplares(codigoBuscar, cantidadModificar);
+                    Funciones.printLn("Ejemplares añadidos correctamente");
+                } catch (NullPointerException excepcion) {
+                    Funciones.printLn("Error: " + excepcion.getMessage());
                 }
             }
-            // retirar ejemplares de animal
+            // retirar ejemplares de un animal (por codigo)
             if (opciónUsuario == 4) {
-                System.out.println("Introduce el código del animal al que quieras retirar ejemplares: ");
+                Funciones.print("Introduce el código del animal al que quieras retirar ejemplares: ");
                 codigoBuscar = scanner.nextLine();
-                cantidadModificar = Funciones.pedirNumeroEntero1valorMIN(scanner, 0, "Introduce la cantidad que quieres retirar: "); //? que es Funciones??
-                
-                if(LoroParque.eliminarEjemplares(codigoBuscar, cantidadModificar)) { //? lo mismo que la duda de arriba
-                    System.out.println("Se han retirado correctamente los ejemplares");
-                } else {
-                    animal1 = LoroParque.buscarAnimal(codigoBuscar);
-                    if(animal1.getCantidadEjemplares() - cantidadModificar < 0) {
-                        System.out.println("No se pueden quedar las cantidades en negatvio");
-                    } else {
-                        System.out.println("No se han retirado correctamente los ejemplares");
-                    }
+                try {
+                    if (zooIterar.buscarAnimal(codigoBuscar) == null) throw new NullPointerException("Animal no encontrado.");
+
+                    cantidadModificar = Funciones.pedirNumeroEntero1valorMIN(scanner, 0, "Introduce la cantidad para retirar: ");
+                    zooIterar.eliminarEjemplares(codigoBuscar, cantidadModificar);
+                    Funciones.printLn("Ejemplares retirados correctamente");
+                } catch (NullPointerException excepcion) {
+                    Funciones.printLn("Error: " + excepcion.getMessage());
+                } catch (IllegalStateException excepcion) {
+                    Funciones.printLn("Error: " + excepcion.getMessage());
                 }
             }
             // Eliminar animal (codigo)
             if (opciónUsuario == 5) {
-                System.out.print("introduce el codigo del animal que quieras eliminar: ");
+                Funciones.print("introduce el codigo del animal que quieras eliminar: ");
                 codigoBuscar = scanner.nextLine();
-                
-                if(LoroParque.eliminarEspecie(codigoBuscar)) { //? lo mismo que la duda de arriba
-                    System.out.println("Animal eliminado del zoologico correctamente");
-                } else {
-                    animal1 = LoroParque.buscarAnimal(codigoBuscar);
-                    if (animal1 == null) {
-                        System.out.println("No se ha podido eliminar al animal por que no se encontró.");
-                    } else if (animal1.getCantidadEjemplares() != 0) {
-                        System.out.println("No se puede eliminar un animal con ejemplares disponibles.");
-                    } 
+                try {
+                    zooIterar.eliminarEspecie(codigoBuscar);
+                    Funciones.printLn("Animal eliminado correctamente");
+                } catch (NullPointerException excepcion) {
+                    Funciones.printLn("Error: " + excepcion.getMessage());
                 }
             }
         }
+        scanner.close();
     }
 }

@@ -6,10 +6,8 @@ public class Animal {
     private int cantidadEjemplares;
     private double precio;
 
-    public static int cantidadAnimales;
-
-    Animal(String nombre, int cantidadEjemplares, double precio) {
-        setCodigo("AN-" + cantidadAnimales);
+    public Animal(String nombre, int cantidadEjemplares, double precio) {
+        setCodigo(Faker.codigoAnimal());
         setNombre(nombre);
         setCantidadEjemplares(cantidadEjemplares);
         setPrecio(precio);
@@ -80,7 +78,8 @@ public class Animal {
     }
 
     @Override
+    // formatear el toString
     public String toString() {
-        return mostrarCodigo() + mostrarNombre() + mostrarCantidadEjemplares() + mostrarPrecio();
+        return String.format("Codigo: %7s || Nombre del animal: %-20s || Cantidad de Ejemplares: %3d || Precio: %.2f", codigo, nombre,cantidadEjemplares, precio);
     }
 }

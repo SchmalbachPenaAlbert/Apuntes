@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class Funciones {
 
-
-    public Funciones() {
-
-    }
     /** Recibe un mensaje y hace un sys.out SIN "ln"
      * @param mensaje mensaje a imprimir
      */
@@ -20,8 +16,8 @@ public class Funciones {
      * 
      * @param mensaje mensaje a imprimir
      */
-    public static void printLn(String mensaje) {
-        System.out.println(mensaje);
+    public static void printLn(Object objeto) {
+        System.out.println(objeto);
     }
 
     /** Pide un numero entero hasta que el usuario introduza un entero entre el valor especificado 
@@ -36,7 +32,7 @@ public class Funciones {
     public static int pedirNumeroEntero2valores(Scanner scanner, int valorMinimoAcptado, int valorMaxAceptado, String mensajeUsuario) {
         printLn("");
         int numero = valorMinimoAcptado - 1;
-        String mensajeERROR = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
         boolean valido;
 
         do {
@@ -46,13 +42,13 @@ public class Funciones {
                 numero = scanner.nextInt();
             
                 if (numero < valorMinimoAcptado || numero > valorMaxAceptado) {
-                    printLn(mensajeERROR);
+                    printLn(mensajeError);
                     valido = false;
                 }
             
             } catch (InputMismatchException e) {
                 scanner.nextLine();
-                printLn(mensajeERROR);
+                printLn(mensajeError);
                 valido = false;
             }
         
@@ -72,7 +68,7 @@ public class Funciones {
     public static int pedirNumeroEntero1valorMAX(Scanner scanner, int valorMaxAceptado, String mensajeUsuario) {
         printLn("");
         int numero = valorMaxAceptado + 1 ;
-        String mensajeERROR = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
         boolean valido;
 
         do {
@@ -82,13 +78,13 @@ public class Funciones {
                 numero = scanner.nextInt();
             
                 if (numero > valorMaxAceptado) {
-                    printLn(mensajeERROR);
+                    printLn(mensajeError);
                     valido = false;
                 }
             
             } catch (InputMismatchException e) {
                 scanner.nextLine();
-                printLn(mensajeERROR);
+                printLn(mensajeError);
                 valido = false;
             }
         
@@ -108,7 +104,7 @@ public class Funciones {
     public static int pedirNumeroEntero1valorMIN(Scanner scanner, int valorMinimoAcptado, String mensajeUsuario) {
         printLn("");
         int numero = valorMinimoAcptado - 1;
-        String mensajeERROR = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
         boolean valido;
 
         do {
@@ -118,13 +114,13 @@ public class Funciones {
                 numero = scanner.nextInt();
             
                 if (numero < valorMinimoAcptado) {
-                    printLn(mensajeERROR);
+                    printLn(mensajeError);
                     valido = false;
                 }
             
             } catch (InputMismatchException e) {
                 scanner.nextLine();
-                printLn(mensajeERROR);
+                printLn(mensajeError);
                 valido = false;
             }
         
@@ -145,7 +141,7 @@ public class Funciones {
     public static double pedirDouble2valores(Scanner scanner, double valorMinimoAcptado, double valorMaxAceptado, String mensajeUsuario) {
         
         double numero = valorMinimoAcptado - 1.00;
-        String mensajeERROR = "ERROR: Ese valor no está permitido en el rango";
+        String mensajeError = "ERROR: Ese valor no está permitido en el rango";
         boolean valido;
 
         do {
@@ -155,13 +151,13 @@ public class Funciones {
                 numero = scanner.nextDouble();
             
                 if (numero < valorMinimoAcptado || numero > valorMaxAceptado) {
-                    printLn(mensajeERROR);
+                    printLn(mensajeError);
                     valido = false;
                 }
             
             } catch (InputMismatchException e) {
                 scanner.nextLine();
-                printLn(mensajeERROR);
+                printLn(mensajeError);
                 valido = false;
             }
         
@@ -182,7 +178,7 @@ public class Funciones {
     public static double pedirDouble1valorMAX(Scanner scanner, double valorMaxAceptado, String mensajeUsuario) {
         printLn("");
         double numero = valorMaxAceptado + 1 ;
-        String mensajeERROR = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
         boolean valido;
 
         do {
@@ -192,13 +188,13 @@ public class Funciones {
                 numero = scanner.nextDouble();
             
                 if (numero > valorMaxAceptado) {
-                    printLn(mensajeERROR);
+                    printLn(mensajeError);
                     valido = false;
                 }
             
             } catch (InputMismatchException e) {
                 scanner.nextLine();
-                printLn(mensajeERROR);
+                printLn(mensajeError);
                 valido = false;
             }
         
@@ -218,7 +214,7 @@ public class Funciones {
     public static double pedirDouble1valorMIN(Scanner scanner, double valorMinimoAcptado, String mensajeUsuario) {
         printLn("");
         double numero = valorMinimoAcptado - 1;
-        String mensajeERROR = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
         boolean valido;
 
         do {
@@ -228,13 +224,13 @@ public class Funciones {
                 numero = scanner.nextDouble();
             
                 if (numero < valorMinimoAcptado) {
-                    printLn(mensajeERROR);
+                    printLn(mensajeError);
                     valido = false;
                 }
             
             } catch (InputMismatchException e) {
                 scanner.nextLine();
-                printLn(mensajeERROR);
+                printLn(mensajeError);
                 valido = false;
             }
         
