@@ -10,7 +10,7 @@ public class ASP_PT5 {
         final int MAXANIMALES = 1000;
         final int OPCIONSALIR = 6;
         int opciónUsuario = 0;
-        int cantidadModificar = 0;
+        int cantidadModificar;
 
         String codigoBuscar = "";
         String mensajeMenu = "===== GESTIÓN DE ZOOLÓGICO =====\n\n" +
@@ -31,7 +31,7 @@ public class ASP_PT5 {
         Zoologico zooIterar = LoroParque;
 
         while (opciónUsuario != OPCIONSALIR) {
-            opciónUsuario = Funciones.pedirNumeroEntero2valores(scanner, 0, OPCIONSALIR, mensajeMenu);
+            opciónUsuario = Funciones.pedirNumeroEntero2valores(scanner, 1, OPCIONSALIR, mensajeMenu);
             scanner.nextLine();
             // enseña todos los animales
             if (opciónUsuario == 1) {
@@ -87,6 +87,8 @@ public class ASP_PT5 {
                     zooIterar.eliminarEspecie(codigoBuscar);
                     Funciones.printLn("Animal eliminado correctamente");
                 } catch (NullPointerException excepcion) {
+                    Funciones.printLn("Error: " + excepcion.getMessage());
+                } catch (IllegalStateException excepcion) {
                     Funciones.printLn("Error: " + excepcion.getMessage());
                 }
             }

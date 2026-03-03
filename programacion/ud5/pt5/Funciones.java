@@ -29,10 +29,10 @@ public class Funciones {
      * 
      * @return int -> Numero mayor al minimo y menor al maximo
      */
-    public static int pedirNumeroEntero2valores(Scanner scanner, int valorMinimoAcptado, int valorMaxAceptado, String mensajeUsuario) {
+    public static int pedirNumeroEntero2valores(Scanner scanner, int valorMinimoAceptado, int valorMaxAceptado, String mensajeUsuario) {
         printLn("");
-        int numero = valorMinimoAcptado - 1;
-        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
+        int numero = valorMinimoAceptado - 1;
+        String mensajeError = "ERROR: Ese valor no se encuentra dentro del rango permitido"; 
         boolean valido;
 
         do {
@@ -41,7 +41,7 @@ public class Funciones {
                 print(mensajeUsuario);
                 numero = scanner.nextInt();
             
-                if (numero < valorMinimoAcptado || numero > valorMaxAceptado) {
+                if (numero < valorMinimoAceptado || numero > valorMaxAceptado) {
                     printLn(mensajeError);
                     valido = false;
                 }
@@ -68,7 +68,7 @@ public class Funciones {
     public static int pedirNumeroEntero1valorMAX(Scanner scanner, int valorMaxAceptado, String mensajeUsuario) {
         printLn("");
         int numero = valorMaxAceptado + 1 ;
-        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no se encuentra dentro del rango permitido"; 
         boolean valido;
 
         do {
@@ -104,7 +104,7 @@ public class Funciones {
     public static int pedirNumeroEntero1valorMIN(Scanner scanner, int valorMinimoAcptado, String mensajeUsuario) {
         printLn("");
         int numero = valorMinimoAcptado - 1;
-        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no se encuentra dentro del rango permitido"; 
         boolean valido;
 
         do {
@@ -141,7 +141,7 @@ public class Funciones {
     public static double pedirDouble2valores(Scanner scanner, double valorMinimoAcptado, double valorMaxAceptado, String mensajeUsuario) {
         
         double numero = valorMinimoAcptado - 1.00;
-        String mensajeError = "ERROR: Ese valor no está permitido en el rango";
+        String mensajeError = "ERROR: Ese valor no se encuentra dentro del rango permitido";
         boolean valido;
 
         do {
@@ -178,7 +178,7 @@ public class Funciones {
     public static double pedirDouble1valorMAX(Scanner scanner, double valorMaxAceptado, String mensajeUsuario) {
         printLn("");
         double numero = valorMaxAceptado + 1 ;
-        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no se encuentra dentro del rango permitido"; 
         boolean valido;
 
         do {
@@ -214,7 +214,7 @@ public class Funciones {
     public static double pedirDouble1valorMIN(Scanner scanner, double valorMinimoAcptado, String mensajeUsuario) {
         printLn("");
         double numero = valorMinimoAcptado - 1;
-        String mensajeError = "ERROR: Ese valor no está permitido en el rango"; 
+        String mensajeError = "ERROR: Ese valor no se encuentra dentro del rango permitido"; 
         boolean valido;
 
         do {
