@@ -6,6 +6,7 @@ public class Lavadora extends Electrodomestico {
         this.capacidadCarga = capacidadCarga;
     }
 
+    @Override
     public String toString() {
         return "Lavadora de marca " + marca + " y modelo " + modelo + ", con capacidad de carga para " + capacidadCarga + " kilogramos.";
     }

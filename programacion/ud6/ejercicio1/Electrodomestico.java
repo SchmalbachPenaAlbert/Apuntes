@@ -7,6 +7,7 @@ public class Electrodomestico {
         this.modelo = modelo;
     }
     
+    @Override
     public String toString() {
         return "Electrodoméstico de marca " + marca + " y modelo " + modelo + ".";
     }

@@ -6,6 +6,7 @@ public class Televisor extends Electrodomestico {
         this.tamañoPantalla = tamañoPantalla;
     }
 
+    @Override
     public String toString() {
         return "Televisor de marca " + marca + " y modelo " + modelo + ", con pantalla de " + tamañoPantalla + " pulgadas de tamaño.";
     }
