@@ -7,9 +7,8 @@ public class Programador extends Empleado {
         super(nombre, sueldoBase);
     }
 
-    public String calcularSueldo() {
-        sueldoBase = (int) (sueldoBase * bonificadorProgramador);
-        return "Tiene un sueldo (con bonificación) de " + sueldoBase + "€ al mes.";
+    public double calcularSueldo() {
+        return sueldoBase * bonificadorProgramador;
     }
 
     public String toString() {
