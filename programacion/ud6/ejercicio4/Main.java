@@ -20,9 +20,6 @@ public class Main {
         // añadir animales
         Domestico gato = new Domestico("Gato", "omnivoro", "Paco");
         Salvaje erizo = new Salvaje("Erizo", "hervíboro", "Praderas");
-        // probar toString
-        System.out.println(gato);
-        System.out.println(erizo);
         // probar metodos
         System.out.println(gato.convivirConHumanos());
         System.out.println(erizo.cazar());
