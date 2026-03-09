@@ -1,6 +1,4 @@
 package programacion.ud6.ejercicio4;
-
-// ### 4. Animales Domésticos y Salvajes
 // **Enunciado:**  
 // Crea una clase `Animal` con los atributos `nombre` y `tipoAlimentacion`. 
 // Luego, crea dos subclases: `Domestico` con el método `convivirConHumanos()` y
@@ -19,6 +17,14 @@ package programacion.ud6.ejercicio4;
 
 public class Main {
     public static void main(String[] args) {
-        
+        // añadir animales
+        Domestico gato = new Domestico("Gato", "omnivoro", "Paco");
+        Salvaje erizo = new Salvaje("Erizo", "hervíboro", "Praderas");
+        // probar toString
+        System.out.println(gato);
+        System.out.println(erizo);
+        // probar metodos
+        System.out.println(gato.convivirConHumanos());
+        System.out.println(erizo.cazar());
     }
 }
