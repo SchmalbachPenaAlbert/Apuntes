@@ -10,6 +10,19 @@ package programacion.ud6.ejercicio2;
 
 public class Main{
     public static void main(String[] args) {
-        
+        // añadir empleados
+        Empleado empleado1 = new Empleado("María Gómez", 2400);
+        Programador empleado2 = new Programador("Isabel Ramos", 2700);
+        Diseñador empleado3 = new Diseñador("Luis Molina", 3100);
+        Gerente empleado4 = new Gerente("José Miguel Rayas", 2500);
+        // probar toString
+        System.out.println(empleado1);
+        System.out.println(empleado2);
+        System.out.println(empleado3);
+        System.out.println(empleado4);
+        // probar metodo sueldos
+        System.out.println(empleado2.calcularSueldo());
+        System.out.println(empleado3.calcularSueldo());
+        System.out.println(empleado4.calcularSueldo());
     }
 }
