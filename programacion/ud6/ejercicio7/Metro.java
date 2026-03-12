@@ -1,12 +1,16 @@
 package programacion.ud6.ejercicio7;
 
 public class Metro implements Transporte {
-    @Override
-    public void arrancar(numVagones) {
-        System.out.println("El metro arranca con " + numVagones + " vagones.");
+    int numVagones;
+    Metro(int numVagones) {
+        this.numVagones = numVagones;
     }
     @Override
-    public void detener() {
-        System.out.println("El metro se detiene.");
+    public String arrancar() {
+        return "El metro arranca con " + numVagones + " vagones.";
+    }
+    @Override
+    public String detener() {
+        return "El metro se detiene.";
     }
 }

@@ -2,11 +2,11 @@ package programacion.ud6.ejercicio7;
 
 public class Bicicleta implements Transporte {
     @Override
-    public void arrancar() {
-        System.out.println("El bicicleta arranca.");
+    public String arrancar() {
+        return "El bicicleta arranca.";
     }
     @Override
-    public void detener() {
-        System.out.println("El bicicleta se detiene.");
+    public String detener() {
+        return "El bicicleta se detiene.";
     }
 }
