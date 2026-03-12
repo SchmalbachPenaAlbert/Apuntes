@@ -18,11 +18,14 @@ Jueves, 11 de diciembre - Programación UD3
 - 2º Trimestre -
 Jueves, 29 de enero - Bases de Datos UD4
 Lunes, 2 de febrero - Sistemas Informáticos UD4
+Viernes, 6 de Febrero - IPE UD4
 Lunes, 9 de febrero - Programación UD4
 Miércoles, 11 de febrero - Lenguajes de Marcas UD4
 Miércoles, 18 de febrero - Entornos de Desarrollo UD4
+Jueves, 26 de Marzo - IPE UD5
 Viernes, 27 de febrero - Sistemas Informáticos UD5
 Martes, 3 de marzo - Programación UD5
 Miércoles, 4 de Marzo - Entornos de Desarrollo UD5
 Martes, 10 de Marzo - Bases de Datos UD5
 Miércoles, 11 de Marzo - Lenguajes de Marcas UD5
+Viernes, 13 de Marzo - IPE UD6
