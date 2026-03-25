@@ -4,6 +4,7 @@ const endpointRegion = "region/"
 const endpointCapital = "capital/"
 const endpointCodigo = "alpha/"
 const endpointListaRapida = "all?fields=name,flags,capital,population"
+let mensajeError = ""
 
 // Función para obtener datos de un pais por un valor de busqueda
 async function obtenerPais(valorBusqueda, filtrarPor) {
@@ -27,7 +28,7 @@ async function obtenerPais(valorBusqueda, filtrarPor) {
     try {
         const respuesta = await fetch(`${apiUrl}${endpoint}${valorBusqueda}`);
         if (!respuesta.ok) {
-            throw new Error("No se encontró el pais");
+            mensajeError = "¡No se encontró el país que estás intentando buscar!"
         }
         let datos = await respuesta.json();
         if (filtrarPor === "todos") {
@@ -37,7 +38,11 @@ async function obtenerPais(valorBusqueda, filtrarPor) {
             mostrarPais(dato, filtrarPor);
         }
     } catch (error) {
-        console.error("Error al obtener el pais:", error);
+        if (mensajeError == "") {
+            alert("¡Algo ha fallado! Revisa tu conexión o prueba de nuevo más tarde.")
+        } else {
+            alert(mensajeError)
+        }
     }
 }
 
@@ -197,6 +202,8 @@ document.getElementById("form-nombre").addEventListener("submit", function (even
     const input = document.getElementById("input-nombre").value.trim().toLowerCase();
     if (input) {
         obtenerPais(input, "nombre");
+    } else {
+        alert("¡Debes introducir un input para buscar!")
     }
 });
 
@@ -216,6 +223,8 @@ document.getElementById("form-capital").addEventListener("submit", function (eve
     const input = document.getElementById("input-capital").value.trim().toLowerCase();
     if (input) {
         obtenerPais(input, "capital");
+    } else {
+        alert("¡Debes introducir un input para buscar!")
     }
 });
 
@@ -226,6 +235,8 @@ document.getElementById("form-codigo").addEventListener("submit", function (even
     const input = document.getElementById("input-codigo").value.trim().toLowerCase();
     if (input) {
         obtenerPais(input, "codigo");
+    } else {
+        alert("¡Debes introducir un input para buscar!")
     }
 });
 
