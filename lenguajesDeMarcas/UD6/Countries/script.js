@@ -54,6 +54,8 @@ function mostrarPais(dato, tipoFiltro) {
     let poblacion = ""
     let continentes = ""
     let zonasHorarias = ""
+    let nombreComunNativo = ""
+    let nombreOficialNativo = ""
 
     if (dato.capital == undefined) {
         capitales = "N/A"
@@ -104,9 +106,17 @@ function mostrarPais(dato, tipoFiltro) {
         poblacion = dato.population + " habitantes"
     }
 
-    const nombreComunNativo = Object.values(dato.name.nativeName)[0].common
+    if (Object.values(dato.name.nativeName)[0] == undefined || Object.values(dato.name.nativeName)[0].common == undefined) {
+        nombreComunNativo = "N/A"
+    } else {
+        nombreComunNativo = Object.values(dato.name.nativeName)[0].common
+    }
 
-    const nombreOficialNativo = Object.values(dato.name.nativeName)[0].official
+    if (Object.values(dato.name.nativeName)[0] == undefined || Object.values(dato.name.nativeName)[0].official == undefined) {
+        nombreOficialNativo = "N/A"
+    } else {
+        nombreOficialNativo = Object.values(dato.name.nativeName)[0].official
+    }
 
     if (tipoFiltro == "nombre") {
         contenedorNombre.innerHTML = `
