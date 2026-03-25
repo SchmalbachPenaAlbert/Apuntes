@@ -42,8 +42,12 @@ function mostrarPais(dato, tipoFiltro) {
     let monedas = ""
     let poblacion = ""
 
-    for (let capital of dato.capital) {
-        capitales += capital + "\n"
+    if (dato.capital == undefined) {
+        capitales = "N/A"
+    } else {
+        for (let capital of dato.capital) {
+            capitales += capital + "\n"
+        }
     }
 
     for (let idioma of Object.values(dato.languages)) {
