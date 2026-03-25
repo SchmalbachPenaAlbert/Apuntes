@@ -2,6 +2,8 @@ const apiUrl = "https://restcountries.com/v3.1/";
 const endpointNombre = "name/"
 const endpointRegion = "region/"
 const endpointCapital = "capital/"
+const endpointCodigo = "alpha/"
+const endpointListaRapida = "all?fields=name,flags,capital,population"
 
 // Función para obtener datos de un pais por un valor de busqueda
 async function obtenerPais(valorBusqueda, filtrarPor) {
@@ -12,6 +14,10 @@ async function obtenerPais(valorBusqueda, filtrarPor) {
         endpoint = endpointRegion
     } else if (filtrarPor == "capital") {
         endpoint = endpointCapital
+    } else if (filtrarPor == "codigo") {
+        endpoint = endpointCodigo
+    } else if (filtrarPor == "todos") {
+        endpoint = endpointListaRapida
     } else {
         console.log("Error: El filtro seleccionado no está definido. Arregla el código.")
     }
@@ -24,6 +30,9 @@ async function obtenerPais(valorBusqueda, filtrarPor) {
             throw new Error("No se encontró el pais");
         }
         let datos = await respuesta.json();
+        if (filtrarPor === "todos") {
+            document.getElementById("resultado-todos").innerHTML = ""
+        }
         for (let dato of datos) {
             mostrarPais(dato, filtrarPor);
         }
@@ -37,10 +46,14 @@ function mostrarPais(dato, tipoFiltro) {
     const contenedorNombre = document.getElementById("resultado-nombre");
     const contenedorRegion = document.getElementById("resultado-region");
     const contenedorCapital = document.getElementById("resultado-capital");
+    const contenedorCodigo = document.getElementById("resultado-codigo");
+    const contenedorTodos = document.getElementById("resultado-todos");
     let capitales = ""
     let idiomas = ""
     let monedas = ""
     let poblacion = ""
+    let continentes = ""
+    let zonasHorarias = ""
 
     if (dato.capital == undefined) {
         capitales = "N/A"
@@ -50,12 +63,36 @@ function mostrarPais(dato, tipoFiltro) {
         }
     }
 
-    for (let idioma of Object.values(dato.languages)) {
-        idiomas += idioma + "\n"
+    if (dato.continents == undefined) {
+        continentes = "N/A"
+    } else {
+        for (let continente of dato.continents) {
+            continentes += continente + "\n"
+        }
     }
 
-    for (let moneda of Object.values(dato.currencies)) {
-        monedas += moneda.name + " (" + moneda.symbol + ")" + "\n"
+    if (dato.timezones == undefined) {
+        zonasHorarias = "N/A"
+    } else {
+        for (let zonaHoraria of dato.timezones) {
+            zonasHorarias += zonaHoraria + "\n"
+        }
+    }
+
+    if (dato.languages == undefined) {
+        idiomas = "N/A"
+    } else {
+        for (let idioma of Object.values(dato.languages)) {
+            idiomas += idioma + "\n"
+        }
+    }
+
+    if (dato.currencies == undefined) {
+        monedas = "N/A"
+    } else {
+        for (let moneda of Object.values(dato.currencies)) {
+            monedas += moneda.name + " (" + moneda.symbol + ")" + "\n"
+        }
     }
 
     // formatear la población según la cantidad
@@ -74,8 +111,7 @@ function mostrarPais(dato, tipoFiltro) {
     if (tipoFiltro == "nombre") {
         contenedorNombre.innerHTML = `
             <p>${dato.flag}</p>
-            <p><strong>Nombre común:</strong></p>
-            <p>${dato.name.common} (${nombreComunNativo})</p>
+            <h3>${dato.name.common} (${nombreComunNativo})</h3>
             <p><strong>Nombre oficial:</strong></p>
             <p>${dato.name.official} (${nombreOficialNativo})</p>
             <p><strong>Capital:</strong></p>
@@ -106,14 +142,38 @@ function mostrarPais(dato, tipoFiltro) {
     } else if (tipoFiltro == "capital") {
         contenedorCapital.innerHTML = `
             <p>${dato.flag}</p>
-            <p><strong>Nombre:</strong></p>
-            <p>${dato.name.common} (${nombreComunNativo})</p>
+            <h3>${dato.name.common} (${nombreComunNativo})</h3>
             <p><strong>Capital:</strong></p>
             <p>${capitales}</p>
             <p><strong>Región:</strong></p>
             <p>${dato.region}</p>
-            <p><strong><a target="_blank" href="${dato.maps.googleMaps}">Mapa</a></strong></p>
+            <p><strong><a target="_blank" href="${dato.maps.googleMaps}">Enlace a Google Maps</a></strong></p>
         `
+    } else if (tipoFiltro == "codigo") {
+        contenedorCodigo.innerHTML = `
+            <p>${dato.flag}</p>
+            <h3>${dato.name.common} (${nombreComunNativo})</h3>
+            <p><strong>Código cca2:</strong></p>
+            <p>${dato.cca2}</p>
+            <p><strong>Código cca3:</strong></p>
+            <p>${dato.cca3}</p>
+            <p><strong>Continente:</strong></p>
+            <p>${continentes}</p>
+            <p><strong>Zona(s) horaria(s):</strong></p>
+            <p>${zonasHorarias}</p>
+        `
+    } else if (tipoFiltro == "todos") {
+        const tarjeta = document.createElement("div")
+        tarjeta.innerHTML = `
+            <img src="${dato.flags.png}" style="width: 100px; height: auto;"></img>
+            <h3>${dato.name.common} (${nombreComunNativo})</h3>
+            <p><strong>Capital:</strong></p>
+            <p>${capitales}</p>
+            <p><strong>Población:</strong></p>
+            <p>${poblacion}</p>
+        `
+        tarjeta.style.marginBottom = "20px";
+        contenedorTodos.appendChild(tarjeta);
     } else {
         console.log("Error: El filtro seleccionado no está definido. Arregla el código.")
     }
@@ -131,12 +191,13 @@ document.getElementById("form-nombre").addEventListener("submit", function (even
 });
 
 // por region
-document.querySelectorAll(".btn-region").forEach(btn => {
-    btn.addEventListener("click", function () {
-        const region = this.dataset.region;
-        obtenerPais(region, "region");
-    });
-});
+const botones = document.getElementsByClassName("btn-region")
+for (let boton of botones) {
+    boton.addEventListener("click", function () {
+        const region = this.dataset.region
+        obtenerPais(region, "region")
+    })
+}
 
 // por capital
 document.getElementById("form-capital").addEventListener("submit", function (event) {
@@ -147,3 +208,19 @@ document.getElementById("form-capital").addEventListener("submit", function (eve
         obtenerPais(input, "capital");
     }
 });
+
+// por codigo
+document.getElementById("form-codigo").addEventListener("submit", function (event) {
+    
+    event.preventDefault();
+    const input = document.getElementById("input-codigo").value.trim().toLowerCase();
+    if (input) {
+        obtenerPais(input, "codigo");
+    }
+});
+
+// lista rapida
+document.getElementById("btn-todos").addEventListener("click", function () {
+    const input = ""
+    obtenerPais(input, "todos")
+})
