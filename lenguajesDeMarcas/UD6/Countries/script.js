@@ -105,7 +105,14 @@ function mostrarPais(dato, tipoFiltro) {
         contenedorRegion.appendChild(tarjeta);
     } else if (tipoFiltro == "capital") {
         contenedorCapital.innerHTML = `
-            <p>hola</p>
+            <p>${dato.flag}</p>
+            <p><strong>Nombre:</strong></p>
+            <p>${dato.name.common} (${nombreComunNativo})</p>
+            <p><strong>Capital:</strong></p>
+            <p>${capitales}</p>
+            <p><strong>Región:</strong></p>
+            <p>${dato.region}</p>
+            <p><strong><a target="_blank" href="${dato.maps.googleMaps}">Mapa</a></strong></p>
         `
     } else {
         console.log("Error: El filtro seleccionado no está definido. Arregla el código.")
