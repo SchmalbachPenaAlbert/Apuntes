@@ -8,6 +8,7 @@ let mensajeError = ""
 
 // Función para obtener datos de un pais por un valor de busqueda
 async function obtenerPais(valorBusqueda, filtrarPor) {
+    mensajeError = ""
     let endpoint = ""
     if (filtrarPor == "nombre") {
         endpoint = endpointNombre
